@@ -1,0 +1,19 @@
+.Info {
+  text-align: center;
+  justify-content: center;
+  font-family: "Saira Condensed", sans-serif;
+  color: aliceblue;
+  background-image: url("../assets/lp_imgs/Login.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 2%;
+  row-gap: 2%;
+  padding-bottom: 1.5%;
+  padding-top: 1.3%;
+}

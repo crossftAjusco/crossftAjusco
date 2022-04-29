@@ -1,0 +1,94 @@
+/* Estilos GoogleFont:
+    font-family: 'Abel', sans-serif;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Saira Condensed', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Allerta+Stencil&family=Anton&family=Saira+Condensed:wght@600&display=swap');
+
+
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../assets/lp_imgs/Login.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.imagen{
+  height: 20vh;
+  width: 20vh;
+  border-radius: 90px;
+  box-shadow: rgb(64, 67, 29) 2px 9px 12px 6px;
+  margin-top: 3vh;
+}
+
+.form{
+  width: 50%;
+  margin-left: 4vh;
+}
+
+.titulo{
+  color: whitesmoke;
+  margin-top: 4vh;
+  font-size: 1.4rem;
+  padding: 0.7vh auto;
+  text-shadow: #2f2806fc 4px 5px 2px;
+}
+
+.tittle{
+  color: #ecc510fc;
+  text-shadow: rgb(0, 0, 0) 1px 2px 2px;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 1.6rem;
+}
+
+input{
+  width: 90%;
+  height: 5vh;
+}
+
+.botn{
+  background-color: silver;
+  width: 50%;
+  margin: 2vh;
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 1.3rem;
+  box-shadow: black 2px 1px 1px 1px;
+  border-radius: 10px;
+  border: ridge black 1px;
+}
+
+.botn:hover{
+  background-color: #ecc510fc;
+  box-shadow: rgb(70, 70, 70) 2px 1px 1px 1px;
+  border: ridge rgb(165, 164, 164) 1px;
+}
+
+.botn2{
+  background-color: rgba(240, 235, 235, 0.824);
+  width: 100%;
+  padding: 1vh;
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 1.1rem;
+  box-shadow: black 2px 1px 1px 1px;
+  border-radius: 10px;
+  border: ridge black 1px;
+  margin-top: -3vh;
+}
+
+.botn2:hover{
+  background-color: #ecc510fc;
+  box-shadow: rgb(70, 70, 70) 2px 1px 1px 1px;
+  border: ridge rgb(165, 164, 164) 1px;
+}
+
+.ancla{
+  color: #ecc510fc;
+  padding-bottom: 4vh;
+  text-shadow: rgb(0, 0, 0) 1px 2px 2px;
+  font-size: 1rem;
+}
