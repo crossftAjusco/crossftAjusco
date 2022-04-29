@@ -2,8 +2,7 @@ import React from "react";
 import CardActionArea from "./Card";
 import { CardMedia } from "@mui/material";
 import "./InfoGeneral.css";
-import misimg from "https://www.sportlife.es/uploads/s1/75/96/70/8/trail-running.jpeg";
-import seimg from "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fchambermaster.blob.core.windows.net%2Fimages%2Fmembers%2F2860%2F1763%2FMalibu%2520Fitness.jpg&f=1&nofb=1";
+
 const InfoGeneral = () => {
   const mision = `Tenemos como misión buscar que nuestros socios día a día progresen
             en todas las cualidades físicas que poseemos. Se busca que a la par
@@ -14,8 +13,6 @@ const InfoGeneral = () => {
   const vision = ` Ser un referendo a nivel local y regional brindando un valor agregado
           a nuestros usuarios y a nuestra comunidad. Lograr que nuestros de
           deportistas hagan una historia llena de logros personales y en equipo. `;
-  const first = <img src={misimg} alt="logo" />;
-  const second = <img src={seimg} alt="logo" />;
 
   return (
     <div>
@@ -34,8 +31,8 @@ const InfoGeneral = () => {
           </h5>
         </div>
         <CardMedia />
-        <CardActionArea img={first} title={`Misión`} content={mision} />
-        <CardMedia img={second} />
+        <CardActionArea title={`Misión`} content={mision} />
+        <CardMedia />
         <CardActionArea title={`Visión`} content={vision} />
       </section>
     </div>
