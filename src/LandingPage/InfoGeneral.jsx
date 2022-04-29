@@ -13,7 +13,6 @@ const InfoGeneral = () => {
   const vision = ` Ser un referendo a nivel local y regional brindando un valor agregado
           a nuestros usuarios y a nuestra comunidad. Lograr que nuestros de
           deportistas hagan una historia llena de logros personales y en equipo. `;
-  const picture = `"https://www.sportlife.es/uploads/s1/75/96/70/8/trail-running.jpeg"`;
 
   return (
     <div>
@@ -31,8 +30,9 @@ const InfoGeneral = () => {
             y está dirigido a cualquier persona.
           </h5>
         </div>
-        <CardMedia image={picture} />
+        <CardMedia />
         <CardActionArea title={`Misión`} content={mision} />
+        <CardMedia />
         <CardActionArea title={`Visión`} content={vision} />
       </section>
     </div>

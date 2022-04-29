@@ -37,6 +37,7 @@ const App = () => {
                 path="/"
                 element={<Navigate to="crossfit_ajusco/home" />}
               />
+              <Route path="/crossfit_ajusco" element={<Home />} />
               <Route path="crossfit_ajusco/home" element={<Home />} />
               <Route path="crossfit_ajusco/login" element={<Login />} />
               <Route
