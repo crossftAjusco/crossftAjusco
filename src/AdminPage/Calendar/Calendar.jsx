@@ -27,6 +27,7 @@ const Calendario = () => {
     });
     setModalUserInfo({
       title: user[0].title,
+      lastName: user[0].lastName,
       strPayday: user[0].start.toLocaleDateString("es-MX", {
         weekday: "long",
         year: "numeric",
@@ -71,6 +72,7 @@ const Calendario = () => {
         return {
           id: doc.id,
           title: doc.get("name"),
+          lastName: doc.get("last_name"),
           start: doc.get("payday").toDate(),
           nextPayDay: doc.get("next_payday").toDate(),
           end: doc.get("payday").toDate(),
@@ -85,6 +87,7 @@ const Calendario = () => {
         return {
           id: doc.id,
           title: doc.get("name"),
+          lastName: doc.get("last_name"),
           start: doc.get("next_payday").toDate(),
           end: doc.get("next_payday").toDate(),
           allDay: true,
