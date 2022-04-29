@@ -25,6 +25,7 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
   
   const inscripcion = dia + " de " + mes + " del " + año; //fecha del día de inscripción
   const proxPago = dia2 + " de " + mes2 + " del " + fecha2.getFullYear() //fecha del próximo pago a partir del registro
+  const nextPay = dia2 + "-" + mes2 + "-" + fecha2.getFullYear();
   // console.log(proxPago) //fecha con formato yyyy-MM-dd
   
   return (
@@ -36,15 +37,14 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
           birthday: "",
           email: "",
           date_start: new Date(),
-          next_payday: new Date(Date.parse(proxPago)),
+          next_payday: new Date(Date.parse(nextPay)),
           payday: new Date(),
-          payment_days: [],
+          payment_days: [new Date()],
           name: "",
           lastname: "",
           phone: "",
           phone_contact: "",
           gender: "",
-          age: "",
           heigth: "",
           weigth: "",
           neck: "",
@@ -62,7 +62,7 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
         }}
         //Validación de el prop "valores" /valores esperados/ vs valores.ingresados
         validate={(valores) => {
-          console.log(valores); //Muestra el objeto del registro
+          // console.log(valores); //Muestra el objeto del registro
           let errores = {}; //Auxiliar en los anuncios de error en la sintaxis ingresada (UI)
           //Se valora la información ingresada mediante if-else, equivale a "required"
           if (!valores.email) { //Validación para el mail
@@ -106,11 +106,6 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
               "Selecciona una opción"
           }
 
-          if (!valores.age) { //Validación para la edad
-            errores.age = 
-                "Ingresa un valor"
-          }
-
           if (!valores.heigth) { //Validación para estatura
             errores.heigth = 
                 "Ingresa un valor"
@@ -128,7 +123,6 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
         //Al dar click en el <btn>Registrar</btn> (y pasar los test) se activa.
         onSubmit={ (valores, { resetForm, values }) => { 
           const nuevoObjeto = valores
-          nuevoObjeto.next_payday = new Date(Date.parse(nuevoObjeto.next_payday))
           NuevoUsuario(nuevoObjeto);
           changeSendForm(true); //si el "state" es true aparece 'Registro exitoso'
           resetForm();//resetForm Limpia el formulario una vez validado
@@ -169,14 +163,14 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
                     <Field type="text" name="name" id="name" placeholder="nombre(s)" className="input" />
                   </div>
                   <div className="fields">
-                    <label htmlFor="lastname" className="subtitles">Apellido:</label>
+                    <label htmlFor="lastname" className="subtitles">Apellido(s):</label>
                     <ErrorMessage name="lastname"
                       component={() => (
                         <div className="error">{errors.lastname}</div>)} />
                     <Field type="text" name="lastname" id="lastname" placeholder="apellido(s)" className="input"/>
                   </div>
                   <div className="fields">
-                    <label htmlFor="birthday" className="subtitles">Fecha de nacimiento:</label>
+                    <label htmlFor="birthday" className="subtitles" >Fecha de nacimiento:</label>
                     <ErrorMessage name="birthday"
                       component={() => (
                         <div className="error">{errors.birthday}</div>)} />
@@ -209,14 +203,6 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
                         <Field type="radio" name="gender" value="masculino" />
                         masculino
                     </label>
-                  </div>
-                  <div className="fields">
-                    <label htmlFor="age" className="subtitles">Edad:</label>
-                    <ErrorMessage name="age"
-                      component={() => (
-                        <div className="error">{errors.age}</div> )}
-                    />
-                    <Field type="number" name="age" id="age" placeholder="edad" min={1} max={99} className="inputNum" />
                   </div>
                   <div className="fields medida">
                     <label htmlFor="heigth" className="subtitles">Estatura:</label>
