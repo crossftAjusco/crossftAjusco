@@ -82,7 +82,6 @@ export function UserTraining() {
 
                 </Paper>
               </Grid>   
-              
             </Grid>
           </Container>
         </Box>

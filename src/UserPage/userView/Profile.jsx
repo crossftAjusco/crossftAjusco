@@ -15,8 +15,6 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import { UserRules} from "./UserRules.jsx"
 import ScrollableFeed from 'react-scrollable-feed'
 import "./UserView.css";
 import { useEffect, useState } from "react";
@@ -90,10 +88,10 @@ const db = getFirestore(app);
         </h4>
         
         <Box sx={{ display: "flex" }}>
-        <CssBaseline />
+       
           <Container maxWidth="lg" sx={{ mt: 6, mb: 5 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={6} lg={3}>
+            <Grid container spacing={1}>
+              <Grid item xs={12} md={6} lg={12}>
               <Paper
                   sx={{
                     p: 1,
@@ -102,11 +100,12 @@ const db = getFirestore(app);
                     height: 635,
                   }}
                 >   
+                <ScrollableFeed>
                
     <List
       sx={{
         width: '100%',
-        maxWidth: 500,
+        maxWidth: 950,
         bgcolor: 'background.paper',
       }}
     >
@@ -272,10 +271,9 @@ const db = getFirestore(app);
         <ListItemText primary="Cintura" secondary="98 cm"  />
       </ListItem>
     </List>   
+    </ScrollableFeed>
     </Paper> 
-   
               </Grid>
-             
             </Grid>
           </Container>
         </Box>   

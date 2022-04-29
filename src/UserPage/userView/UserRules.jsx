@@ -6,44 +6,22 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import ScrollableFeed from 'react-scrollable-feed'
-import { Document, Page, pdfjs } from 'react-pdf';
 import { useState } from "react";
 import Reglamento from "../../assets/pdf/Reglamento.pdf"
+import Button from '@mui/material/Button';
 
 export const UserRules = () => {
   // Se declara una variable para guardar el id del usuario para
   const { user, users } = useAuth();
   console.log(user.email)
   //console.log(users[0])
-  pdfjs.GlobalWorkerOptions.workerSrc = 
-  `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  
+  const style = {display: "block", margin: "auto", width: "100%", height: "100%"}
+
   /*To Prevent right click on screen*/
   document.addEventListener("contextmenu", (event) => {
     event.preventDefault();
   });
-    
-  /*When document gets loaded successfully*/
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-    setPageNumber(1);
-  }
-  
-  function changePage(offset) {
-    setPageNumber(prevPageNumber => prevPageNumber + offset);
-  }
-  
-  function previousPage() {
-    changePage(-1);
-  }
-  
-  function nextPage() {
-    changePage(1);
-  }
-  
-
+      
   const userData = users.filter( (us) => {
     if (us.email === user.email) return true
   })
@@ -64,7 +42,7 @@ export const UserRules = () => {
          
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={2}>
-              <Grid item xs={16} md={8} lg={10}>
+              <Grid item xs={12} md={8} lg={12}>
               <Paper
                   sx={{
                     p: 1,
@@ -74,49 +52,19 @@ export const UserRules = () => {
                   }}
                 >
       
-        
+      <a target="_blanck" href={Reglamento}></a>
+    <object data={Reglamento} style={style} label="pdf"></object>
 
-    <div className="main">
-      <Document
-        file={Reglamento}
-        onLoadSuccess={onDocumentLoadSuccess}
-      >
-        <Page pageNumber={pageNumber} />
-      </Document>
-      <div>
-        <div className="pagec">
-          Página {pageNumber || (numPages ? 1 : '--')} de {numPages || '--'}
-        </div>
-        <div className="buttonc">
-        <button
-          type="button"
-          disabled={pageNumber <= 1}
-          onClick={previousPage}
-          className="Pre"
-            
-        >
-          Anterior
-        </button>
-        <button
-          type="button"
-          disabled={pageNumber >= numPages}
-          onClick={nextPage}
-           
-        >
-          Siguiente
-        </button>
-        </div>
-      </div>
-      </div>
+
       </Paper>
       </Grid>
-      <Grid item xs={16} md={8} lg={10}>
+      <Grid item xs={12} md={8} lg={12}>
       <Paper
                   sx={{
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
-                    height: 635,
+                    height: 435,
                   }}
                 >
       
