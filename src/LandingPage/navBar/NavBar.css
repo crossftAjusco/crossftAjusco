@@ -18,6 +18,9 @@
   font-family: "Allerta Stencil", sans-serif;
 }
 
+.navbar-collapse {
+  align-items: center;
+}
 .logoText {
   font-family: "Allerta Stencil", sans-serif;
   font-size: 1.4rem;
