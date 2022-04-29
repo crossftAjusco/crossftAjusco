@@ -1,0 +1,107 @@
+.sticky {
+  width: 100%;
+  height: 40%;
+  position: relative;
+  font-family: "Saira Condensed", sans-serif;
+  background-color: #212529;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: initial;
+  justify-content: space-evenly;
+  padding-top: 2%;
+}
+
+.box {
+  width: fit-content;
+}
+.box3 {
+  width: fit-content;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.socialmedia {
+  padding-bottom: 15px;
+  width: fit-content;
+  margin-bottom: 25px;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+.socialmedia a {
+  text-decoration: none;
+  color: azure;
+}
+.socialmedia a:hover {
+  color: rgb(210, 153, 11);
+  scale: 0.9;
+}
+
+.copyright {
+  background-color: #ecc510fc;
+  justify-items: center;
+  text-align: center;
+  color: black;
+}
+.img {
+  overflow: hidden;
+  padding-bottom: 56.2%;
+  position: relative;
+  height: 0;
+}
+.img iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.line {
+  width: 80%;
+  height: 4px;
+  background-color: #f5f3f3;
+  border-radius: 2px;
+  position: absolute;
+  overflow: hidden;
+}
+.lineA {
+  width: 10%;
+  height: 4px;
+  background-color: #f5f3f3;
+  border-radius: 2px;
+  position: absolute;
+  overflow: hidden;
+}
+.lineA span {
+  width: 15px;
+  height: 100%;
+  background: #ecc510fc;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  animation: moving 3s linear infinite;
+}
+.line span {
+  width: 15px;
+  height: 100%;
+  background: #ecc510fc;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  animation: moving 3s linear infinite;
+}
+@keyframes moving {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: 100px;
+  }
+}
