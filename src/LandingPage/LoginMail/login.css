@@ -11,11 +11,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   background-image: url("../../assets/lp_imgs/Login.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  padding: 5em auto;
 }
 
 .imagen{

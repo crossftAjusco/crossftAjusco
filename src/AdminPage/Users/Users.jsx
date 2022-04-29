@@ -66,7 +66,7 @@ function Row(props) {
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <Typography variant="h6" gutterBottom component="div">
-                History
+                Historial:
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableHead>
@@ -134,11 +134,11 @@ export default function CollapsibleTable() {
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell>Nombre:</TableCell>
+            <TableCell align="right">Apellido(s):</TableCell>
+            <TableCell align="right">Edad:</TableCell>
+            <TableCell align="right">Miembro desde:</TableCell>
+            <TableCell align="right">Siguiente pago:(g)</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
