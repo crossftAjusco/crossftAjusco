@@ -27,9 +27,20 @@ const Calendario = () => {
     });
     setModalUserInfo({
       title: user[0].title,
-      strPayday: user[0].start.toDateString(),
-      strNext_payday: user[0].nextPayDay.toDateString(),
-      payday: user[0].nextPayDay,
+      strPayday: user[0].start.toLocaleDateString("es-MX", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+      strNext_payday: user[0].nextPayDay.toLocaleDateString("es-MX", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+      nextPayday: user[0].nextPayDay,
+      payday: user[0].start,
       id: user[0].id,
     });
     handleShow();

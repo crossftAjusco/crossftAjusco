@@ -17,18 +17,31 @@ const ModalCal = ({ show, setShow, modalUserInfo }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const timeStamp = Date.parse(date) + 107999000;
-    console.log(timeStamp);
+    // console.log(modalUserInfo.payday);
+    // console.log(modalUserInfo.nextPayday);
+    const timeStamp = Date.parse(date) + 18000000;
+    const nuevaFecha = new Date(timeStamp); //Nueva fecha de pago utilizando el seleccionador
     if (!timeStamp) {
-      alert("Ingrese una fecha");
+      console.log(modalUserInfo.nextPayday);
+      let proximoPago = new Date();
+      proximoPago.setMonth(modalUserInfo.nextPayday.getMonth() + 1);
+      proximoPago.setFullYear(modalUserInfo.nextPayday.getFullYear());
+      proximoPago.setDate(modalUserInfo.nextPayday.getDate());
+      console.log(proximoPago);
+      let docRef = doc(db, `Users/${modalUserInfo.id}`);
+      console.log(modalUserInfo.nextPayday);
+      console.log(proximoPago);
+      await updateDoc(docRef, {
+        payday: modalUserInfo.nextPayday,
+        next_payday: proximoPago,
+      });
+      setDate({});
+      handleClose();
       return;
     }
-    const nuevaFecha = new Date(timeStamp); //La nueva fecha de pago
-    console.log(nuevaFecha);
-    console.log(modalUserInfo.id);
     let docRef = doc(db, `Users/${modalUserInfo.id}`);
     await updateDoc(docRef, {
-      payday: modalUserInfo.payday,
+      payday: modalUserInfo.nextPayday,
       next_payday: nuevaFecha,
       //--------------------------------------------falta agregar el push al arreglo de pagos
     });
