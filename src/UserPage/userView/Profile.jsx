@@ -16,7 +16,6 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import { UserRules} from "./UserRules.jsx"
 import ScrollableFeed from 'react-scrollable-feed'
 import "./UserView.css";
 import { useEffect, useState } from "react";
@@ -92,8 +91,8 @@ const db = getFirestore(app);
         <Box sx={{ display: "flex" }}>
         <CssBaseline />
           <Container maxWidth="lg" sx={{ mt: 6, mb: 5 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={6} lg={3}>
+            <Grid container spacing={1}>
+              <Grid item xs={12} md={6} lg={12}>
               <Paper
                   sx={{
                     p: 1,
@@ -101,185 +100,201 @@ const db = getFirestore(app);
                     flexDirection: "column",
                     height: 635,
                   }}
-                >   
-               
-    <List
-      sx={{
-        width: '100%',
-        maxWidth: 500,
-        bgcolor: 'background.paper',
-      }}
-    >
-     
-      <ListItem>
-        <ListItemText primary="Edad:" secondary={users.age}/>
-        <Button 
-        variant="primary" 
-        onClick={()=> {
-          handleShow()
-          setTipo('Edad:')
-          setData(users.age)
-          
-        }} 
-          onSelectEvent={handleClick}>
-         <EditOutlinedIcon />
-         
-        </Button>
-      </ListItem>
-      <Divider component="li" />
-      <li>
-        <Typography
-          sx={{ mt: 0.5, ml: 2 }}
-          color="text.secondary"
-          display="block"
-          variant="caption"
-        >
-        </Typography>
-      </li>
-      <ListItem>
-        <ListItemText primary="Teléfono:" secondary={users.phone} />
-        <Button variant="primary" onClick={()=> {
-          handleShow()
-          setTipo('Teléfono')
-          setData(users.phone)
-        }}onSelectEvent={handleClick} >
-         <EditOutlinedIcon />
-        </Button>
-      </ListItem>
-      <Divider component="li" />
-      <li>
-        <Typography
-          sx={{ mt: 0.5, ml: 2 }}
-          color="text.secondary"
-          display="block"
-          variant="caption"
-        >
-        </Typography>
-      </li>
-      <ListItem>
-        <ListItemText primary="Email:" secondary={users.email} />
-        <Button variant="primary" onClick={()=> {
-          handleShow()
-          setTipo('Emial')
-          setData(users.email)
-        }}onSelectEvent={handleClick}>
-         <EditOutlinedIcon />
-        </Button>
-      </ListItem>
-      <Divider component="li" />
-      <li>
-        <Typography
-          sx={{ mt: 0.5, ml: 2 }}
-          color="text.secondary"
-          display="block"
-          variant="caption"
-        >
-        </Typography>
-      </li>
-      <ListItem>
-        <ListItemText primary="Alergias:" secondary={users.allergies} />
-        <Button variant="primary" onClick={()=> {
-          handleShow()
-          setTipo('Alergias')
-          setData(users.allergies)
-        }}onSelectEvent={handleClick}>
-         <EditOutlinedIcon />
-        </Button>
-      </ListItem>
-      <Divider component="li" />
-      <li>
-        <Typography
-          sx={{ mt: 0.5, ml: 2 }}
-          color="text.secondary"
-          display="block"
-          variant="caption"
-        >
-        </Typography>
-        <ListItem>
-        <ListItemText primary="Condición médica:" secondary={users.injuries} />
-        <Button variant="primary" onClick={()=> {
-          handleShow()
-          setTipo('Condición Médica')
-          setData(users.injuries)
-        }}onSelectEvent={handleClick}>
-         <EditOutlinedIcon />
-        </Button>
-      </ListItem>
-      <Divider component="li" />
-      <li>
-        <Typography
-          sx={{ mt: 0.5, ml: 2 }}
-          color="text.secondary"
-          display="block"
-          variant="caption"
-        >
-        </Typography>
-      </li>
-      </li>
-      <ListItem>
-        <ListItemText primary="Medidas:"/>
-      </ListItem>
-      <Divider component="li" variant="inset" />
-      <li>
-        <Typography
-          sx={{ mt: 0.5, ml: 9 }}
-          color="text.secondary"
-          display="block"
-          variant="caption"
-        >
-        </Typography>
-      </li>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <StraightenIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Altura:"  secondary="1.70 mts"/>
-      </ListItem>
-      <li>
-        <Typography
-          sx={{ mt: 0.5, ml: 9 }}
-          color="text.secondary"
-          display="block"
-          variant="caption"
-        >
-        </Typography>
-      </li>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-           <StraightenIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Peso" secondary="76 kg" />
-      </ListItem>
-      <li>
-        <Typography
-          sx={{ mt: 0.5, ml: 9 }}
-          color="text.secondary"
-          display="block"
-          variant="caption"
-        >
-        </Typography>
-      </li>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-           <StraightenIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Cintura" secondary="98 cm"  />
-      </ListItem>
-    </List>   
-    </Paper> 
-   
-              </Grid>
-             
-            </Grid>
-          </Container>
+                >  
+              <ScrollableFeed>             
+              <List
+                sx={{
+                  width: '100%',
+                  maxWidth: 960,
+                  bgcolor: 'background.paper',
+                }}
+              >
+                
+                <ListItem>
+                  <ListItemText primary="Edad:" secondary={users.age}/>
+                  <Button 
+                  variant="primary" 
+                  onClick={()=> {
+                    handleShow()
+                    setTipo('Edad:')
+                    setData(users.age)
+                    
+                  }} 
+                    onSelectEvent={handleClick}>
+                    <EditOutlinedIcon />
+                    
+                  </Button>
+                </ListItem>
+                <Divider component="li" />
+                <li>
+                  <Typography
+                    sx={{ mt: 0.5, ml: 2 }}
+                    color="text.secondary"
+                    display="block"
+                    variant="caption"
+                  >
+                  </Typography>
+                </li>
+                <ListItem>
+                  <ListItemText primary="Teléfono:" secondary={users.phone} />
+                  <Button variant="primary" onClick={()=> {
+                    handleShow()
+                    setTipo('Teléfono')
+                    setData(users.phone)
+                  }}onSelectEvent={handleClick} >
+                    <EditOutlinedIcon />
+                  </Button>
+                </ListItem>
+                <Divider component="li" />
+                <li>
+                  <Typography
+                    sx={{ mt: 0.5, ml: 2 }}
+                    color="text.secondary"
+                    display="block"
+                    variant="caption"
+                  >
+                  </Typography>
+                </li>
+                <ListItem>
+                  <ListItemText primary="Email:" secondary={users.email} />
+                  <Button variant="primary" onClick={()=> {
+                    handleShow()
+                    setTipo('Emial')
+                    setData(users.email)
+                  }}onSelectEvent={handleClick}>
+                    <EditOutlinedIcon />
+                  </Button>
+                </ListItem>
+                <Divider component="li" />
+                <li>
+                  <Typography
+                    sx={{ mt: 0.5, ml: 2 }}
+                    color="text.secondary"
+                    display="block"
+                    variant="caption"
+                  >
+                  </Typography>
+                </li>
+                <ListItem>
+                  <ListItemText primary="Alergias:" secondary={users.allergies} />
+                  <Button variant="primary" onClick={()=> {
+                    handleShow()
+                    setTipo('Alergias')
+                    setData(users.allergies)
+                  }}onSelectEvent={handleClick}>
+                    <EditOutlinedIcon />
+                  </Button>
+                </ListItem>
+                <Divider component="li" />
+                <li>
+                  <Typography
+                    sx={{ mt: 0.5, ml: 2 }}
+                    color="text.secondary"
+                    display="block"
+                    variant="caption"
+                  >
+                  </Typography>
+                  <ListItem>
+                  <ListItemText primary="Condición médica:" secondary={users.injuries} />
+                  <Button variant="primary" onClick={()=> {
+                    handleShow()
+                    setTipo('Condición Médica')
+                    setData(users.injuries)
+                  }}onSelectEvent={handleClick}>
+                    <EditOutlinedIcon />
+                  </Button>
+                </ListItem>
+                <Divider component="li" />
+                <li>
+                  <Typography
+                    sx={{ mt: 0.5, ml: 2 }}
+                    color="text.secondary"
+                    display="block"
+                    variant="caption"
+                  >
+                  </Typography>
+                </li>
+                </li>
+                <ListItem>
+                  <ListItemText primary="Medidas:"/>
+                </ListItem>
+                <Divider component="li" variant="inset" />
+                <li>
+                  <Typography
+                    sx={{ mt: 0.5, ml: 9 }}
+                    color="text.secondary"
+                    display="block"
+                    variant="caption"
+                  >
+                  </Typography>
+                </li>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <StraightenIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="Altura:" secondary={users.sizes['height']} />
+                </ListItem>
+                <li>
+                  <Typography
+                    sx={{ mt: 0.5, ml: 9 }}
+                    color="text.secondary"
+                    display="block"
+                    variant="caption"
+                  >
+                  </Typography>
+                </li>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <StraightenIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="Peso" secondary={users.sizes['weight']} />
+                </ListItem>
+                <li>
+                  <Typography
+                    sx={{ mt: 0.5, ml: 9 }}
+                    color="text.secondary"
+                    display="block"
+                    variant="caption"
+                  >
+                  </Typography>
+                </li>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <StraightenIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="Cintura" secondary={users.sizes['waist']} />
+                </ListItem>
+                <li>
+                  <Typography
+                    sx={{ mt: 0.5, ml: 9 }}
+                    color="text.secondary"
+                    display="block"
+                    variant="caption"
+                  >
+                  </Typography>
+                </li>
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <StraightenIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary="Cuello" secondary={users.sizes['neck']} />
+                </ListItem>
+              </List> 
+            </ScrollableFeed>   
+            </Paper> 
+          </Grid>
+          </Grid>
+        </Container>
         </Box>   
-      </div>
+        </div>
     </>
   );    
 };
