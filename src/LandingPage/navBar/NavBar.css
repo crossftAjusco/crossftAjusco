@@ -61,3 +61,7 @@ a.nav-link:hover {
   position: relative;
   top: 1px;
 }
+
+.user{
+  display: flex;
+}
