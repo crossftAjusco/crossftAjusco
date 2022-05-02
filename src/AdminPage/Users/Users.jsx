@@ -17,7 +17,8 @@ import { useAuth } from '../../Context/authContext'
 
 export default function CollapsibleTable() {
   const { users } = useAuth()
-   console.log(users) 
+  console.log(users)
+  
   return (
     <TableContainer component={Paper}>
         <h2 className="title">Usuarios registrados:</h2>
@@ -37,7 +38,11 @@ export default function CollapsibleTable() {
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.lastname}</TableCell>
               <TableCell>{row.birthday} años</TableCell>
-              <TableCell>De milisegundos a tiempo actual</TableCell>
+              <TableCell>{row.date_start.toDate().toLocaleDateString("es-MX", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })}</TableCell>
               <TableCell>Yo igual</TableCell>
             </TableRow>
           ))}

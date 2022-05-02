@@ -18,7 +18,7 @@ export const Navigation = () => {
 
   //cerrar sesión desde navBar
   const { user, logout } = useAuth();
-  console.log(user)
+  // console.log(user)
   //const para la redirección del usuario
   const navigate = useNavigate();
   //una vez que cierra sesión se va navigate('direccón')
