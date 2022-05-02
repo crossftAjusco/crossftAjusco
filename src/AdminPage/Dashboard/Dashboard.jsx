@@ -22,8 +22,7 @@ function Copyright(props) {
       color="text.secondary"
       align="center"
       {...props}
-    >
-    </Typography>
+    ></Typography>
   );
 }
 

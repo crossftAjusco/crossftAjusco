@@ -1,3 +1,4 @@
+import "./calendar.css";
 import React, { useEffect, useState } from "react";
 import app from "../../firebase";
 import {
@@ -28,12 +29,7 @@ const Calendario = () => {
     setModalUserInfo({
       title: user[0].title,
       lastName: user[0].lastName,
-      strPayday: user[0].start.toLocaleDateString("es-MX", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      }),
+      strPayday: user[0].start.toLocaleDateString(),
       strNext_payday: user[0].nextPayDay.toLocaleDateString("es-MX", {
         weekday: "long",
         year: "numeric",
@@ -114,6 +110,7 @@ const Calendario = () => {
         onSelectEvent={handleClick}
         selectable
         eventPropGetter={eventPropGetter}
+        className="calendario"
       />
       <ModalCal show={show} setShow={setShow} modalUserInfo={modalUserInfo} />
     </>
