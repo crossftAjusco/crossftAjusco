@@ -116,14 +116,8 @@ function DashboardContent() {
 }
 
 export default function Dashboard() {
-  const { user } = useAuth();
-  // console.log(user);
   return (
     <>
-      <div>
-        <img src={user.photoURL} alt="Perfil" />
-        <p>Bienvenido: {user.displayName || user.email}</p>
-      </div>
       <DashboardContent />;
     </>
   );

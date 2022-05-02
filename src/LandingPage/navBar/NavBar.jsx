@@ -18,6 +18,7 @@ export const Navigation = () => {
 
   //cerrar sesión desde navBar
   const { user, logout } = useAuth();
+  console.log(user)
   //const para la redirección del usuario
   const navigate = useNavigate();
   //una vez que cierra sesión se va navigate('direccón')
@@ -30,12 +31,6 @@ export const Navigation = () => {
     await logout();
     navigate("crossfit_ajusco/home");
   };
-
-  // if (!user) {
-  //   handleLogin()
-  // } else {
-  //   handleLogin()
-  // }
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -63,14 +58,19 @@ export const Navigation = () => {
                 Recomendaciones de salud
               </Nav.Link>
             */}
-            {}
           </Nav>
           {/* Botones de inicio de sesión */}
-          {user ? (
-            <button onClick={handleLogout} className="login">
-              Cerrar Sesión
-            </button>
-          ) : (
+          {user ? (<>
+            <div className="user">
+              <img src={user.photoURL} alt="Perfil" />s
+              <p>{user.displayName || user.email}</p>
+            </div>
+            <div>
+              <button onClick={handleLogout} className="login">
+                Cerrar Sesión
+              </button>
+            </div>
+            </>) : (
             <button onClick={handleLogin} className="login">
               Iniciar Sesión
             </button>
