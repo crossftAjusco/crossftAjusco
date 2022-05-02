@@ -14,50 +14,38 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PaidIcon from '@mui/icons-material/Paid';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import { IconButton } from '@mui/material';
+import { yellow } from '@mui/material/colors';
+import { createTheme } from '@mui/material';
 
 export const mainListItems = (
-  <React.Fragment>
+  <div className='iconsDashboard'>
     <NavLink to='calendar'>
-      <ListItemButton>
-        <ListItemIcon>
-          <CalendarMonthIcon />
-        </ListItemIcon>
-        <ListItemText primary="Calendario" />
-      </ListItemButton>
+      <IconButton color='warning' size='large'>
+        <CalendarMonthIcon size='large' />
+      </IconButton>
     </NavLink>
     <NavLink to='graph'>
-      <ListItemButton>
-        <ListItemIcon>
-          <PaidIcon />
-        </ListItemIcon>
-        <ListItemText primary="Ingresos" />
-      </ListItemButton>
+      <IconButton color='warning' size='large'>
+        <PaidIcon size='large' />
+      </IconButton>
     </NavLink>
     <NavLink to='comunidad'>
-      <ListItemButton>
-        <ListItemIcon>
-          <ConnectWithoutContactIcon />
-        </ListItemIcon>
-        <ListItemText primary="Comunidad" />
-      </ListItemButton>
+      <IconButton color='warning' size='large'>
+        <ConnectWithoutContactIcon size='large' />
+      </IconButton>
     </NavLink>
     <NavLink to='form'>
-      <ListItemButton>
-        <ListItemIcon>
-          <GroupAddIcon />
-        </ListItemIcon>
-        <ListItemText primary="Nuevo usuario" />
-      </ListItemButton>
+      <IconButton color='warning' size='large'>
+        <GroupAddIcon size='large' />
+      </IconButton>
     </NavLink>
     <NavLink to='usuarios'>
-      <ListItemButton>
-        <ListItemIcon>
-          <PeopleIcon />
-        </ListItemIcon>
-        <ListItemText primary="Usuarios" />
-      </ListItemButton>
+      <IconButton color='warning' size='large'>
+        <PeopleIcon fontSize="inherit" />
+      </IconButton>
     </NavLink>
-  </React.Fragment>
+  </div>
 );
 
 export const secondaryListItems = (

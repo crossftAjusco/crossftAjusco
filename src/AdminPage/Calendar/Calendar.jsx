@@ -29,7 +29,12 @@ const Calendario = () => {
     setModalUserInfo({
       title: user[0].title,
       lastName: user[0].lastName,
-      strPayday: user[0].start.toLocaleDateString(),
+      strPayday: user[0].start.toLocaleDateString("es-MX", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
       strNext_payday: user[0].nextPayDay.toLocaleDateString("es-MX", {
         weekday: "long",
         year: "numeric",

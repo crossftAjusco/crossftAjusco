@@ -1,3 +1,4 @@
+import "./dashboard.css";
 import * as React from "react";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -14,17 +15,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems, secondaryListItems } from "./listItems";
 import { useAuth } from "../../Context/authContext";
 import { Outlet } from "react-router-dom";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    ></Typography>
-  );
-}
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const drawerWidth = 240;
 
@@ -62,16 +53,10 @@ function DashboardContent() {
     setOpen(!open);
   };
 
-  const { user, loading } = useAuth();
-
-  if (loading) return <h2>Cargando...</h2>;
-
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-
-        <Drawer variant="permanent" open={open}>
+        {/*<Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
               display: "flex",
@@ -90,7 +75,7 @@ function DashboardContent() {
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
           </List>
-        </Drawer>
+        </Drawer>*/}
         <Box
           component="main"
           sx={{
@@ -103,10 +88,8 @@ function DashboardContent() {
             overflow: "auto",
           }}
         >
-          <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Outlet />
-            <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>
@@ -117,6 +100,7 @@ function DashboardContent() {
 export default function Dashboard() {
   return (
     <>
+      {mainListItems}
       <DashboardContent />;
     </>
   );
