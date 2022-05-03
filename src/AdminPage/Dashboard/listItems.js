@@ -15,14 +15,17 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PaidIcon from '@mui/icons-material/Paid';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
-import { IconButton } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { yellow } from '@mui/material/colors';
+import { grey, yellow } from '@mui/material/colors';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: yellow[600]
+      main: grey[100]
+    },
+    secondary: {
+      main: yellow[700]
     }
   }
 })
@@ -31,29 +34,39 @@ export const mainListItems = (
   <ThemeProvider theme={theme}>
     <div className='iconsDashboard'>
       <NavLink to='calendar'>
-        <IconButton color='primary' size='large'>
-          <CalendarMonthIcon size='large' />
-        </IconButton>
+        <Tooltip title="Calendario">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <CalendarMonthIcon size='large' />
+          </IconButton>
+        </Tooltip>
       </NavLink>
       <NavLink to='graph'>
-        <IconButton color='primary' size='large'>
-          <PaidIcon size='large' />
-        </IconButton>
+        <Tooltip title="Pagos">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <PaidIcon size='large' />
+          </IconButton>
+        </Tooltip>
       </NavLink>
       <NavLink to='comunidad'>
-        <IconButton color='primary' size='large'>
-          <ConnectWithoutContactIcon size='large' />
-        </IconButton>
+        <Tooltip title="Comunidad">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <ConnectWithoutContactIcon size='large' />
+          </IconButton>
+        </Tooltip>
       </NavLink>
       <NavLink to='form'>
-        <IconButton color='primary' size='large'>
-          <GroupAddIcon size='large' />
-        </IconButton>
+        <Tooltip title="Nuevo usuario">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <GroupAddIcon size='large' />
+          </IconButton>
+        </Tooltip>
       </NavLink>
       <NavLink to='usuarios'>
-        <IconButton color='primary' size='large'>
-          <PeopleIcon fontSize="inherit" />
-        </IconButton>
+        <Tooltip title="Usuarios">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <PeopleIcon fontSize="inherit" />
+          </IconButton>
+        </Tooltip>
       </NavLink>
     </div>
   </ThemeProvider>

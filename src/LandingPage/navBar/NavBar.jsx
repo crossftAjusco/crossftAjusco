@@ -86,12 +86,6 @@ export const Navigation = () => {
           {/* Botones de inicio de sesión */}
           {user ? (
             <>
-              <div>
-                <button onClick={handleLogout} className="login">
-                  Cerrar Sesión
-                </button>
-              </div>
-
               <Box sx={{ flexGrow: 0 }} className="dropDownAvatar">
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -129,11 +123,6 @@ export const Navigation = () => {
                 </Menu>
                 <p className="userName">{user.displayName || user.email}</p>
               </Box>
-
-              <div className="user">
-                <Avatar src={user.photoURL} />
-                <p className="userName">{user.displayName || user.email}</p>
-              </div>
             </>
           ) : (
             <button onClick={handleLogin} className="login">
