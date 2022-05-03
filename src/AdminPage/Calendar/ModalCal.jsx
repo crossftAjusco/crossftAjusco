@@ -65,14 +65,19 @@ const ModalCal = ({ show, setShow, modalUserInfo }) => {
         </Modal.Header>
         <Modal.Body>
           <p>
-            <span className="accent">Último </span>pago:{" "}
+            <span className="accent">Último pago:</span>{" "}
             {modalUserInfo.strPayday}
           </p>
           <p>
-            <span className="accent">Próximo </span> pago:{" "}
+            <span className="accent">Próximo pago:</span>{" "}
             {modalUserInfo.strNext_payday}
           </p>
-          <Button variant="primary" type="submit" onClick={handleClick}>
+          <Button
+            variant="primary"
+            type="submit"
+            onClick={handleClick}
+            className="modalbtn"
+          >
             Editar fecha de pago
           </Button>
           <Form>
@@ -90,7 +95,12 @@ const ModalCal = ({ show, setShow, modalUserInfo }) => {
                 </>
               )}
             </Form.Group>
-            <Button variant="danger" type="submit" onClick={handleSubmit}>
+            <Button
+              variant="danger"
+              type="submit"
+              onClick={handleSubmit}
+              className="modalbtn"
+            >
               Actualizar pago
             </Button>
           </Form>

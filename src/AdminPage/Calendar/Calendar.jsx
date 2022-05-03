@@ -1,3 +1,4 @@
+import "./calendar.css";
 import React, { useEffect, useState } from "react";
 import app from "../../firebase";
 import {
@@ -114,6 +115,7 @@ const Calendario = () => {
         onSelectEvent={handleClick}
         selectable
         eventPropGetter={eventPropGetter}
+        className="calendario"
       />
       <ModalCal show={show} setShow={setShow} modalUserInfo={modalUserInfo} />
     </>
