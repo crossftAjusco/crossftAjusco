@@ -1,4 +1,12 @@
 // -------------------NabBar by Bootstrap, NavBar en landing page------------------
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
 import {
   Navbar,
   Container,
@@ -11,13 +19,30 @@ import { useAuth } from "../../Context/authContext";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/lp_imgs/Logo.jpg";
 import "./NavBar.css";
+import {
+  Avatar,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 
 export const Navigation = () => {
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
   //para mostrar el modal
   //const [modalShow, setModalShow] = useState(false);
 
   //cerrar sesión desde navBar
   const { user, logout } = useAuth();
+  console.log(user);
+  // console.log(user)
   //const para la redirección del usuario
   const navigate = useNavigate();
   //una vez que cierra sesión se va navigate('direccón')
@@ -30,12 +55,6 @@ export const Navigation = () => {
     await logout();
     navigate("crossfit_ajusco/home");
   };
-
-  // if (!user) {
-  //   handleLogin()
-  // } else {
-  //   handleLogin()
-  // }
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -66,13 +85,59 @@ export const Navigation = () => {
                 Recomendaciones de salud
               </Nav.Link>
             */}
-            {}
           </Nav>
           {/* Botones de inicio de sesión */}
           {user ? (
-            <button onClick={handleLogout} className="login">
-              Cerrar Sesión
-            </button>
+            <>
+              <div>
+                <button onClick={handleLogout} className="login">
+                  Cerrar Sesión
+                </button>
+              </div>
+
+              <Box sx={{ flexGrow: 0 }} className="dropDownAvatar">
+                <Tooltip title="Open settings">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar alt="Remy Sharp" src={user.photoURL} />
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  <MenuItem onClick={handleLogout}>
+                    <Typography textAlign="center">LogOut</Typography>
+                  </MenuItem>
+                  <MenuItem onClick={handleLogout}>
+                    <Typography textAlign="center">Calendar</Typography>
+                  </MenuItem>
+                  <ListItemButton onClick={handleLogout}>
+                    <ListItemIcon>
+                      <AutoStoriesIcon />
+                      <ListItemText primary="Reglamento" />
+                    </ListItemIcon>
+                  </ListItemButton>
+                </Menu>
+                <p className="userName">{user.displayName || user.email}</p>
+              </Box>
+
+              <div className="user">
+                <Avatar src={user.photoURL} />
+                <p className="userName">{user.displayName || user.email}</p>
+              </div>
+            </>
           ) : (
             <button onClick={handleLogin} className="login">
               Iniciar Sesión

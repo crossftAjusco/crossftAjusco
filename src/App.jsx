@@ -61,6 +61,7 @@ const App = () => {
                   </ProtectedRoute>
                 }
               >
+                <Route index element={<Calendar />} />
                 <Route path="graph" element={<Graph />} />
                 <Route path="calendar" element={<Calendar />} />
                 <Route path="form" element={<Register />} />
