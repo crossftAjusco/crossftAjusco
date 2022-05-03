@@ -1,3 +1,7 @@
 .biopic {
-  height: 100vh;
+  height: 80vh;
+  color: aliceblue;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
+  background-color: aqua;
 }
