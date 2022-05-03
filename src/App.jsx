@@ -65,8 +65,9 @@ const App = () => {
                 <Route path="usuarios" element={<Users />} />
                 <Route path="comunidad" element={<ReadPost />} />
               </Route>
+
               <Route
-                path="/UserView"
+                path="/UserView/*"
                 element={
                   <ProtectedRouteUser>
                     {" "}
@@ -74,7 +75,7 @@ const App = () => {
                   </ProtectedRouteUser>
                 }
               >
-                <Route index element={<UserDash />} />
+                <Route index element= {<UserDash/>} />
                 <Route path="profile" element={<Profile />} />
                 <Route path="pagos" element={<UserPayments />} />
                 <Route path="training" element={<UserTraining />} />
@@ -82,6 +83,7 @@ const App = () => {
                 <Route path="eventos" element={<UserDash />} />
                 <Route path="reglamento" element={<UserRules />} />
               </Route>
+
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>

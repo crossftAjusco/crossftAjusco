@@ -14,13 +14,9 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { useAuth } from "../../Context/authContext";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
-// 
-
 import { Outlet } from "react-router-dom";
-
 //Perfil del usuario logueado
 import { mainListItems } from "./UserNavBar.jsx";
-
 export const UserView = () => {
   const { user } = useAuth();
   return (

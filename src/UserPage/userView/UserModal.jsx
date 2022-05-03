@@ -11,26 +11,21 @@ const db = getFirestore(app);
 const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
     const handleClose = () => setShow(false);
     const [dataUser, setUserData] = useState({});
-    const [dataPhone, setPhone] = useState({});
+    
     const docRef = doc (db, `Users/${modalUserData.id}`);
     console.log(tipo)
     //creamos la funcion para actualizar los datos del modal
     const updateA = async (e) => {
-        e.preventDefault()
+    e.preventDefault()
     const age = parseInt(dataUser)
+    
     console.log(typeof(age))
     await updateDoc(docRef, {
         age: age, 
-    }); 
-    console.log(data)
-    
-    const phone = parseInt(dataPhone)
-    await updateDoc(docRef, {
-        phone: phone,  
-    }); 
-        setUserData();
-        setPhone();
-        handleClose();
+    });
+   
+      setUserData();
+      handleClose();
     };
     
     return(

@@ -25,7 +25,7 @@ export const UserPayments = () => {
 
   //configuración de los hoocks para
   const uD = userData[0]
-  const payIni = Date.parse(uD.date_start);
+  const payIni = toString(uD.date_start)
   console.log(payIni)
 
   //Función para actualizar datos 
@@ -55,14 +55,14 @@ export const UserPayments = () => {
                 <Table striped bordered hover size="sm">
   <thead>
     <tr>
-      <th>Fecha de Inicio</th>
+      <th>Fecha de Inscripción:</th>
       <th>Último Pago</th>
       <th>Siguiente Fecha de Pago</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td> 8 Mar 2022 </td>
+      <td> {payIni} </td>
       <td> 9 Abril 2022 </td>
       <td> 9 Mayo 2022 </td>
     </tr>
