@@ -3,20 +3,16 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
+import LogoutIcon from "@mui/icons-material/Logout";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import {
-  Navbar,
-  Container,
-  Nav,
-  NavDropdown,
-  Button,
-  NavLink,
-} from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
 import { useAuth } from "../../Context/authContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import Logo from "../../assets/lp_imgs/Logo.jpg";
 import "./NavBar.css";
 import {
@@ -28,7 +24,7 @@ import {
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 
 export const Navigation = () => {
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(false);
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -40,7 +36,7 @@ export const Navigation = () => {
   //const [modalShow, setModalShow] = useState(false);
 
   //cerrar sesión desde navBar
-  const { user, logout } = useAuth();
+  const { user, logout, setAdmin, admin } = useAuth();
   console.log(user);
   // console.log(user)
   //const para la redirección del usuario
@@ -53,16 +49,25 @@ export const Navigation = () => {
 
   const handleLogout = async () => {
     await logout();
+    setAdmin(false);
     navigate("crossfit_ajusco/home");
+  };
+
+  const handleUser = () => {
+    navigate("/UserView");
+  };
+
+  const handleAdmin = () => {
+    navigate("/admin");
   };
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container className="contenido">
         <img src={Logo} alt="logo" className="icon" />
-        <Nav.Link className="logoText" href="/">
+        <NavLink className="logoText" to="/">
           <b>Cross Ft. Ajusco</b>
-        </Nav.Link>
+        </NavLink>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -89,9 +94,10 @@ export const Navigation = () => {
               <Box sx={{ flexGrow: 0 }} className="dropDownAvatar">
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt="Remy Sharp" src={user.photoURL} />
+                    <Avatar alt={user.displayName} src={user.photoURL} />
                   </IconButton>
                 </Tooltip>
+                <p className="userName">{user.displayName || user.email}</p>
                 <Menu
                   sx={{ mt: "45px" }}
                   id="menu-appbar"
@@ -108,20 +114,38 @@ export const Navigation = () => {
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
-                  <MenuItem onClick={handleLogout}>
-                    <Typography textAlign="center">LogOut</Typography>
-                  </MenuItem>
-                  <MenuItem onClick={handleLogout}>
-                    <Typography textAlign="center">Calendar</Typography>
-                  </MenuItem>
-                  <ListItemButton onClick={handleLogout}>
-                    <ListItemIcon>
-                      <AutoStoriesIcon />
-                      <ListItemText primary="Reglamento" />
-                    </ListItemIcon>
-                  </ListItemButton>
+                  {admin ? (
+                    <>
+                      <ListItemButton onClick={handleAdmin}>
+                        <ListItemIcon>
+                          <AdminPanelSettingsIcon />
+                          <ListItemText primary="Admin" />
+                        </ListItemIcon>
+                      </ListItemButton>
+                      <ListItemButton onClick={handleLogout}>
+                        <ListItemIcon>
+                          <LogoutIcon />
+                          <ListItemText primary="LogOut" />
+                        </ListItemIcon>
+                      </ListItemButton>
+                    </>
+                  ) : (
+                    <>
+                      <ListItemButton onClick={handleUser}>
+                        <ListItemIcon>
+                          <AccountCircleIcon />
+                          <ListItemText primary="Usuario" />
+                        </ListItemIcon>
+                      </ListItemButton>
+                      <ListItemButton onClick={handleLogout}>
+                        <ListItemIcon>
+                          <LogoutIcon />
+                          <ListItemText primary="LogOut" />
+                        </ListItemIcon>
+                      </ListItemButton>
+                    </>
+                  )}
                 </Menu>
-                <p className="userName">{user.displayName || user.email}</p>
               </Box>
             </>
           ) : (
