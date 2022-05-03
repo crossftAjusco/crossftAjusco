@@ -76,10 +76,17 @@ const Profile = () => {
     //delete properties innecessary from info object
     //[array] of the properties we need [ {age: 78}, {phone: 8822897},]
    let filterArray = [
-    {age: 55},
+    {age: info.age},
     {phone: 5576703061},
-    {email: 'linzerking@gmail.com'}
+    {email: 'linzerking@gmail.com'},
+    {alergies: 'Al trabajo'},
+    {injuries: 'Le duele la rodilla'},
+    {height: 1.70},
+    {weight: 75},
+    {waist: 90},
+    {neck: 30} 
     ]
+    console.log(info.age)
     setProfileData();//set del hook profile data
     //return arreglo y listo
     return () => {
@@ -87,6 +94,7 @@ const Profile = () => {
     }
     
   }
+  
   console.log(users)
   
   
@@ -122,6 +130,7 @@ const Profile = () => {
                 {profileDate.map((item) => {
                   return (
                 <ListItem key={item.id}>
+                  {console.log(item)}
                   <ListItemText primary="Edad:" secondary={users.age}/>
                   <Button 
                   variant="primary" 
@@ -172,7 +181,7 @@ const Profile = () => {
                   <ListItemText primary="Email:" secondary={users.email} />
                   <Button variant="primary" onClick={()=> {
                     handleShow()
-                    setTipo('Emial')
+                    setTipo('Email')
                     setData(users.email)
                   }}onSelectEvent={handleClick}>
                     <EditOutlinedIcon />
