@@ -52,6 +52,9 @@ export const Navigation = () => {
               <NavDropdown.Item href="/crossfit_ajusco/acerca_de">
                 Acerca de
               </NavDropdown.Item>
+              <NavDropdown.Item href="/crossfit_ajusco/coach">
+                Coach
+              </NavDropdown.Item>
               <NavDropdown.Item href="/crossfit_ajusco/precios">
                 Precio
               </NavDropdown.Item>

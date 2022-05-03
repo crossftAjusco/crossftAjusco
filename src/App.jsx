@@ -20,9 +20,10 @@ import { UserPayments } from "./UserPage/userView/UserPayments.jsx";
 import { ReadPost } from "./Community/Posts/ReadPost";
 import { UserDash } from "./UserPage/userView/UserDash.jsx";
 import { UserRules } from "./UserPage/userView/UserRules.jsx";
-import InfoGeneral from "./LandingPage/InfoGeneral.jsx";
-import Precios from "./LandingPage/Precios.jsx";
+import InfoGeneral from "./LandingPage/navBar/InfoGeneral.jsx";
+import Precios from "./LandingPage/navBar/Precios";
 import Health from "./LandingPage/navBar/Health.jsx";
+import Biopic from "./LandingPage/navBar/Biopic.jsx";
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
                 path="crossfit_ajusco/acerca_de"
                 element={<InfoGeneral />}
               />
+              <Route path="crossfit_ajusco/coach" element={<Biopic />} />
               <Route path="crossfit_ajusco/precios" element={<Precios />} />
               <Route
                 path="crossfit_ajusco/recomendaciones_de_salud"
