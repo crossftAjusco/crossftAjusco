@@ -1,3 +1,4 @@
+import './dashboard.css'
 import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -15,37 +16,47 @@ import PaidIcon from '@mui/icons-material/Paid';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import { IconButton } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { yellow } from '@mui/material/colors';
-import { createTheme } from '@mui/material';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: yellow[600]
+    }
+  }
+})
 
 export const mainListItems = (
-  <div className='iconsDashboard'>
-    <NavLink to='calendar'>
-      <IconButton color='warning' size='large'>
-        <CalendarMonthIcon size='large' />
-      </IconButton>
-    </NavLink>
-    <NavLink to='graph'>
-      <IconButton color='warning' size='large'>
-        <PaidIcon size='large' />
-      </IconButton>
-    </NavLink>
-    <NavLink to='comunidad'>
-      <IconButton color='warning' size='large'>
-        <ConnectWithoutContactIcon size='large' />
-      </IconButton>
-    </NavLink>
-    <NavLink to='form'>
-      <IconButton color='warning' size='large'>
-        <GroupAddIcon size='large' />
-      </IconButton>
-    </NavLink>
-    <NavLink to='usuarios'>
-      <IconButton color='warning' size='large'>
-        <PeopleIcon fontSize="inherit" />
-      </IconButton>
-    </NavLink>
-  </div>
+  <ThemeProvider theme={theme}>
+    <div className='iconsDashboard'>
+      <NavLink to='calendar'>
+        <IconButton color='primary' size='large'>
+          <CalendarMonthIcon size='large' />
+        </IconButton>
+      </NavLink>
+      <NavLink to='graph'>
+        <IconButton color='primary' size='large'>
+          <PaidIcon size='large' />
+        </IconButton>
+      </NavLink>
+      <NavLink to='comunidad'>
+        <IconButton color='primary' size='large'>
+          <ConnectWithoutContactIcon size='large' />
+        </IconButton>
+      </NavLink>
+      <NavLink to='form'>
+        <IconButton color='primary' size='large'>
+          <GroupAddIcon size='large' />
+        </IconButton>
+      </NavLink>
+      <NavLink to='usuarios'>
+        <IconButton color='primary' size='large'>
+          <PeopleIcon fontSize="inherit" />
+        </IconButton>
+      </NavLink>
+    </div>
+  </ThemeProvider>
 );
 
 export const secondaryListItems = (
