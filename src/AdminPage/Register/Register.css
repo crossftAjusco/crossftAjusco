@@ -4,7 +4,7 @@
     font-family: 'Anton', sans-serif;
     font-family: 'Saira Condensed', sans-serif;
 */
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Allerta+Stencil&family=Anton&family=Saira+Condensed:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Allerta+Stencil&family=Anton&family=Saira+Condensed:wght@600&display=swap");
 
 .formulario {
   align-items: center;
@@ -15,14 +15,13 @@
   box-shadow: 0.5px 10px -5px rgba(0, 0, 0, 0.315);
   padding: 5em auto;
   text-align: center;
-  margin-top: -13vh;
 }
 
 .title {
   font-family: "Anton", sans-serif;
   color: #ecc510fc;
   text-shadow: 2px 3px 3px black;
-  background-color: rgba(0, 0, 0, 0.681);
+  background-color: rgba(0, 0, 0, 0.819);
   font-style: italic;
   font-size: 1.5rem;
   font-weight: 1px;
@@ -41,7 +40,7 @@
 .subtitles {
   color: rgb(41, 41, 40);
   font-size: 1rem;
-  font-family: 'Allerta Stencil', sans-serif;
+  font-family: "Allerta Stencil", sans-serif;
   font-weight: 200;
 }
 
@@ -54,30 +53,29 @@
   position: relative;
 }
 
-.input{
+.input {
   width: 90%;
   background: transparent;
   font-size: 1rem;
-  padding: .6em .3em;
+  padding: 0.6em 0.3em;
   border: none;
   outline: none;
   border-bottom: 1px solid black;
 }
 
-
-.inputNum{
+.inputNum {
   width: 20%;
   margin-right: 10px;
   margin-left: 5px;
   margin-bottom: 1.5vh;
 }
 
-.explain{
+.explain {
   width: 85%;
   height: 10vh;
 }
 
-.check{
+.check {
   align-items: center;
   height: 2rem;
   width: 2rem;
@@ -90,32 +88,32 @@
   align-items: center;
 }
 
-#frequency{
+#frequency {
   width: 90%;
 }
 .send {
   padding: 1%;
   border-radius: 7px;
-  font-family: 'Allerta Stencil', sans-serif;
+  font-family: "Allerta Stencil", sans-serif;
   font-size: 1rem;
   font-weight: bolder;
   background-color: rgb(108, 108, 40);
   border: solid 1px rgb(207, 207, 8);
-  color:rgb(243, 239, 236);
+  color: rgb(243, 239, 236);
   box-shadow: rgb(221, 227, 32) 1px 2px 1px 1px;
   margin-top: 3vh;
 }
 
-.send:hover{
+.send:hover {
   background-color: #ecc510fc;
-  color:rgb(41, 41, 40);
+  color: rgb(41, 41, 40);
   border: solid 1px black;
   scale: 0.9;
   box-shadow: rgb(67, 67, 13) 1px 1px 1px 1px;
 }
 
-.success{
-  font-family: 'Saira Condensed', sans-serif;
+.success {
+  font-family: "Saira Condensed", sans-serif;
   color: #ecc510fc;
   font-weight: bold;
   font-size: 2rem;

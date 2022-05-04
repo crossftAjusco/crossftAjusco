@@ -1,5 +1,5 @@
 import * as React from "react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import "./Biopic.css";
 import diplom1 from "../../assets/lp_imgs/dip1V.jpeg";

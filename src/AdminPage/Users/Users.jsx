@@ -18,78 +18,107 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useAuth } from '../../Context/authContext'
 import { TableFooter, TablePagination } from '@mui/material';
 
-export default function CollapsibleTable() {
-  const { users } = useAuth()
-  console.log(users)
+  function Row(users) {
+    const { row } = users;
+    const [open, setOpen] = React.useState(false);
   
-  // function MTable() {
-  //   const classes = useStyles();
-  //   const [page, setPage] = React.useState(0);
-  //   const [rowsPerPage, setRowsPerPage] = React.useState[10]
-
-  //   const handleChangeRowsPerPage = { event } => {
-  //     setRowsPerPage(+event.target.value);
-  //     setPage(0)
-  //   };
-  // }
-
-  return (
-    <TableContainer component={Paper}>
+    return (
+      <React.Fragment>
+        <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
+          <TableCell>
+            <IconButton
+              aria-label="expand row"
+              size="small"
+              onClick={() => setOpen(!open)}
+            >
+              {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+            </IconButton>
+          </TableCell>
+          <TableCell component="th" scope="row">
+            <Grid container>
+              <Grid item lg={2}>
+                <Avatar alt={row.name} src='.' />
+              </Grid>
+              <Grid lg={5}>
+                <Typography>{row.name} {row.lastname}</Typography>
+                <Typography color="textSecondary" variant="body2">{row.email}</Typography>
+              </Grid>
+            </Grid>
+          </TableCell>
+          <TableCell >
+            <Grid>
+              <Typography color="textPrimary" variant="body2">{row.phone}</Typography>  
+              <Typography color="textSecondary" variant="body2">{row.phone_contact}</Typography>
+            </Grid>
+          </TableCell>
+          <TableCell >{row.date_start.toDate().toLocaleDateString("es-MX", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}</TableCell>
+          <TableCell >{row.next_payday.toDate().toLocaleDateString("es-MX", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <Box sx={{ margin: 1 }}>
+                <Typography variant="h6" gutterBottom component="div">
+                  Historial:
+                </Typography>
+                <Table size="small" aria-label="purchases">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Fecha de inicio: </TableCell>
+                      <TableCell>Próxima fecha de pago:</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>Pagos realizados:</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {row.payment_days.map((historyRow) => (
+                      <TableRow key={historyRow.payment_days}>
+                        <TableCell component="th" scope="row">
+                          {historyRow.payment_days}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </Box>
+            </Collapse>
+          </TableCell>
+        </TableRow>
+      </React.Fragment>
+    );
+  }
+  
+  export default function CollapsibleTable() {
+    const { users } = useAuth()
+    console.log(users)
+    return (
+      <TableContainer component={Paper}>
         <h2 className="title">Usuarios registrados:</h2>
-      <Table aria-label="collapsible table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Nombre(s): </TableCell>
-            <TableCell>Teléfono: </TableCell>
-            <TableCell>Fecha de registro:</TableCell>
-            <TableCell>Próxima fecha de pago:</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {users.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell>
-                <Grid container>
-                  <Grid item lg={2} >
-                    <Avatar alt={row.name} src='.' />
-                  </Grid>
-                  <Grid lg={5}>
-                    <Typography>{row.name} {row.lastname}</Typography>
-                    <Typography color="textSecondary" variant="body2">{row.email}</Typography>
-                  </Grid>
-                </Grid>
-              </TableCell>
-              <TableCell>
-                <Grid>
-                  <Typography color="textSecondary" variant="body2">{row.phone}</Typography>
-                  <Typography color="textSecondary" variant="body2">{row.phone_contact}</Typography>
-                </Grid>
-                
-              </TableCell>
-              <TableCell>{row.date_start.toDate().toLocaleDateString("es-MX", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}</TableCell>
-              <TableCell>{row.next_payday.toDate().toLocaleDateString("es-MX", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              }) }</TableCell>
+        <Table aria-label="collapsible table">
+          <TableHead>
+            <TableRow>
+              <TableCell />
+              <TableCell>Nombre(s):</TableCell>
+              <TableCell># Teléfono:</TableCell>
+              <TableCell>Fecha de inicio:</TableCell>
+              <TableCell>Próximo pago:</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-        {/* <TableFooter>
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 15]}
-            component="div"
-            count={users.length}
-            rowsPerPage={handleChangePage}
-            onChangeRowsPerPage={handleChangeRowsPerPage}
-              
-          />
-        </TableFooter> */}
-      </Table>
-    </TableContainer>
-  );
-}
+          </TableHead>
+          <TableBody>
+            {users.map((row) => (
+              <Row key={row.name} row={row} />
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    );
+  }
