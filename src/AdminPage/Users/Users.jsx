@@ -76,17 +76,39 @@ import { TableFooter, TablePagination } from '@mui/material';
                       <TableCell>Próxima fecha de pago:</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>Pagos realizados:</TableCell>
+                      <TableCell>{row.date_start.toDate().toLocaleDateString("es-MX", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                      })}</TableCell>
+                      <TableCell>{row.next_payday.toDate().toLocaleDateString("es-MX", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {row.payment_days.map((historyRow) => (
-                      <TableRow key={historyRow.payment_days}>
-                        <TableCell component="th" scope="row">
-                          {historyRow.payment_days}
-                        </TableCell>
-                      </TableRow>
-                    ))}
+                    <TableRow>
+                      <TableCell>
+                        Pagos realizados:
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                    <TableCell>
+                        {row.payment_days.map((historyRow) => (
+                          <TableRow key={historyRow}>
+                            <TableCell component="th" scope="row">
+                              {historyRow.toDate().toLocaleDateString("es-MX", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                            })}
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableCell>
+                    </TableRow>
                   </TableBody>
                 </Table>
               </Box>
