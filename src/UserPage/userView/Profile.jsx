@@ -48,6 +48,28 @@ const Profile = () => {
     }) 
     handleShow();
   }
+
+  const filterData = (info) => {
+    //delete properties innecessary from info object
+    //[array] of the properties we need [ {age: 78}, {phone: 8822897},]
+    alert('filterDAta');
+   let filterArray = [
+    {age: info.age},
+    {phone: 5576703061},
+    {email: 'linzerking@gmail.com'},
+    {alergies: 'Al trabajo'},
+    {injuries: 'Le duele la rodilla'},
+    {height: 1.70},
+    {weight: 75},
+    {waist: 90},
+    {neck: 30} 
+    ]
+    console.log(info)
+    setProfileData();//set del hook profile data
+    //return arreglo y listo
+    return filterArray
+  }
+
  useEffect(() => {
     let info = {}
     const q = query(collection(db,"Users"));
@@ -62,38 +84,18 @@ const Profile = () => {
         }
       });
       console.log(info.age)
-      setUsers(info)
+       setUsers(info)
       
     });
-    return () =>  {
-      unsub();
-      filterData();//FILTER DTATA FUNC
+
+     return () =>  {
+      
+       filterData(info);//FILTER DTATA FUNC
     };
   }, []);
 
   //filter data 
-  const filterData = (info) => {
-    //delete properties innecessary from info object
-    //[array] of the properties we need [ {age: 78}, {phone: 8822897},]
-   let filterArray = [
-    {age: info.age},
-    {phone: 5576703061},
-    {email: 'linzerking@gmail.com'},
-    {alergies: 'Al trabajo'},
-    {injuries: 'Le duele la rodilla'},
-    {height: 1.70},
-    {weight: 75},
-    {waist: 90},
-    {neck: 30} 
-    ]
-    console.log(info.age)
-    setProfileData();//set del hook profile data
-    //return arreglo y listo
-    return () => {
-       filterArray();
-    }
-    
-  }
+ 
   
   console.log(users)
   
@@ -107,10 +109,10 @@ const Profile = () => {
           {users.name} {users.last_name}
         </h4>
         <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-          <Container maxWidth="lg" sx={{ mt: 6, mb: 5 }}>
+        
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={1}>
-              <Grid item xs={12} md={6} lg={12}>
+              <Grid item xs={12} md={4} lg={12}>
               <Paper
                   sx={{
                     p: 1,
@@ -127,7 +129,7 @@ const Profile = () => {
                   bgcolor: 'background.paper',
                 }}
               >
-                {profileDate.map((item) => {
+                {/*profileDate.map((item) => {
                   return (
                 <ListItem key={item.id}>
                   {console.log(item)}
@@ -146,7 +148,7 @@ const Profile = () => {
                   </Button>
                 </ListItem>
                   )
-                })}
+                })*/}
                 <Divider component="li" />
                 <li>
                   <Typography

@@ -62,7 +62,7 @@
   margin-top: 10px;
 }
 
-.css-18qy2ck {
+.css-fxbtpg {
   background-image: url("../../assets/lp_imgs/Login.jpg");
 }
 
@@ -84,4 +84,14 @@
 }
 .css-1atwg64-MuiPaper-root{
   padding:30;
+}
+
+.userIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -4vh;
+}
+.iconos {
+  color: yellow;
 }
