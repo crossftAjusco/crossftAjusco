@@ -1,9 +1,6 @@
 import * as React from "react";
 import { useAuth } from "../../Context/authContext";
 import "./UserView.css";
-
-
-
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -25,7 +22,7 @@ export const UserPayments = () => {
 
   //configuración de los hoocks para
   const uD = userData[0]
-  const payIni = Date.parse(uD.date_start);
+  const payIni = toString(uD.date_start)
   console.log(payIni)
 
   //Función para actualizar datos 
@@ -39,30 +36,30 @@ export const UserPayments = () => {
     <h2 id="title">Mis Pagos</h2>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-          <Toolbar />
+          
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={1}>
-              <Grid item xs={10} md={4} lg={10}>
+              <Grid item xs={12} md={4} lg={12}>
               <Paper
                   sx={{
                     p: 1,
                     display: "flex",
                     flexDirection: "column",
-                    height: 335,
+                    height: 435,
                   }}
                 >
                   <h4>{uD.name} {uD.last_name}</h4>
                 <Table striped bordered hover size="sm">
   <thead>
     <tr>
-      <th>Fecha de Inicio</th>
+      <th>Fecha de Inscripción:</th>
       <th>Último Pago</th>
       <th>Siguiente Fecha de Pago</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td> 8 Mar 2022 </td>
+      <td> {payIni} </td>
       <td> 9 Abril 2022 </td>
       <td> 9 Mayo 2022 </td>
     </tr>

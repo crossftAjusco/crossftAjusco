@@ -108,10 +108,11 @@ const Calendario = () => {
 
   return (
     <>
+      <h1 className="tituloCalendar">Calendario de pagos</h1>
       <Calendar
         localizer={localizer}
         events={data}
-        style={{ height: 500, margin: "50px" }}
+        style={{ height: "80vh", margin: "0" }}
         onSelectEvent={handleClick}
         selectable
         eventPropGetter={eventPropGetter}

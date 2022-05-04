@@ -20,20 +20,20 @@ import ScrollableFeed from 'react-scrollable-feed'
 import "./UserView.css";
 import { useEffect, useState } from "react";
 import { getFirestore, collection, query, onSnapshot} from "firebase/firestore";
-
-
 import app from "../../firebase";
 const db = getFirestore(app);
 
- const Profile = () => {
-  const { user } = useAuth();
-  // Traemos el id del usuario desde useAuth 
+const Profile = () => {
+    const { user } = useAuth();
     const [ users, setUsers ] = useState({});
     const [tipo, setTipo] = useState('');
-    const  [data, setData] = useState('');
+    const [data, setData] = useState('');
     const [modalUserData, setModalUserData] = useState({});
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
+
+    //hook state para guardar el array de data del users
+    const [profileDate, setProfileData] = useState([])
   
   const handleClick = (e) => {
     console.log('paso')
@@ -43,56 +43,76 @@ const db = getFirestore(app);
       email: user[0].email, 
       alergias: user[0].alergies,
       injuries: user[0].injuries,
+      height: user[0].sizes.height,
       id: user[0].id
     }) 
     handleShow();
   }
 
-  useEffect(() =>{
+  const filterData = (info) => {
+    //delete properties innecessary from info object
+    //[array] of the properties we need [ {age: 78}, {phone: 8822897},]
+    alert('filterDAta');
+   let filterArray = [
+    {age: info.age},
+    {phone: 5576703061},
+    {email: 'linzerking@gmail.com'},
+    {alergies: 'Al trabajo'},
+    {injuries: 'Le duele la rodilla'},
+    {height: 1.70},
+    {weight: 75},
+    {waist: 90},
+    {neck: 30} 
+    ]
+    console.log(info)
+    setProfileData();//set del hook profile data
+    //return arreglo y listo
+    return filterArray
+  }
+
+ useEffect(() => {
     let info = {}
     const q = query(collection(db,"Users"));
     const unsub = onSnapshot(q, (snap) => {
       const array = snap.docs.filter((doc) => {
-        if(user.email === doc.data().email) {
+         if(user.email === doc.data().email) {
           console.log(doc.id)
           info = doc.data()
           info.id = doc.id
           console.log(doc.id)
-
           return true
         }
       });
-      console.log(info)
-      setUsers(info)
+      console.log(info.age)
+       setUsers(info)
+      
     });
-    return () => {
-      unsub();
+
+     return () =>  {
+      
+       filterData(info);//FILTER DTATA FUNC
     };
   }, []);
-  console.log(users)
+
+  //filter data 
  
-
   
-  //creamos la funcion para actualizar los datos
+  console.log(users)
   
-  //creamos la función para traer los datos de la filaseleccionada
-
-  //mostramos en pantalla los datos del usuario  
+  
   return (
     <>
-          <UserModal show={show} setShow={setShow}  tipo={tipo} modalUserData={users} data={data} />
-          
+    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={users} data={data} />  
     <div key={modalUserData.id} style={{ height: 200, margin: "10px", padding:"5px" }}>
     <h2 id="title">Mi Perfil</h2>
     <h4 id="subtitle">
           {users.name} {users.last_name}
         </h4>
-        
         <Box sx={{ display: "flex" }}>
-        <CssBaseline />
-          <Container maxWidth="lg" sx={{ mt: 6, mb: 5 }}>
+        
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={1}>
-              <Grid item xs={12} md={6} lg={12}>
+              <Grid item xs={12} md={4} lg={12}>
               <Paper
                   sx={{
                     p: 1,
@@ -109,8 +129,10 @@ const db = getFirestore(app);
                   bgcolor: 'background.paper',
                 }}
               >
-                
-                <ListItem>
+                {/*profileDate.map((item) => {
+                  return (
+                <ListItem key={item.id}>
+                  {console.log(item)}
                   <ListItemText primary="Edad:" secondary={users.age}/>
                   <Button 
                   variant="primary" 
@@ -125,6 +147,8 @@ const db = getFirestore(app);
                     
                   </Button>
                 </ListItem>
+                  )
+                })*/}
                 <Divider component="li" />
                 <li>
                   <Typography
@@ -159,7 +183,7 @@ const db = getFirestore(app);
                   <ListItemText primary="Email:" secondary={users.email} />
                   <Button variant="primary" onClick={()=> {
                     handleShow()
-                    setTipo('Emial')
+                    setTipo('Email')
                     setData(users.email)
                   }}onSelectEvent={handleClick}>
                     <EditOutlinedIcon />
@@ -234,7 +258,14 @@ const db = getFirestore(app);
                       <StraightenIcon />
                     </Avatar>
                   </ListItemAvatar>
-                  <ListItemText primary="Altura:" secondary={users.sizes['height']} />
+                <ListItemText primary="Altura:" secondary={users.height} /> 
+                <Button variant="primary" onClick={()=> {
+                    handleShow()
+                    setTipo('Altura')
+                    setData(users.height)
+                  }}onSelectEvent={handleClick}>
+                    <EditOutlinedIcon />
+                  </Button>
                 </ListItem>
                 <li>
                   <Typography
@@ -251,7 +282,14 @@ const db = getFirestore(app);
                       <StraightenIcon />
                     </Avatar>
                   </ListItemAvatar>
-                  <ListItemText primary="Peso" secondary={users.sizes['weight']} />
+                  <ListItemText primary="Peso" secondary={users.weight}  />
+                  <Button variant="primary" onClick={()=> {
+                    handleShow()
+                    setTipo('Peso')
+                    setData(users.weight)
+                  }}onSelectEvent={handleClick}>
+                    <EditOutlinedIcon />
+                  </Button>
                 </ListItem>
                 <li>
                   <Typography
@@ -268,7 +306,14 @@ const db = getFirestore(app);
                       <StraightenIcon />
                     </Avatar>
                   </ListItemAvatar>
-                  <ListItemText primary="Cintura" secondary={users.sizes['waist']} />
+                  <ListItemText primary="Cintura" secondary={users.waist}  />
+                  <Button variant="primary" onClick={()=> {
+                    handleShow()
+                    setTipo('Cintura')
+                    setData(users.waist)
+                  }}onSelectEvent={handleClick}>
+                    <EditOutlinedIcon />
+                  </Button>
                 </ListItem>
                 <li>
                   <Typography
@@ -285,7 +330,14 @@ const db = getFirestore(app);
                       <StraightenIcon />
                     </Avatar>
                   </ListItemAvatar>
-                  <ListItemText primary="Cuello" secondary={users.sizes['neck']} />
+                  <ListItemText primary="Cuello" secondary={users.neck}  />
+                  <Button variant="primary" onClick={()=> {
+                    handleShow()
+                    setTipo('Cuello')
+                    setData(users.neck)
+                  }}onSelectEvent={handleClick}>
+                    <EditOutlinedIcon />
+                  </Button>
                 </ListItem>
               </List> 
             </ScrollableFeed>   
@@ -299,5 +351,3 @@ const db = getFirestore(app);
   );    
 };
 export default Profile; 
-
-
