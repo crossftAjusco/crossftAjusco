@@ -1,95 +1,61 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
+import React, { useState } from "react";
+
 import "./Biopic.css";
+import diplom1 from "../../assets/lp_imgs/dip1V.jpeg";
+import diplom2 from "../../assets/lp_imgs/dip2H.jpeg";
+import diplom3 from "../../assets/lp_imgs/dip3V.jpeg";
+import diplom4 from "../../assets/lp_imgs/dip4H.jpeg";
+import diplom5 from "../../assets/lp_imgs/dip5V.jpeg";
 
-export default function Biopic() {
+const Biopic = () => {
+  let data = [
+    {
+      id: 1,
+      imgSrc: diplom1,
+    },
+    {
+      id: 2,
+      imgSrc: diplom2,
+    },
+    {
+      id: 3,
+      imgSrc: diplom3,
+    },
+    {
+      id: 4,
+      imgSrc: diplom4,
+    },
+    {
+      id: 5,
+      imgSrc: diplom5,
+    },
+  ];
+  const [model, setModel] = useState(false);
+  /*const [tempImgSrc, setTempImgSrc] */
+  const getImg = (imgSrc) => {
+    setTempImgSrc(imgSrc);
+    setModel(true);
+    console.warn(imgSrc);
+  };
   return (
-    <Box
-      sx={{
-        width: 500,
-        height: 400,
-        overflowY: "scroll",
-      }}
-    >
-      <ImageList variant="masonry" cols={3} gap={8}>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img}>
-            <img
-              src={`${item.img}?w=248&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
-              loading="lazy"
-            />
-            <ImageListItemBar position="below" title={item.author} />
-          </ImageListItem>
-        ))}
-      </ImageList>
-    </Box>
+    <>
+      <div className={model ? "model open" : "model"}></div>
+      <div className="biopic">
+        {data.map((item, index) => {
+          return (
+            <div
+              className="pics"
+              key={index}
+              onClick={() => getImg(item.imgSrc)}
+            >
+              <img src={item.imgSrc} style={{ width: "100%" }} />
+            </div>
+          );
+        })}
+      </div>
+      {console.warn(data)}
+    </>
   );
-}
-
-const itemData = [
-  {
-    img: "../../assets/lp_imgs/dip1V.jpeg",
-    title: "certificación",
-    author: "Eduardo Romero",
-  },
-  {
-    img: "../../assets/lp_imgs/dip2H.jpeg",
-    title: "Books",
-    author: "Pavel Nekoranec",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6",
-    title: "Sink",
-    author: "Charles Deluvio",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1563298723-dcfebaa392e3",
-    title: "Kitchen",
-    author: "Christian Mackie",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1588436706487-9d55d73a39e3",
-    title: "Blinds",
-    author: "Darren Richardson",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1574180045827-681f8a1a9622",
-    title: "Chairs",
-    author: "Taylor Simpson",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1530731141654-5993c3016c77",
-    title: "Laptop",
-    author: "Ben Kolde",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1481277542470-605612bd2d61",
-    title: "Doors",
-    author: "Philipp Berndt",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7",
-    title: "Coffee",
-    author: "Jen P.",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee",
-    title: "Storage",
-    author: "Douglas Sheppard",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62",
-    title: "Candle",
-    author: "Fi Bell",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
-    title: "Coffee table",
-    author: "Hutomo Abrianto",
-  },
-];
+};
+export default Biopic;

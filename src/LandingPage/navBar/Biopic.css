@@ -1,7 +1,21 @@
 .biopic {
-  height: 80vh;
-  color: aliceblue;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  justify-content: center;
-  background-color: aqua;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  -moz-column-width: 33%;
+  column-width: 33%;
+  padding: 0 12px;
 }
+
+.biopic .pics {
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+/*
+@media (max-width: 991px) {
+  .biopic {
+   */
