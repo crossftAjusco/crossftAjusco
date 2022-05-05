@@ -62,16 +62,17 @@
   margin-top: 10px;
 }
 
-.css-fxbtpg {
+.contUser {
+  
   background-image: url("../../assets/lp_imgs/Login.jpg");
+
 }
 
 #title, #subtitle, #welcome{
   color: white;
 }
 
-.middle-component,
-#muiBox {
+.middle-component{
   background-color: #212529;
 }
 
@@ -95,3 +96,4 @@
 .iconos {
   color: yellow;
 }
+

@@ -23,7 +23,7 @@ export function UserDash() {
                     p: 1,
                     display: "flex",
                     flexDirection: "column",
-                    height: 635,
+                    
                   }}
                 >
                 <ScrollableFeed>

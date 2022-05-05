@@ -15,9 +15,8 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import ScrollableFeed from 'react-scrollable-feed'
-import "./UserView.css";
+import "./UserProf.css";
 import { useEffect, useState } from "react";
 import { getFirestore, collection, query, onSnapshot} from "firebase/firestore";
 import app from "../../firebase";
@@ -89,7 +88,7 @@ const Profile = () => {
     });
 
      return () =>  {
-      
+       unsub();
        filterData(info);//FILTER DTATA FUNC
     };
   }, []);
@@ -103,7 +102,7 @@ const Profile = () => {
   return (
     <>
     <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={users} data={data} />  
-    <div key={modalUserData.id} style={{ height: 200, margin: "10px", padding:"5px" }}>
+    <div  key={modalUserData.id} >
     <h2 id="title">Mi Perfil</h2>
     <h4 id="subtitle">
           {users.name} {users.last_name}
@@ -118,17 +117,11 @@ const Profile = () => {
                     p: 1,
                     display: "flex",
                     flexDirection: "column",
-                    height: 635,
+                    height: 565,
                   }}
                 >  
               <ScrollableFeed>             
-              <List
-                sx={{
-                  width: '100%',
-                  maxWidth: 960,
-                  bgcolor: 'background.paper',
-                }}
-              >
+              <List>
                 {/*profileDate.map((item) => {
                   return (
                 <ListItem key={item.id}>
@@ -149,6 +142,7 @@ const Profile = () => {
                 </ListItem>
                   )
                 })*/}
+
                 <Divider component="li" />
                 <li>
                   <Typography
