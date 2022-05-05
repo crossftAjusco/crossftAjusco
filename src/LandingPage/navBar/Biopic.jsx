@@ -1,6 +1,6 @@
-import * as React from "react";
+/*
 import React, { useState } from "react";
-
+import CloseIcon from "@mui/icons-material/Close";
 import "./Biopic.css";
 import diplom1 from "../../assets/lp_imgs/dip1V.jpeg";
 import diplom2 from "../../assets/lp_imgs/dip2H.jpeg";
@@ -32,15 +32,17 @@ const Biopic = () => {
     },
   ];
   const [model, setModel] = useState(false);
-  /*const [tempImgSrc, setTempImgSrc] */
-  const getImg = (imgSrc) => {
+  const [tempImgSrc, setTempImgSrc] */
+/*const getImg = (imgSrc) => {
     setTempImgSrc(imgSrc);
     setModel(true);
-    console.warn(imgSrc);
   };
   return (
     <>
-      <div className={model ? "model open" : "model"}></div>
+      <div className={model ? "model open" : "model"}>
+        <img src={tempimgSrc} />
+        <CloseIcon onClick={() => setModel(true)} />
+      </div>
       <div className="biopic">
         {data.map((item, index) => {
           return (
@@ -50,6 +52,7 @@ const Biopic = () => {
               onClick={() => getImg(item.imgSrc)}
             >
               <img src={item.imgSrc} style={{ width: "100%" }} />
+              <CloseIcon onClick={() => setModel(false)} />
             </div>
           );
         })}
@@ -58,4 +61,6 @@ const Biopic = () => {
     </>
   );
 };
+
 export default Biopic;
+*/
