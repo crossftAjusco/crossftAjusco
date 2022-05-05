@@ -1,16 +1,33 @@
 {
   "files": {
-    "main.css": "/crossftAjusco/static/css/main.073c9b0a.css",
-    "main.js": "/crossftAjusco/static/js/main.287cbbf3.js",
+    "main.css": "/crossftAjusco/static/css/main.caf919c6.css",
+    "main.js": "/crossftAjusco/static/js/main.a68a0f66.js",
     "static/js/787.0fac509b.chunk.js": "/crossftAjusco/static/js/787.0fac509b.chunk.js",
-    "static/media/logo.svg": "/crossftAjusco/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/Logo.jpg": "/crossftAjusco/static/media/Logo.74ce37c375a0e38db1bb.jpg",
+    "static/media/Login.jpg": "/crossftAjusco/static/media/Login.753fcc053b1eaa4e8ca4.jpg",
+    "static/media/team.jpg": "/crossftAjusco/static/media/team.47e71952c611adaeb99c.jpg",
+    "static/media/bosque.jpg": "/crossftAjusco/static/media/bosque.d8ef76a30c30014e300c.jpg",
+    "static/media/powerade.jpg": "/crossftAjusco/static/media/powerade.2d6b5d211a29a89f2fb9.jpg",
+    "static/media/lalostyle.jpg": "/crossftAjusco/static/media/lalostyle.ae086542b394f104b51a.jpg",
+    "static/media/arenal.jpg": "/crossftAjusco/static/media/arenal.d210c0953e17f91dde86.jpg",
+    "static/media/celebrate.jpg": "/crossftAjusco/static/media/celebrate.b0a9992a2f9d9bc83fec.jpg",
+    "static/media/trainning.jpg": "/crossftAjusco/static/media/trainning.addc61738fbeea2ef1a4.jpg",
+    "static/media/Reglamento.pdf": "/crossftAjusco/static/media/Reglamento.b8320c97e3d977066080.pdf",
+    "static/media/spartan.jpg": "/crossftAjusco/static/media/spartan.2e8656e153313cb88ddf.jpg",
+    "static/media/p5.jpg": "/crossftAjusco/static/media/p5.75be0332bf9bcd1385b9.jpg",
+    "static/media/p3.jpg": "/crossftAjusco/static/media/p3.5769da027fff032ec880.jpg",
+    "static/media/p4.jpg": "/crossftAjusco/static/media/p4.c0b42b1f16401e7dac09.jpg",
+    "static/media/nutri.png": "/crossftAjusco/static/media/nutri.af23c7f81794395b4c05.png",
+    "static/media/training.png": "/crossftAjusco/static/media/training.5be3748f3d78d8092a2b.png",
+    "static/media/visit.png": "/crossftAjusco/static/media/visit.898bc9f5a4b8b0525858.png",
+    "static/media/mensualidad.png": "/crossftAjusco/static/media/mensualidad.1fad8b667cf0e753422f.png",
     "index.html": "/crossftAjusco/index.html",
-    "main.073c9b0a.css.map": "/crossftAjusco/static/css/main.073c9b0a.css.map",
-    "main.287cbbf3.js.map": "/crossftAjusco/static/js/main.287cbbf3.js.map",
+    "main.caf919c6.css.map": "/crossftAjusco/static/css/main.caf919c6.css.map",
+    "main.a68a0f66.js.map": "/crossftAjusco/static/js/main.a68a0f66.js.map",
     "787.0fac509b.chunk.js.map": "/crossftAjusco/static/js/787.0fac509b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.287cbbf3.js"
+    "static/css/main.caf919c6.css",
+    "static/js/main.a68a0f66.js"
   ]
 }
