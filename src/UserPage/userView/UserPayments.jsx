@@ -51,16 +51,32 @@ export const UserPayments = () => {
                 <Table striped bordered hover size="sm">
   <thead>
     <tr>
-      <th>Fecha de Inscripción:</th>
-      <th>Último Pago</th>
-      <th>Siguiente Fecha de Pago</th>
+      <th>Fecha de Inscripción: </th>
+      <th>Siguiente Fecha de Pago: </th>
+      <th>Pagos Realizados: </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td> {payIni} </td>
-      <td> 9 Abril 2022 </td>
-      <td> 9 Mayo 2022 </td>
+      <td> {uD.date_start.toDate().toLocaleDateString("es-MX", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })} </td>
+      <td> {uD.next_payday.toDate().toLocaleDateString("es-MX", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })} </td>
+      <td> {uD.payment_days.map((pays) => (
+        <td key={pays}> 
+         {pays.toDate().toLocaleDateString("es-MX", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          })}
+          </td>
+        ))} </td>
     </tr>
   </tbody>
 
@@ -74,9 +90,12 @@ export const UserPayments = () => {
   <tbody>
     <tr>
       <td> Banco Azteca: 09099093042343423 </td>
+      <button onClick={() => navigator.clipboard.writeText('09099093042343423')}>Copiar</button>
     </tr>
     <tr>
       <td> Banamex: 89235150985413098 </td>
+      <button onClick={() => navigator.clipboard.writeText('89235150985413098')}>Copiar</button>
+
     </tr>
   </tbody>
 </Table>
