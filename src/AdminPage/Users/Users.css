@@ -1,0 +1,6 @@
+.active{
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    width: 50%;
+}
