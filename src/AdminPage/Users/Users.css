@@ -1,6 +1,10 @@
-.active{
-    display: grid;
-    text-align: center;
+.activate{
+    display: flex;
     justify-content: center;
-    width: 50%;
+    width: 25%;
+}
+
+.perfil{
+    box-shadow: rgb(91, 94, 3) 1px 1px 10px 1px;
+
 }
