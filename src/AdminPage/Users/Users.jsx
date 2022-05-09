@@ -18,6 +18,10 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useAuth } from '../../Context/authContext'
 import { TableFooter, TablePagination } from '@mui/material';
 import ModalCal from '../../AdminPage/Calendar/ModalCal'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
+import { ClassNames } from '@emotion/react';
+import './Users.css'
 
   function Row(users) {
     const { row } = users;
@@ -53,13 +57,16 @@ import ModalCal from '../../AdminPage/Calendar/ModalCal'
             </Grid>
           </TableCell>
           <TableCell>{row.gender}</TableCell>
-          <TableCell >{(new Date().getTime() > row.next_payday.toDate().getDate()) ? (
-            <>
-              <p>Activo</p>
-            </>) : (
-            <>
-              <p>Inactivo</p>
-            </>
+          <TableCell >{
+            new Date().getTime() < row.next_payday.toDate().getTime() ? (
+              <div >
+                <CheckCircleIcon className="active" color="success"/>
+                <Typography className='active' color="success" variant="body2">Activo</Typography>
+            </div>) : (
+                <div>
+                <CancelIcon className="active" color="error"/>
+                  <Typography className="active" color="error" variant="body2">Inactivo</Typography>
+            </div>
             )
           }</TableCell>
         </TableRow>
