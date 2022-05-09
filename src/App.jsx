@@ -34,10 +34,12 @@ const App = () => {
 
           <div className="middle-component">
             <Routes>
-              {/* <Route
+              <Route
                 path="/"
-                element={<Navigate to="crossfit_ajusco/home" />}
-              />*/}
+                element={
+                  <Navigate to="/crossftajusco.github.io/crossftAjusco" />
+                }
+              />
               <Route
                 path="/crossftajusco.github.io/crossftAjusco"
                 element={<Home />}
