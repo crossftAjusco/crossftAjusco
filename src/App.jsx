@@ -38,7 +38,10 @@ const App = () => {
                 path="/"
                 element={<Navigate to="crossfit_ajusco/home" />}
               />*/}
-              <Route path="/crossftAjusco" element={<Home />} />
+              <Route
+                path="/crossftajusco.github.io/crossftAjusco"
+                element={<Home />}
+              />
               <Route path="crossftAjusco/home" element={<Home />} />
               <Route path="crossftAjusco/login" element={<Login />} />
               <Route path="crossftAjusco/acerca_de" element={<InfoGeneral />} />

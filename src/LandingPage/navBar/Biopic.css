@@ -15,10 +15,24 @@
   margin-bottom: 12px;
 }
 
-/*
 @media (max-width: 991px) {
   .biopic {
-   */
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (max-width: 480px) {
+  .biopic {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+  }
+}
+*/
 /*Model*/
 .model {
   width: 100%;
@@ -30,7 +44,8 @@
   justify-content: center;
   align-items: center;
   background-color: black;
-  transition: opacity 0.4s ease, visibility;
+  transition: opacity 0.4s ease, visibility 0.4s ease,
+    transform 0.5s ease-in-out;
   visibility: hidden;
   opacity: 0;
   transform: scale(0);

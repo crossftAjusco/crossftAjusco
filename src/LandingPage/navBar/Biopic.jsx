@@ -1,4 +1,3 @@
-/*
 import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import "./Biopic.css";
@@ -31,9 +30,10 @@ const Biopic = () => {
       imgSrc: diplom5,
     },
   ];
+
   const [model, setModel] = useState(false);
-  const [tempImgSrc, setTempImgSrc] */
-/*const getImg = (imgSrc) => {
+  const [tempimgSrc, setTempImgSrc] = useState("");
+  const getImg = (imgSrc) => {
     setTempImgSrc(imgSrc);
     setModel(true);
   };
@@ -52,15 +52,12 @@ const Biopic = () => {
               onClick={() => getImg(item.imgSrc)}
             >
               <img src={item.imgSrc} style={{ width: "100%" }} />
-              <CloseIcon onClick={() => setModel(false)} />
             </div>
           );
         })}
       </div>
-      {console.warn(data)}
     </>
   );
 };
 
 export default Biopic;
-*/
