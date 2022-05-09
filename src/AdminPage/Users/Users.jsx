@@ -17,6 +17,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useAuth } from '../../Context/authContext'
 import { TableFooter, TablePagination } from '@mui/material';
+import ModalCal from '../../AdminPage/Calendar/ModalCal'
 
   function Row(users) {
     const { row } = users;
@@ -51,22 +52,22 @@ import { TableFooter, TablePagination } from '@mui/material';
               <Typography color="textSecondary" variant="body2">{row.phone_contact}</Typography>
             </Grid>
           </TableCell>
-          <TableCell >{row.date_start.toDate().toLocaleDateString("es-MX", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}</TableCell>
-          <TableCell >{row.next_payday.toDate().toLocaleDateString("es-MX", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}</TableCell>
+          <TableCell>{row.gender}</TableCell>
+          <TableCell >{(new Date().getTime() > row.next_payday.toDate().getDate()) ? (
+            <>
+              <p>Activo</p>
+            </>) : (
+            <>
+              <p>Inactivo</p>
+            </>
+            )
+          }</TableCell>
         </TableRow>
         <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <Box sx={{ margin: 1 }}>
-                <Typography variant="h6" gutterBottom component="div">
+                <Typography variant="h7" gutterBottom component="div">
                   Historial:
                 </Typography>
                 <Table size="small" aria-label="purchases">
@@ -131,8 +132,8 @@ import { TableFooter, TablePagination } from '@mui/material';
               <TableCell />
               <TableCell>Nombre(s):</TableCell>
               <TableCell># Teléfono:</TableCell>
-              <TableCell>Fecha de inicio:</TableCell>
-              <TableCell>Próximo pago:</TableCell>
+              <TableCell>Sexo:</TableCell>
+              <TableCell>Status:</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
