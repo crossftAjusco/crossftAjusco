@@ -22,6 +22,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import { ClassNames } from '@emotion/react';
 import './Users.css'
+import { yellow } from '@mui/material/colors';
 
   function Row(users) {
     const { row } = users;
@@ -41,8 +42,8 @@ import './Users.css'
           </TableCell>
           <TableCell component="th" scope="row">
             <Grid container>
-              <Grid item lg={2}>
-                <Avatar alt={row.name} src='.' />
+              <Grid item lg={3}>
+                <Avatar className="perfil" sx={{ bgcolor: yellow[700] }} alt={row.name} src='.' />
               </Grid>
               <Grid lg={5}>
                 <Typography>{row.name} {row.lastname}</Typography>
@@ -60,13 +61,14 @@ import './Users.css'
           <TableCell >{
             new Date().getTime() < row.next_payday.toDate().getTime() ? (
               <div >
-                <CheckCircleIcon className="active" color="success"/>
-                <Typography className='active' color="success" variant="body2">Activo</Typography>
-            </div>) : (
+                <CheckCircleIcon className="activate" color="success"/>
+                <Typography className='activate' color="success" variant="body2">Activo</Typography>
+              </div>) : (
                 <div>
-                <CancelIcon className="active" color="error"/>
-                  <Typography className="active" color="error" variant="body2">Inactivo</Typography>
-            </div>
+                <CancelIcon className="activate" color="error"/>
+                  <Typography className="activate" color="error" variant="body2">Inactivo</Typography>
+
+              </div>
             )
           }</TableCell>
         </TableRow>
