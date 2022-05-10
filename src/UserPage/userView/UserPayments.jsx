@@ -6,11 +6,24 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Table from "@mui/material/Table";
+import Divider from '@mui/material/Divider';
+
+import FileCopyIcon from '@mui/icons-material/FileCopy';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+
+
+
+
+
 
 export const UserPayments = () => {
   // Se declara una variable para guardar el id del usuario para
   const { user, users } = useAuth();
+  const [open, setOpen] = React.useState(false);
   console.log(user.email)
   //console.log(users[0])
 
@@ -23,8 +36,36 @@ export const UserPayments = () => {
   const uD = userData[0]
   const payIni = toString(uD.date_start)
   console.log(payIni)
+ 
+  //Función para copiar # de cuenta al portapapeles 
+ 
 
-  //Función para actualizar datos 
+    const handleClick = () => {
+      navigator.clipboard.writeText('072180003213100972')
+    console.log('copy')
+      setOpen(true);
+    };
+  
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+      setOpen(false);
+    };
+  
+    const action = (
+      <React.Fragment >
+        
+        <IconButton
+          size="small"
+          aria-label="close"
+          color="inherit"
+          onClick={handleClose}
+        >
+          <CloseIcon fontSize="small" />
+        </IconButton>
+      </React.Fragment>
+    );
   
   return (
     
@@ -33,41 +74,51 @@ export const UserPayments = () => {
         
         
     <h2 id="title">Mis Pagos</h2>
-      <Box sx={{ display: "flex" }}>
+      
         <CssBaseline />
           
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={1}>
-              <Grid item xs={12} md={4} lg={12}>
+          <Grid container rowSpacing={2} spacing={2}>
+              <Grid item xs={12} align="center" className="grid1"> 
               <Paper
                   sx={{
                     p: 1,
                     display: "flex",
                     flexDirection: "column",
-                    height: 435,
+                    
                   }}
                 >
+                 
                   <h4>{uD.name} {uD.last_name}</h4>
-                <Table striped bordered hover size="sm">
-  <thead>
-    <tr>
+                  <Divider component="li" />
+                <List 
+      aria-label="contacts">
+                
+    <ListItem className="li">
+    <Grid item xs={12} lg={9}>
       <th>Fecha de Inscripción: </th>
-      <th>Siguiente Fecha de Pago: </th>
-      <th>Pagos Realizados: </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
       <td> {uD.date_start.toDate().toLocaleDateString("es-MX", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })} </td>
+      </Grid>
+    </ListItem>
+    <Divider component="li" />
+    <ListItem className="li1">  
+      <Grid item xs={12} lg={9}>
+      <th>Siguiente Fecha de Pago: </th>
       <td> {uD.next_payday.toDate().toLocaleDateString("es-MX", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })} </td>
+      </Grid>
+      </ListItem>
+      <Divider component="li" />
+      <ListItem className="li2">
+      <Grid item xs={12} lg={9}>
+      <th>Pagos Realizados: </th>
       <td> {uD.payment_days.map((pays) => (
         <td key={pays}> 
          {pays.toDate().toLocaleDateString("es-MX", {
@@ -77,37 +128,48 @@ export const UserPayments = () => {
           })}
           </td>
         ))} </td>
-    </tr>
-  </tbody>
+      </Grid>
+      </ListItem>
+      <Divider component="li" />
+      <ListItem className="li3">
+      <Grid item xs={12} lg={9}>
+      <th marginLeft="3px">Cuenta Clabe:</th>
+      <td padding="2px">072180003213100972</td>
+      <td> 
+                  <IconButton 
+                  size="large"
+                  variant="contained" 
+                  
+                  onClick={handleClick}> 
+                  <FileCopyIcon >
+                    </FileCopyIcon> </IconButton>
+                  <Snackbar
+                  color="success"
+                    open={open}
+                    autoHideDuration={3000}
+                    onClose={handleClose}
+                    message="Copiado al portapapeles"
+                    action={action}
+                  />
+                  </td>
+      </Grid>
 
-<br></br>
-  <thead>
-    <tr>
-      <th>Realizar Pago #Cuenta:</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> Banco Azteca: 09099093042343423 </td>
-      <button onClick={() => navigator.clipboard.writeText('09099093042343423')}>Copiar</button>
-    </tr>
-    <tr>
-      <td> Banamex: 89235150985413098 </td>
-      <button onClick={() => navigator.clipboard.writeText('89235150985413098')}>Copiar</button>
+    </ListItem>
+              
+              </List>
 
-    </tr>
-  </tbody>
-</Table>
-
-                </Paper>
+              </Paper>
               </Grid>   
               
             </Grid>
+            
           </Container>
-        </Box>
+        
         </div>
    
-         
+       
+      
     </>
   )}; 
+
+  

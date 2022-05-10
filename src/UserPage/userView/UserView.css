@@ -97,3 +97,42 @@
   color: yellow;
 }
 
+.css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root, Snackbar { 
+ background-color:green;
+}
+
+
+
+.grid1{
+  padding: 0;
+}
+
+.li, .li1, .li2, .li3{
+   
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: baseline;
+    position: relative;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* padding-left: 16px; */
+    /* padding-right: 16px; */
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+
+}
