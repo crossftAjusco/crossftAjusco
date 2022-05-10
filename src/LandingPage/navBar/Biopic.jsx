@@ -6,12 +6,13 @@ import diplom2 from "../../assets/lp_imgs/dip2H.jpeg";
 import diplom3 from "../../assets/lp_imgs/dip3V.jpeg";
 import diplom4 from "../../assets/lp_imgs/dip4H.jpeg";
 import diplom5 from "../../assets/lp_imgs/dip5V.jpeg";
+import bio from "../../assets/lp_imgs/Eduardo Romero Flores.png";
 
 const Biopic = () => {
   let data = [
     {
       id: 1,
-      imgSrc: diplom1,
+      imgSrc: bio,
     },
     {
       id: 2,
@@ -19,14 +20,18 @@ const Biopic = () => {
     },
     {
       id: 3,
-      imgSrc: diplom3,
+      imgSrc: diplom1,
     },
     {
       id: 4,
-      imgSrc: diplom4,
+      imgSrc: diplom3,
     },
     {
       id: 5,
+      imgSrc: diplom4,
+    },
+    {
+      id: 6,
       imgSrc: diplom5,
     },
   ];
@@ -35,7 +40,7 @@ const Biopic = () => {
   const [tempimgSrc, setTempImgSrc] = useState("");
   const getImg = (imgSrc) => {
     setTempImgSrc(imgSrc);
-    setModel(true);
+    setModel(false);
   };
   return (
     <>
@@ -52,6 +57,7 @@ const Biopic = () => {
               onClick={() => getImg(item.imgSrc)}
             >
               <img src={item.imgSrc} style={{ width: "100%" }} />
+              <CloseIcon onClick={() => setModel(false)} />
             </div>
           );
         })}
