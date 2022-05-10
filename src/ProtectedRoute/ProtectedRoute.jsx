@@ -7,8 +7,7 @@ export const ProtectedRoute = ({ children }) => {
   const navigate = useNavigate();
 
   if (loading) return <h2>Cargando...</h2>;
-  if (!user) return <Navigate to="/" />; //..................................................quitar los comments cuando se arregle la base de datos
-
+  if (!user) return <Navigate to="/" />;
   const mails = users.map((elem) => {
     return elem.email;
   });

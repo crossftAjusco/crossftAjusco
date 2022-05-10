@@ -36,19 +36,21 @@ const App = () => {
             <Routes>
               <Route
                 path="/"
-                element={<Navigate to="crossfit_ajusco/home" />}
+                element={
+                  <Navigate to="/crossftajusco.github.io/crossftAjusco" />
+                }
               />
-              <Route path="/crossfit_ajusco" element={<Home />} />
-              <Route path="crossfit_ajusco/home" element={<Home />} />
-              <Route path="crossfit_ajusco/login" element={<Login />} />
               <Route
-                path="crossfit_ajusco/acerca_de"
-                element={<InfoGeneral />}
+                path="/crossftajusco.github.io/crossftAjusco"
+                element={<Home />}
               />
-              <Route path="crossfit_ajusco/coach" element={<Biopic />} />
-              <Route path="crossfit_ajusco/precios" element={<Precios />} />
+              <Route path="crossftAjusco/home" element={<Home />} />
+              <Route path="crossftAjusco/login" element={<Login />} />
+              <Route path="crossftAjusco/acerca_de" element={<InfoGeneral />} />
+              <Route path="crossftAjusco/coach" element={<Biopic />} />
+              <Route path="crossftAjusco/precios" element={<Precios />} />
               <Route
-                path="crossfit_ajusco/recomendaciones_de_salud"
+                path="crossftAjusco/recomendaciones_de_salud"
                 element={<Health />}
               />
 
@@ -78,7 +80,7 @@ const App = () => {
                   </ProtectedRouteUser>
                 }
               >
-                <Route index element= {<UserDash/>} />
+                <Route index element={<UserDash />} />
                 <Route path="profile" element={<Profile />} />
                 <Route path="pagos" element={<UserPayments />} />
                 <Route path="training" element={<UserTraining />} />

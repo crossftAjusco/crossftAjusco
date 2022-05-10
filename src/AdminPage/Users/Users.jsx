@@ -17,6 +17,12 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useAuth } from '../../Context/authContext'
 import { TableFooter, TablePagination } from '@mui/material';
+import ModalCal from '../../AdminPage/Calendar/ModalCal'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
+import { ClassNames } from '@emotion/react';
+import './Users.css'
+import { yellow } from '@mui/material/colors';
 
   function Row(users) {
     const { row } = users;
@@ -36,8 +42,8 @@ import { TableFooter, TablePagination } from '@mui/material';
           </TableCell>
           <TableCell component="th" scope="row">
             <Grid container>
-              <Grid item lg={2}>
-                <Avatar alt={row.name} src='.' />
+              <Grid item lg={3}>
+                <Avatar className="perfil" sx={{ bgcolor: yellow[700] }} alt={row.name} src='.' />
               </Grid>
               <Grid lg={5}>
                 <Typography>{row.name} {row.lastname}</Typography>
@@ -51,22 +57,26 @@ import { TableFooter, TablePagination } from '@mui/material';
               <Typography color="textSecondary" variant="body2">{row.phone_contact}</Typography>
             </Grid>
           </TableCell>
-          <TableCell >{row.date_start.toDate().toLocaleDateString("es-MX", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}</TableCell>
-          <TableCell >{row.next_payday.toDate().toLocaleDateString("es-MX", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}</TableCell>
+          <TableCell>{row.gender}</TableCell>
+          <TableCell >{
+            new Date().getTime() < row.next_payday.toDate().getTime() ? (
+              <div >
+                <CheckCircleIcon className="activate" color="success"/>
+                <Typography className='activate' color="success" variant="body2">Activo</Typography>
+              </div>) : (
+                <div>
+                <CancelIcon className="activate" color="error"/>
+                  <Typography className="activate" color="error" variant="body2">Inactivo</Typography>
+
+              </div>
+            )
+          }</TableCell>
         </TableRow>
         <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <Box sx={{ margin: 1 }}>
-                <Typography variant="h6" gutterBottom component="div">
+                <Typography variant="h7" gutterBottom component="div">
                   Historial:
                 </Typography>
                 <Table size="small" aria-label="purchases">
@@ -131,8 +141,8 @@ import { TableFooter, TablePagination } from '@mui/material';
               <TableCell />
               <TableCell>Nombre(s):</TableCell>
               <TableCell># Teléfono:</TableCell>
-              <TableCell>Fecha de inicio:</TableCell>
-              <TableCell>Próximo pago:</TableCell>
+              <TableCell>Sexo:</TableCell>
+              <TableCell>Status:</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

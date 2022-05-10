@@ -1,4 +1,3 @@
-/*
 import React, { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import "./Biopic.css";
@@ -7,12 +6,13 @@ import diplom2 from "../../assets/lp_imgs/dip2H.jpeg";
 import diplom3 from "../../assets/lp_imgs/dip3V.jpeg";
 import diplom4 from "../../assets/lp_imgs/dip4H.jpeg";
 import diplom5 from "../../assets/lp_imgs/dip5V.jpeg";
+import bio from "../../assets/lp_imgs/Eduardo Romero Flores.png";
 
 const Biopic = () => {
   let data = [
     {
       id: 1,
-      imgSrc: diplom1,
+      imgSrc: bio,
     },
     {
       id: 2,
@@ -20,22 +20,27 @@ const Biopic = () => {
     },
     {
       id: 3,
-      imgSrc: diplom3,
+      imgSrc: diplom1,
     },
     {
       id: 4,
-      imgSrc: diplom4,
+      imgSrc: diplom3,
     },
     {
       id: 5,
+      imgSrc: diplom4,
+    },
+    {
+      id: 6,
       imgSrc: diplom5,
     },
   ];
+
   const [model, setModel] = useState(false);
-  const [tempImgSrc, setTempImgSrc] */
-/*const getImg = (imgSrc) => {
+  const [tempimgSrc, setTempImgSrc] = useState("");
+  const getImg = (imgSrc) => {
     setTempImgSrc(imgSrc);
-    setModel(true);
+    setModel(false);
   };
   return (
     <>
@@ -57,10 +62,8 @@ const Biopic = () => {
           );
         })}
       </div>
-      {console.warn(data)}
     </>
   );
 };
 
 export default Biopic;
-*/

@@ -44,13 +44,13 @@ export const Navigation = () => {
   //una vez que cierra sesión se va navigate('direccón')
 
   const handleLogin = () => {
-    navigate("crossfit_ajusco/login");
+    navigate("crossftAjusco/login");
   };
 
   const handleLogout = async () => {
     await logout();
     setAdmin(false);
-    navigate("crossfit_ajusco/home");
+    navigate("crossftAjusco/home");
   };
 
   const handleUser = () => {
@@ -73,20 +73,20 @@ export const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="¿Quiénes somos?" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/crossfit_ajusco/acerca_de">
+              <NavDropdown.Item href="/crossftAjusco/acerca_de">
                 Acerca de
               </NavDropdown.Item>
-              <NavDropdown.Item href="/crossfit_ajusco/coach">
+              <NavDropdown.Item href="/crossftAjusco/coach">
                 Coach
               </NavDropdown.Item>
-              <NavDropdown.Item href="/crossfit_ajusco/precios">
+              <NavDropdown.Item href="/crossftAjusco/precios">
                 Precio
               </NavDropdown.Item>
 
               <NavDropdown.Divider />
             </NavDropdown>
             {/* 
-              <Nav.Link className="navtext" href="/crossfit_ajusco/recomendaciones_de_salud">
+              <Nav.Link className="navtext" href="/crossftAjusco/recomendaciones_de_salud">
                 Recomendaciones de salud
               </Nav.Link>
             */}
