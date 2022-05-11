@@ -73,7 +73,7 @@ export const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="¿Quiénes somos?" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/crossftAjusco/acerca_de">
+              <NavDropdown.Item href="/crossftajusco.github.io/crossftAjusco/acerca_de">
                 Acerca de
               </NavDropdown.Item>
               <NavDropdown.Item href="/crossftAjusco/coach">
