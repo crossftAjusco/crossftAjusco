@@ -97,17 +97,18 @@
   color: yellow;
 }
 
-.css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root, Snackbar { 
- background-color:green;
+.Snack {
+  background-color: green;
 }
 
 
 
 .grid1{
   padding: 0;
+
 }
 
-.li, .li1, .li2, .li3{
+.li, .li1, .li2, .li3, .l14{
    
     display: -webkit-box;
     display: -webkit-flex;
@@ -134,5 +135,6 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
+    margin: .2rem;
 
 }

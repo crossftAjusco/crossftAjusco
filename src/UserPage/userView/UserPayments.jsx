@@ -2,7 +2,6 @@ import * as React from "react";
 import { useAuth } from "../../Context/authContext";
 import "./UserView.css";
 import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -84,16 +83,14 @@ export const UserPayments = () => {
                   sx={{
                     p: 1,
                     display: "flex",
-                    flexDirection: "column",
-                    
+                    flexDirection: "column", 
                   }}
+                  elevation={4}
                 >
-                 
-                  <h4>{uD.name} {uD.last_name}</h4>
                   <Divider component="li" />
                 <List 
       aria-label="contacts">
-                
+     <Paper elevation={1}>           
     <ListItem className="li">
     <Grid item xs={12} lg={9}>
       <th>Fecha de Inscripción: </th>
@@ -101,10 +98,12 @@ export const UserPayments = () => {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
-                })} </td>
+                })} </td>   
       </Grid>
     </ListItem>
+    </Paper>
     <Divider component="li" />
+    <Paper elevation={2}>         
     <ListItem className="li1">  
       <Grid item xs={12} lg={9}>
       <th>Siguiente Fecha de Pago: </th>
@@ -115,7 +114,9 @@ export const UserPayments = () => {
                 })} </td>
       </Grid>
       </ListItem>
+      </Paper>  
       <Divider component="li" />
+      <Paper elevation={3}>         
       <ListItem className="li2">
       <Grid item xs={12} lg={9}>
       <th>Pagos Realizados: </th>
@@ -130,7 +131,9 @@ export const UserPayments = () => {
         ))} </td>
       </Grid>
       </ListItem>
+      </Paper>
       <Divider component="li" />
+      <Paper elevation={4}>         
       <ListItem className="li3">
       <Grid item xs={12} lg={9}>
       <th marginLeft="3px">Cuenta Clabe:</th>
@@ -139,23 +142,32 @@ export const UserPayments = () => {
                   <IconButton 
                   size="large"
                   variant="contained" 
-                  
                   onClick={handleClick}> 
                   <FileCopyIcon >
                     </FileCopyIcon> </IconButton>
                   <Snackbar
-                  color="success"
+                  className="Snack"
+                  autoHidenDuration={3000}
                     open={open}
-                    autoHideDuration={3000}
                     onClose={handleClose}
                     message="Copiado al portapapeles"
                     action={action}
                   />
                   </td>
       </Grid>
-
     </ListItem>
-              
+    <Divider component="li" />
+    <Paper elevation={2}>         
+    <ListItem className="li4">  
+      <Grid item xs={12} lg={9}>
+      <p>(Puedes realizar tus pagos en efectivo de manera personal con tu coach,
+        o puedes hacer una transferencia bancaria a travéz del número de cuenta clabe)
+      </p>
+      
+      </Grid>
+      </ListItem>
+      </Paper>  
+              </Paper>
               </List>
 
               </Paper>
