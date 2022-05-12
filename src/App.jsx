@@ -44,13 +44,28 @@ const App = () => {
                 path="/crossftajusco.github.io/crossftAjusco"
                 element={<Home />}
               />
-              <Route path="crossftAjusco/home" element={<Home />} />
-              <Route path="crossftAjusco/login" element={<Login />} />
-              <Route path="crossftAjusco/acerca_de" element={<InfoGeneral />} />
-              <Route path="crossftAjusco/coach" element={<Biopic />} />
-              <Route path="crossftAjusco/precios" element={<Precios />} />
               <Route
-                path="crossftAjusco/recomendaciones_de_salud"
+                path="/crossftajusco.github.io/crossftAjusco/home"
+                element={<Home />}
+              />
+              <Route
+                path="/crossftajusco.github.io/crossftAjusco/login"
+                element={<Login />}
+              />
+              <Route
+                path="/crossftajusco.github.io/crossftAjusco/acerca_de"
+                element={<InfoGeneral />}
+              />
+              <Route
+                path="/crossftajusco.github.io/crossftAjusco/coach"
+                element={<Biopic />}
+              />
+              <Route
+                path="/crossftajusco.github.io/crossftAjusco/precios"
+                element={<Precios />}
+              />
+              <Route
+                path="/crossftajusco.github.io/crossftAjusco/recomendaciones_de_salud"
                 element={<Health />}
               />
 
