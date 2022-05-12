@@ -24,6 +24,13 @@ import { ClassNames } from '@emotion/react';
 import './Users.css'
 import { yellow } from '@mui/material/colors';
 
+  function searchingTerm(term) {
+    return function (x) {
+      console.log(x)
+        return x.name.toLowerCase().includes(term) || !term 
+      }
+  };
+
   function Row(users) {
     const { row } = users;
     const [open, setOpen] = React.useState(false);
@@ -67,7 +74,6 @@ import { yellow } from '@mui/material/colors';
                 <div>
                 <CancelIcon className="activate" color="error"/>
                   <Typography className="activate" color="error" variant="body2">Inactivo</Typography>
-
               </div>
             )
           }</TableCell>
@@ -132,9 +138,20 @@ import { yellow } from '@mui/material/colors';
   export default function CollapsibleTable() {
     const { users } = useAuth()
     console.log(users)
+
+    const [usuarios, setUsuarios] = React.useState([]);
+    const [term, setTerm] = React.useState("");
+    // console.log(usuarios)
+    
+    React.useEffect(() => {
+      setUsuarios(users);
+    }, [users]);
+
     return (
       <TableContainer component={Paper}>
         <h2 className="title">Usuarios registrados:</h2>
+        {usuarios && (<input className="buscador" type="text" placeholder="Buscar por nombre..." name="term" onChange={e => setTerm(e.target.value.toLowerCase())} />
+        )}
         <Table aria-label="collapsible table">
           <TableHead>
             <TableRow>
@@ -146,8 +163,8 @@ import { yellow } from '@mui/material/colors';
             </TableRow>
           </TableHead>
           <TableBody>
-            {users.map((row) => (
-              <Row key={row.name} row={row} />
+            {usuarios.filter(searchingTerm(term)).map((row) => (
+              <Row key={(row.name || row.lastname)} row={row} />
             ))}
           </TableBody>
         </Table>

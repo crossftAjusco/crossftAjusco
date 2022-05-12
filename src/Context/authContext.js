@@ -74,11 +74,6 @@ export const AuthProvider = ({ children }) => {
       //console.log(currentUser.email)
       setUser(currentUser);
       setLoading(false);
-      //if(currentUser.email == "delias16.hernandez@gmail.com"){
-      //    navigate('/admin')
-      //} else {
-      //    navigate('/user')
-      //}
     });
     async function traerColl() {
       const usersObtenidos = await traerUsers();
