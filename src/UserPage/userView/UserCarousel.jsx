@@ -9,24 +9,15 @@ const UserCarousel = () => {
     <Carousel fade>
         <Carousel.Item>
         <img className="d-block w-100" src={img5} alt="First slide"/>
-        <Carousel.Caption>
-          <h3>Carrera a Los Volcanes</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
+        
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={img3} alt="First slide"/>
-        <Carousel.Caption>
-          <h3>Carrera Power Ade</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
+       
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={img4} alt="First slide"/>
-        <Carousel.Caption>
-          <h3>Carrera Power Ade</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
+        
       </Carousel.Item>
     </Carousel>
   );

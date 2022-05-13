@@ -62,7 +62,7 @@ function UserContent() {
     
     <ThemeProvider theme={mdTheme} >
      <div className="contUser">
-      <Box sx={{ display: "flex" }} >
+      <Box sx={{ display: "flex"}}>
        <Box
           component="main"
           sx={{
@@ -71,7 +71,7 @@ function UserContent() {
             overflow: "auto",
           }}
           > 
-          <Container  maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Outlet />
           </Container>
         </Box>

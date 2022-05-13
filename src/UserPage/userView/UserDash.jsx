@@ -12,10 +12,12 @@ import ScrollableFeed from 'react-scrollable-feed'
 export function UserDash() {
   
   return (
-    <div>
-    <h2 id="title">Próximos Eventos</h2>
+    <>
+    <div className="title1">
+    <h2>Próximos Eventos</h2>
+    </div>
       <Box sx={{ display: "flex" }}>
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="lg">
             <Grid container spacing={1}>
               <Grid item xs={12} md={8} lg={12}>
               <Paper
@@ -34,7 +36,7 @@ export function UserDash() {
             </Grid>
           </Container>
         </Box>
-        </div>
+        </>
    
   );
 }

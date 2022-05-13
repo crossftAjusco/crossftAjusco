@@ -8,8 +8,10 @@ import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import StraightenIcon from '@mui/icons-material/Straighten';
+import IconButton from '@mui/material/IconButton';
 import Button from 'react-bootstrap/Button';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import UserModal from "./UserModal";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -32,7 +34,7 @@ const Profile = () => {
     const handleShow = () => setShow(true);
 
     //hook state para guardar el array de data del users
-    const [profileDate, setProfileData] = useState([])
+  
   
   const handleClick = (e) => {
     console.log('paso')
@@ -42,32 +44,13 @@ const Profile = () => {
       email: user[0].email, 
       alergias: user[0].alergies,
       injuries: user[0].injuries,
-      height: user[0].sizes.height,
+      height: user[0].height,
       id: user[0].id
     }) 
     handleShow();
   }
-
-  const filterData = (info) => {
-    //delete properties innecessary from info object
-    //[array] of the properties we need [ {age: 78}, {phone: 8822897},]
-    alert('filterDAta');
-   let filterArray = [
-    {age: info.age},
-    {phone: 5576703061},
-    {email: 'linzerking@gmail.com'},
-    {alergies: 'Al trabajo'},
-    {injuries: 'Le duele la rodilla'},
-    {height: 1.70},
-    {weight: 75},
-    {waist: 90},
-    {neck: 30} 
-    ]
-    console.log(info)
-    setProfileData();//set del hook profile data
-    //return arreglo y listo
-    return filterArray
-  }
+  
+ 
 
  useEffect(() => {
     let info = {}
@@ -82,18 +65,18 @@ const Profile = () => {
           return true
         }
       });
-      console.log(info.age)
+    
        setUsers(info)
       
     });
 
      return () =>  {
        unsub();
-       filterData(info);//FILTER DTATA FUNC
+       
     };
   }, []);
 
-  //filter data 
+ 
  
   
   console.log(users)
@@ -102,17 +85,15 @@ const Profile = () => {
   return (
     <>
     <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={users} data={data} />  
-    <div  key={modalUserData.id} >
-    <h2 id="title">Mi Perfil</h2>
-    <h4 id="subtitle">
-          {users.name} {users.last_name}
-        </h4>
+    <div  key={modalUserData.id}>
+    <div className="title1">
+    <h2>Mi Perfil</h2>
+    </div>  
         <Box sx={{ display: "flex" }}>
-        
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="lg" className="cont1">
             <Grid container spacing={1}>
               <Grid item xs={12} md={4} lg={12}>
-              <Paper
+              <Paper className="paper1"
                   sx={{
                     p: 1,
                     display: "flex",
@@ -122,27 +103,10 @@ const Profile = () => {
                 >  
               <ScrollableFeed>             
               <List>
-                {/*profileDate.map((item) => {
-                  return (
-                <ListItem key={item.id}>
-                  {console.log(item)}
-                  <ListItemText primary="Edad:" secondary={users.age}/>
-                  <Button 
-                  variant="primary" 
-                  onClick={()=> {
-                    handleShow()
-                    setTipo('Edad:')
-                    setData(users.age)
-                    
-                  }} 
-                    onSelectEvent={handleClick}>
-                    <EditOutlinedIcon />
-                    
-                  </Button>
-                </ListItem>
-                  )
-                })*/}
-
+                <p>
+                  Aquí puedes editar tus datos, si deseas cambiar algun otro dato como tu correo o 
+                  contraseña contacta a tu coach.
+                </p>
                 <Divider component="li" />
                 <li>
                   <Typography
@@ -155,32 +119,12 @@ const Profile = () => {
                 </li>
                 <ListItem>
                   <ListItemText primary="Teléfono:" secondary={users.phone} />
-                  <Button variant="primary" onClick={()=> {
+                  <Button id="btn1" size="large" variant="success"  onClick={()=> {
                     handleShow()
                     setTipo('Teléfono')
                     setData(users.phone)
                   }}onSelectEvent={handleClick} >
-                    <EditOutlinedIcon />
-                  </Button>
-                </ListItem>
-                <Divider component="li" />
-                <li>
-                  <Typography
-                    sx={{ mt: 0.5, ml: 2 }}
-                    color="text.secondary"
-                    display="block"
-                    variant="caption"
-                  >
-                  </Typography>
-                </li>
-                <ListItem>
-                  <ListItemText primary="Email:" secondary={users.email} />
-                  <Button variant="primary" onClick={()=> {
-                    handleShow()
-                    setTipo('Email')
-                    setData(users.email)
-                  }}onSelectEvent={handleClick}>
-                    <EditOutlinedIcon />
+                    <ModeEditOutlineIcon/>
                   </Button>
                 </ListItem>
                 <Divider component="li" />
@@ -195,7 +139,7 @@ const Profile = () => {
                 </li>
                 <ListItem>
                   <ListItemText primary="Alergias:" secondary={users.allergies} />
-                  <Button variant="primary" onClick={()=> {
+                  <Button id="btn1" size="large" variant="success" onClick={()=> {
                     handleShow()
                     setTipo('Alergias')
                     setData(users.allergies)
@@ -214,7 +158,7 @@ const Profile = () => {
                   </Typography>
                   <ListItem>
                   <ListItemText primary="Condición médica:" secondary={users.injuries} />
-                  <Button variant="primary" onClick={()=> {
+                  <Button id="btn1" size="large" variant="success" onClick={()=> {
                     handleShow()
                     setTipo('Condición Médica')
                     setData(users.injuries)
@@ -234,9 +178,8 @@ const Profile = () => {
                 </li>
                 </li>
                 <ListItem>
-                  <ListItemText primary="Medidas:"/>
+                  <ListItemText primary="Medidas"/>
                 </ListItem>
-                <Divider component="li" variant="inset" />
                 <li>
                   <Typography
                     sx={{ mt: 0.5, ml: 9 }}
@@ -253,7 +196,7 @@ const Profile = () => {
                     </Avatar>
                   </ListItemAvatar>
                 <ListItemText primary="Altura:" secondary={users.height} /> 
-                <Button variant="primary" onClick={()=> {
+                <Button id="btn1" size="large" variant="success" onClick={()=> {
                     handleShow()
                     setTipo('Altura')
                     setData(users.height)
@@ -277,7 +220,7 @@ const Profile = () => {
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText primary="Peso" secondary={users.weight}  />
-                  <Button variant="primary" onClick={()=> {
+                  <Button id="btn1" size="large" variant="success" onClick={()=> {
                     handleShow()
                     setTipo('Peso')
                     setData(users.weight)
@@ -301,7 +244,7 @@ const Profile = () => {
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText primary="Cintura" secondary={users.waist}  />
-                  <Button variant="primary" onClick={()=> {
+                  <Button id="btn1" size="large" variant="success" onClick={()=> {
                     handleShow()
                     setTipo('Cintura')
                     setData(users.waist)
@@ -325,7 +268,7 @@ const Profile = () => {
                     </Avatar>
                   </ListItemAvatar>
                   <ListItemText primary="Cuello" secondary={users.neck}  />
-                  <Button variant="primary" onClick={()=> {
+                  <Button id="btn1" size="large" variant="success" onClick={()=> {
                     handleShow()
                     setTipo('Cuello')
                     setData(users.neck)

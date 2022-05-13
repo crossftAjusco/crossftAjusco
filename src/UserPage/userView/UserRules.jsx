@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
 import * as React from "react";
 import { useAuth } from "../../Context/authContext";
 import "./UserView.css";
@@ -8,6 +7,8 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import ScrollableFeed from 'react-scrollable-feed'
 import Reglamento from "../../assets/pdf/Reglamento.pdf"
+import IconButton from '@mui/material/IconButton';
+import FileOpenIcon from '@mui/icons-material/FileOpen';
 
 export const UserRules = () => {
   //Se configura el hoock para traer los datos de los usuarios desde AutContext
@@ -26,9 +27,11 @@ export const UserRules = () => {
   //Retornamos el rendereado de los elementos del reglamento 
   return (
       <>
-    <h2 id="title">REGLAMENTO DE USUARIO</h2>
+    <div className="title1">  
+    <h2>REGLAMENTO DE USUARIO</h2>
+    </div> 
     <Box sx={{ display: "flex" }}>
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          <Container maxWidth="lg">
             <Grid container spacing={2}>
               <Grid item xs={12} md={8} lg={12}>
               <Paper
@@ -36,10 +39,22 @@ export const UserRules = () => {
                     p: 1,
                     display: "flex",
                     flexDirection: "column",
-                    height: 635,
+                    height: 535,
                   }}>  
-      <a target="_blanck" href={Reglamento}>
-      </a>
+      <div className="p1">
+        <p>
+          Este es tu reglamento de usuario, puedes descargarlo en formato pdf y leerlo cuando desees. 
+        </p>
+        <a target="_blanck" href={Reglamento}>
+      <IconButton color="success">
+        Abrir Documento
+          <FileOpenIcon fontSize="large" >
+          </FileOpenIcon>
+        </IconButton>
+        </a>
+      </div>
+
+      
     <object data={Reglamento} style={style} label="pdf">
     </object>
       </Paper>

@@ -12,18 +12,21 @@ const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
     const handleClose = () => setShow(false);
     const [dataUser, setUserData] = useState({});
     
+
+    
     const docRef = doc (db, `Users/${modalUserData.id}`);
     console.log(tipo)
     //creamos la funcion para actualizar los datos del modal
     const updateA = async (e) => {
     e.preventDefault()
-    const age = parseInt(dataUser)
-    
-    console.log(typeof(age))
-    await updateDoc(docRef, {
-        age: age, 
-    });
+    const phone = parseInt(dataUser)
    
+    console.log(typeof(phone))
+    await updateDoc(docRef, {
+        phone: phone, 
+        
+    });
+    
       setUserData();
       handleClose();
     };
@@ -50,7 +53,7 @@ const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
         <Button variant="secondary" onClick={handleClose}>
           Cancelar
         </Button>
-        <Button variant="primary" onClick={updateA} tipo={tipo}>
+        <Button variant="primary" onClick={updateA} type="submit">
           Guardar cambios
         </Button>
       </Modal.Footer>

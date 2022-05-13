@@ -16,3 +16,9 @@
     height: 635px;
 }
 
+
+#btn1 {
+    border-radius: 50px;
+    background-color: rgb(210, 153, 11);
+    border: 0;
+}

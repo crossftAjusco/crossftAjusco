@@ -1,23 +1,17 @@
 import * as React from "react";
 import { useAuth } from "../../Context/authContext";
 import "./UserView.css";
-import CssBaseline from "@mui/material/CssBaseline";
+import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Divider from '@mui/material/Divider';
-
 import FileCopyIcon from '@mui/icons-material/FileCopy';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-
-
-
-
-
 
 export const UserPayments = () => {
   // Se declara una variable para guardar el id del usuario para
@@ -30,21 +24,17 @@ export const UserPayments = () => {
     if (us.email === user.email) return true
   })
   console.log(userData[0])
-
   //configuración de los hoocks para
   const uD = userData[0]
   const payIni = toString(uD.date_start)
   console.log(payIni)
- 
   //Función para copiar # de cuenta al portapapeles 
- 
-
     const handleClick = () => {
       navigator.clipboard.writeText('072180003213100972')
     console.log('copy')
       setOpen(true);
     };
-  
+    //Funcion para cerrar el snackbar haciendo click en cerrar o en cualquier lado
     const handleClose = (event, reason) => {
       if (reason === 'clickaway') {
         return;
@@ -54,7 +44,6 @@ export const UserPayments = () => {
   
     const action = (
       <React.Fragment >
-        
         <IconButton
           size="small"
           aria-label="close"
@@ -69,17 +58,14 @@ export const UserPayments = () => {
   return (
     
     <>        
-      <div key={uD.id}>
-        
-        
-    <h2 id="title">Mis Pagos</h2>
-      
-        <CssBaseline />
-          
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-          <Grid container rowSpacing={2} spacing={2}>
+    <div className="title1">  
+    <h2>Mis Pagos</h2>
+    </div>   
+        <Box sx={{ display: "flex" }}>
+          <Container maxWidth="lg" className="cont1">
+          <Grid container rowSpacing={4} spacing={2}>
               <Grid item xs={12} align="center" className="grid1"> 
-              <Paper
+              <Paper className='paper1'
                   sx={{
                     p: 1,
                     display: "flex",
@@ -87,10 +73,9 @@ export const UserPayments = () => {
                   }}
                   elevation={4}
                 >
-                  <Divider component="li" />
                 <List 
       aria-label="contacts">
-     <Paper elevation={1}>           
+     <Paper elevation={4}>           
     <ListItem className="li">
     <Grid item xs={12} lg={9}>
       <th>Fecha de Inscripción: </th>
@@ -103,7 +88,7 @@ export const UserPayments = () => {
     </ListItem>
     </Paper>
     <Divider component="li" />
-    <Paper elevation={2}>         
+    <Paper elevation={4}>         
     <ListItem className="li1">  
       <Grid item xs={12} lg={9}>
       <th>Siguiente Fecha de Pago: </th>
@@ -116,7 +101,7 @@ export const UserPayments = () => {
       </ListItem>
       </Paper>  
       <Divider component="li" />
-      <Paper elevation={3}>         
+      <Paper elevation={4}>         
       <ListItem className="li2">
       <Grid item xs={12} lg={9}>
       <th>Pagos Realizados: </th>
@@ -143,11 +128,12 @@ export const UserPayments = () => {
                   size="large"
                   variant="contained" 
                   onClick={handleClick}> 
-                  <FileCopyIcon >
-                    </FileCopyIcon> </IconButton>
+                    <FileCopyIcon >
+                    </FileCopyIcon> 
+                    </IconButton>
                   <Snackbar
-                  className="Snack"
-                  autoHidenDuration={3000}
+                    id="Snack"
+                    autoHideDuration={3000}
                     open={open}
                     onClose={handleClose}
                     message="Copiado al portapapeles"
@@ -156,31 +142,23 @@ export const UserPayments = () => {
                   </td>
       </Grid>
     </ListItem>
-    <Divider component="li" />
-    <Paper elevation={2}>         
+    <Paper elevation={4}>         
     <ListItem className="li4">  
       <Grid item xs={12} lg={9}>
-      <p>(Puedes realizar tus pagos en efectivo de manera personal con tu coach,
+      <p>
+        (Puedes realizar tus pagos en efectivo de manera personal con tu coach,
         o puedes hacer una transferencia bancaria a travéz del número de cuenta clabe)
       </p>
-      
       </Grid>
       </ListItem>
       </Paper>  
               </Paper>
               </List>
-
               </Paper>
-              </Grid>   
-              
+              </Grid>    
             </Grid>
-            
           </Container>
-        
-        </div>
-   
-       
-      
+          </Box> 
     </>
   )}; 
 
