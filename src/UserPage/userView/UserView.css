@@ -146,3 +146,12 @@
   text-align: center;
   margin: .3rem;
 }
+
+#btnC {
+  color: rgb(210, 153, 11);
+}
+
+.css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root{
+  color: rgb(210, 153, 11);
+
+}

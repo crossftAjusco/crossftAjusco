@@ -12,6 +12,7 @@ import ListItem from '@mui/material/ListItem';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export const UserPayments = () => {
   // Se declara una variable para guardar el id del usuario para
@@ -41,6 +42,16 @@ export const UserPayments = () => {
       }
       setOpen(false);
     };
+   //Tema de material ui para editar Snackbar
+    const theme = createTheme({
+    palette: {
+      neutral: {
+        main: '#64748B',
+        contrastText: 'rgb(210, 153, 11)',
+      },
+    },
+   });
+
   
     const action = (
       <React.Fragment >
@@ -125,13 +136,16 @@ export const UserPayments = () => {
       <td padding="2px">072180003213100972</td>
       <td> 
                   <IconButton 
+                  id="btnC"
                   size="large"
                   variant="contained" 
                   onClick={handleClick}> 
                     <FileCopyIcon >
                     </FileCopyIcon> 
                     </IconButton>
+                    <ThemeProvider theme={theme}>  
                   <Snackbar
+                  color="neutral"
                     id="Snack"
                     autoHideDuration={3000}
                     open={open}
@@ -139,6 +153,7 @@ export const UserPayments = () => {
                     message="Copiado al portapapeles"
                     action={action}
                   />
+                  </ThemeProvider>
                   </td>
       </Grid>
     </ListItem>

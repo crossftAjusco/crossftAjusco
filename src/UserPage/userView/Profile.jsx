@@ -8,9 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import StraightenIcon from '@mui/icons-material/Straighten';
-import IconButton from '@mui/material/IconButton';
 import Button from 'react-bootstrap/Button';
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import UserModal from "./UserModal";
 import Container from "@mui/material/Container";
@@ -144,7 +142,7 @@ const Profile = () => {
                     setTipo('Alergias')
                     setData(users.allergies)
                   }}onSelectEvent={handleClick}>
-                    <EditOutlinedIcon />
+                    <ModeEditOutlineIcon/>
                   </Button>
                 </ListItem>
                 <Divider component="li" />
@@ -163,7 +161,7 @@ const Profile = () => {
                     setTipo('Condición Médica')
                     setData(users.injuries)
                   }}onSelectEvent={handleClick}>
-                    <EditOutlinedIcon />
+                    <ModeEditOutlineIcon/>
                   </Button>
                 </ListItem>
                 <Divider component="li" />
@@ -201,7 +199,7 @@ const Profile = () => {
                     setTipo('Altura')
                     setData(users.height)
                   }}onSelectEvent={handleClick}>
-                    <EditOutlinedIcon />
+                    <ModeEditOutlineIcon />
                   </Button>
                 </ListItem>
                 <li>
@@ -225,7 +223,7 @@ const Profile = () => {
                     setTipo('Peso')
                     setData(users.weight)
                   }}onSelectEvent={handleClick}>
-                    <EditOutlinedIcon />
+                    <ModeEditOutlineIcon />
                   </Button>
                 </ListItem>
                 <li>
@@ -249,7 +247,7 @@ const Profile = () => {
                     setTipo('Cintura')
                     setData(users.waist)
                   }}onSelectEvent={handleClick}>
-                    <EditOutlinedIcon />
+                    <ModeEditOutlineIcon />
                   </Button>
                 </ListItem>
                 <li>
@@ -273,7 +271,7 @@ const Profile = () => {
                     setTipo('Cuello')
                     setData(users.neck)
                   }}onSelectEvent={handleClick}>
-                    <EditOutlinedIcon />
+                    <ModeEditOutlineIcon />
                   </Button>
                 </ListItem>
               </List> 
