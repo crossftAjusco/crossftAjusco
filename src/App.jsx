@@ -33,7 +33,9 @@ const App = () => {
 
           <div className="middle-component">
             <Routes>
-              <Route
+              <Route index element={<Home />} />
+              <Route path="/" element={<Home />} />
+              {/*<Route
                 path="/"
                 element={
                   <Navigate to="/crossftajusco.github.io/crossftAjusco" />
@@ -41,33 +43,20 @@ const App = () => {
               />
               <Route
                 path="/crossftajusco.github.io/crossftAjusco"
-                element={<Home />}
-              />
+                element={<Home />} 
+
               <Route
                 path="/crossftajusco.github.io/crossftAjusco/home"
                 element={<Home />}
-              />
-              <Route
-                path="/crossftajusco.github.io/crossftAjusco/login"
-                element={<Login />}
-              />
-              <Route
-                path="/crossftajusco.github.io/crossftAjusco/acerca_de"
-                element={<InfoGeneral />}
-              />
-              <Route
-                path="/crossftajusco.github.io/crossftAjusco/coach"
-                element={<Biopic />}
-              />
-              <Route
-                path="/crossftajusco.github.io/crossftAjusco/precios"
-                element={<Precios />}
-              />
+              />*/}
+              <Route path="login" element={<Login />} />
+              <Route path="acerca_de" element={<InfoGeneral />} />
+              <Route path="coach" element={<Biopic />} />
+              <Route path="precios" element={<Precios />} />
               <Route
                 path="/crossftajusco.github.io/crossftAjusco/recomendaciones_de_salud"
                 element={<Health />}
               />
-
               <Route
                 path="/admin/*"
                 element={
@@ -84,7 +73,6 @@ const App = () => {
                 <Route path="usuarios" element={<Users />} />
                 <Route path="comunidad" element={<ReadPost />} />
               </Route>
-
               <Route
                 path="/UserView/*"
                 element={
@@ -101,7 +89,6 @@ const App = () => {
                 <Route path="eventos" element={<UserDash />} />
                 <Route path="reglamento" element={<UserRules />} />
               </Route>
-
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>
