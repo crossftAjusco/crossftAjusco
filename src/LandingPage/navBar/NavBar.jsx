@@ -44,7 +44,7 @@ export const Navigation = () => {
   //una vez que cierra sesión se va navigate('direccón')
 
   const handleLogin = () => {
-    navigate("crossftAjusco/login");
+    navigate("/crossftajusco.github.io/crossftAjusco/login");
   };
 
   const handleLogout = async () => {
