@@ -6,17 +6,34 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import ScrollableFeed from 'react-scrollable-feed'
+<<<<<<< HEAD
 import Reglamento from "../../assets/pdf/Reglamento.pdf"
 import IconButton from '@mui/material/IconButton';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
+=======
+import { useState } from "react";
+import Reglamento from "../../assets/pdf/Reglamento.pdf"
+import Button from '@mui/material/Button';
+>>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
 
 export const UserRules = () => {
   //Se configura el hoock para traer los datos de los usuarios desde AutContext
   const { user, users } = useAuth();
   console.log(user.email)
+<<<<<<< HEAD
   //Configuracción del contenedor del documento pdf
   const style = {display: "block", width: "100%", height: "100%"}
   //Utilizamos el método filter para traer los datos de un usuario    
+=======
+  //console.log(users[0])
+  const style = {display: "block", margin: "auto", width: "100%", height: "100%"}
+
+  /*To Prevent right click on screen*/
+  document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+  });
+      
+>>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
   const userData = users.filter( (us) => {
     //Comparamos el email de usuario logueado y el del usurio filtrado
     if (us.email === user.email) return true
@@ -39,6 +56,7 @@ export const UserRules = () => {
                     p: 1,
                     display: "flex",
                     flexDirection: "column",
+<<<<<<< HEAD
                     height: 535,
                   }}>  
       <div className="p1">
@@ -61,12 +79,35 @@ export const UserRules = () => {
       </Grid>
       <Grid item xs={12} md={8} lg={12}>
                 <Paper
+=======
+                    height: 935,
+                  }}
+                >
+      
+      <a target="_blanck" href={Reglamento}></a>
+    <object data={Reglamento} style={style} label="pdf"></object>
+
+
+      </Paper>
+      </Grid>
+      <Grid item xs={12} md={8} lg={12}>
+      <Paper
+>>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
                   sx={{
                     p: 2,
                     display: "flex",
                     flexDirection: "column",
                     height: 435,
+<<<<<<< HEAD
                   }}>
+=======
+                  }}
+                >
+      
+        
+      
+
+>>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
         <h3>{uD.name} {uD.last_name}</h3> 
         <h4>Este es mi reglamento de usuario:</h4>
         <ScrollableFeed>

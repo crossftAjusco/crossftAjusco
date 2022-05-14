@@ -7,6 +7,10 @@ import PersonIcon from '@mui/icons-material/Person';
 import PeopleIcon from '@mui/icons-material/People';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import LayersIcon from '@mui/icons-material/Layers';
+<<<<<<< HEAD
+=======
+
+>>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
 import { NavLink } from 'react-router-dom';
 import { grey, yellow } from '@mui/material/colors';
 import { IconButton, Tooltip } from '@mui/material';
@@ -25,6 +29,7 @@ const theme = createTheme({
 
 
 export const mainListItems = (
+<<<<<<< HEAD
   <ThemeProvider theme={theme}>
   <div className='userIcons'>
       <NavLink to='reglamento'>
@@ -40,6 +45,24 @@ export const mainListItems = (
     <PersonIcon size='large' />
     </IconButton>
       </Tooltip>
+=======
+  <React.Fragment>
+      <NavLink to='reglamento'>
+    <ListItemButton>
+      <ListItemIcon>
+        <AutoStoriesIcon  />
+      </ListItemIcon>
+      <ListItemText primary="Reglamento" />
+    </ListItemButton>
+     </NavLink>
+     <NavLink to='profile'>
+    <ListItemButton>
+      <ListItemIcon>
+        <PersonIcon />
+      </ListItemIcon>
+      <ListItemText primary=" Mi Perfil" />
+    </ListItemButton>
+>>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
       </NavLink>
       <NavLink to='comunidad'>
         <Tooltip title='Comunidad'>
@@ -49,6 +72,7 @@ export const mainListItems = (
         </Tooltip>
       </NavLink>
       <NavLink to='pagos'>
+<<<<<<< HEAD
         <Tooltip title='Pagos'>
          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
            <AttachMoneyIcon size='large' />
@@ -65,3 +89,24 @@ export const mainListItems = (
      </div>
   </ThemeProvider>
 );
+=======
+    <ListItemButton>
+      <ListItemIcon>
+        <AttachMoneyIcon />
+      </ListItemIcon>
+      <ListItemText primary="Pagos" />
+    </ListItemButton>
+     </NavLink>
+     <NavLink to='eventos'>
+    <ListItemButton>
+      <ListItemIcon>
+        <LayersIcon />
+      </ListItemIcon>
+      <ListItemText primary="Eventos" />
+    </ListItemButton>
+     </NavLink>
+  </React.Fragment>
+);
+
+
+>>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
