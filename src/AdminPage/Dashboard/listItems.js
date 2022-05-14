@@ -1,3 +1,4 @@
+import './dashboard.css'
 import * as React from 'react';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -14,50 +15,61 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PaidIcon from '@mui/icons-material/Paid';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import { IconButton, Tooltip } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { grey, yellow } from '@mui/material/colors';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: grey[100]
+    },
+    secondary: {
+      main: yellow[700]
+    }
+  }
+})
 
 export const mainListItems = (
-  <React.Fragment>
-    <NavLink to='calendar'>
-      <ListItemButton>
-        <ListItemIcon>
-          <CalendarMonthIcon />
-        </ListItemIcon>
-        <ListItemText primary="Calendario" />
-      </ListItemButton>
-    </NavLink>
-    <NavLink to='graph'>
-      <ListItemButton>
-        <ListItemIcon>
-          <PaidIcon />
-        </ListItemIcon>
-        <ListItemText primary="Ingresos" />
-      </ListItemButton>
-    </NavLink>
-    <NavLink to='comunidad'>
-      <ListItemButton>
-        <ListItemIcon>
-          <ConnectWithoutContactIcon />
-        </ListItemIcon>
-        <ListItemText primary="Comunidad" />
-      </ListItemButton>
-    </NavLink>
-    <NavLink to='form'>
-      <ListItemButton>
-        <ListItemIcon>
-          <GroupAddIcon />
-        </ListItemIcon>
-        <ListItemText primary="Nuevo usuario" />
-      </ListItemButton>
-    </NavLink>
-    <NavLink to='usuarios'>
-      <ListItemButton>
-        <ListItemIcon>
-          <PeopleIcon />
-        </ListItemIcon>
-        <ListItemText primary="Usuarios" />
-      </ListItemButton>
-    </NavLink>
-  </React.Fragment>
+  <ThemeProvider theme={theme}>
+    <div className='iconsDashboard'>
+      <NavLink to='calendar'>
+        <Tooltip title="Calendario">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <CalendarMonthIcon size='large' />
+          </IconButton>
+        </Tooltip>
+      </NavLink>
+      <NavLink to='graph'>
+        <Tooltip title="Pagos">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <PaidIcon size='large' />
+          </IconButton>
+        </Tooltip>
+      </NavLink>
+      <NavLink to='comunidad'>
+        <Tooltip title="Comunidad">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <ConnectWithoutContactIcon size='large' />
+          </IconButton>
+        </Tooltip>
+      </NavLink>
+      <NavLink to='form'>
+        <Tooltip title="Nuevo usuario">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <GroupAddIcon size='large' />
+          </IconButton>
+        </Tooltip>
+      </NavLink>
+      <NavLink to='usuarios'>
+        <Tooltip title="Usuarios">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+            <PeopleIcon fontSize="inherit" />
+          </IconButton>
+        </Tooltip>
+      </NavLink>
+    </div>
+  </ThemeProvider>
 );
 
 export const secondaryListItems = (

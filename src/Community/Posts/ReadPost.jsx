@@ -37,7 +37,8 @@ export const ReadPost = () => {
   }, []);
 
   return (
-    <div className="contentCommunity">
+    
+    <div className="contentCommunity"> 
       <div className="avatarAside">
         <Avatar
           src={user.photoURL}
@@ -45,6 +46,9 @@ export const ReadPost = () => {
         ></Avatar>
       </div>
       <div className="createPost">
+      <div className="title1">
+    <h2>Comunidad</h2>
+    </div> 
         <CreatePost setPosts={setPosts} />
       </div>
       <main className="postArea">

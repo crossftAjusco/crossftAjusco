@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Allerta+Stencil&family=Anton&family=Saira+Condensed:wght@600&display=swap");
+
 *{
     margin: 0px;
     padding: 0px;
@@ -62,26 +64,94 @@
   margin-top: 10px;
 }
 
-.css-18qy2ck {
+.contUser {
   background-image: url("../../assets/lp_imgs/Login.jpg");
 }
 
-#title, #subtitle, #welcome{
+ #subtitle, #welcome{
   color: white;
 }
 
-.middle-component,
-#muiBox {
+.middle-component{
   background-color: #212529;
 }
 
-.css-12jn0w3-MuiContainer-root {
+
+.userIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: -4vh;
+}
+.iconos {
+  color: yellow;
+}
+
+
+.paper1 {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0.5px 10px -5px rgba(0, 0, 0, 0.315);
+  padding: 5em auto;
+  text-align: center;
+}
+
+.grid1{
+  padding: 0;
+}
+
+.li, .li1, .li2, .li3, .l14{ 
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: baseline;
+    position: relative;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    margin: .2rem;
+}
+
+.title1 {
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  color: rgb(210, 153, 11);
+  margin-top: .3rem;
+  margin-bottom: .3rem;
+}
+
+.cont1 {
   margin-top: 0;
 }
 
-.css-1um0a0q-MuiPaper-root{
-  padding:36;
+.p1 {
+  text-align: center;
+  margin: .3rem;
 }
-.css-1atwg64-MuiPaper-root{
-  padding:30;
+
+#btnC {
+  color: rgb(210, 153, 11);
+}
+
+.css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root{
+  color: rgb(210, 153, 11);
+
 }

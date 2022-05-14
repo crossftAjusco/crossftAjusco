@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from './Title';
-import { useAuth } from "../../Context/authContext"
 
 // Generate Sales Data
 function createData(time, amount) {
   return { time, amount };
 }
 
-const data = [ /* x,y */
+const data = [
   createData('00:00', 0),
   createData('03:00', 300),
   createData('06:00', 600),
@@ -21,33 +20,14 @@ const data = [ /* x,y */
   createData('24:00', undefined),
 ];
 
-export default function Chart() {
-  const { users } = useAuth()
+export default function YearsGraph() {
   const theme = useTheme();
-  /* Pintar los datos de la grafica de pagos recientes*/
-  const today = new Date()
-  const lastPayday = []
-  const dataGraph = []
-  for (let date of users) {
-    today.getMonth() == date.payday.toDate().getMonth() && today.getFullYear() == date.payday.toDate().getFullYear() ?
-      lastPayday.push(date.payday.toDate()) :
-      console.log('otro mes o año')
-  }
-  /*
-  for (let day of lastPayday) {
-    console.log(day.getDate())
-    if (dataGraph.includes(day.getDate())){
 
-    } else {
-
-    }
-  }
-  */
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Years</Title>
       <ResponsiveContainer>
-        <BarChart
+        <LineChart
           data={data}
           margin={{
             top: 16,
@@ -77,15 +57,14 @@ export default function Chart() {
               Sales ($)
             </Label>
           </YAxis>
-          <Bar
-            isAnimationActive={true}
+          <Line
+            isAnimationActive={false}
             type="monotone"
             dataKey="amount"
             stroke={theme.palette.primary.main}
             dot={false}
-            fill="#ff9900"
           />
-        </BarChart>
+        </LineChart>
       </ResponsiveContainer>
     </React.Fragment>
   );

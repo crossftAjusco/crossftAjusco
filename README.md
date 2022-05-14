@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# CrossFt Website Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+Index
 
-In the project directory, you can run:
+    1. Description
+    2. User Definition & User Stories (UX)
+    3. Workflow Process
+    4. Prototype Design
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 1. Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+In this project our team work for develop a web application available for mobile and desktop devices.
 
-### `npm test`
+The website is built with React JS and firestore database.
+Our client is a CrossFit teacher who lives in Ajusco, and requires a tool to help him improve his business and interaction with his users.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Client profile
 
-### `npm run build`
+Name: Eduardo Romero Flores
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+PyME:CrossFT Ajusco SA. de CV.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contact: [Social Media](https://www.facebook.com/YETIS14Ajusco12)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Profesor](./src/assets/readmeImg/Eduardo.jpeg)
 
-### `npm run eject`
+## 2. User Stories
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**For the teacher of CrossFt Ajusco:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The user wishes to view the dates, names and payment status of each of his clients.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- The user requires a simple and friendly way to interact with their clients, share exercise routines and events related to their discipline.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**For the customers:**
 
-## Learn More
+The interface should allow the customers:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Log-in
+  - With Google or Facebook
+  - Email
+- See the news Feed of the Social Network
+- Showing at least the title, date of published, Content (img & text), for each publication.
+- Show the list of all the users registered with profile picture and name
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Publish
 
-### Code Splitting
+## 3. Workflow process
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The agile methodology is used to distribute the tasks of the project
 
-### Analyzing the Bundle Size
+![Kanban Board](./src/assets/readmeImg/SDLC.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Kanban Board](./src/assets/readmeImg/SDLC2.png)
 
-### Making a Progressive Web App
+![prototype](./src/assets/readmeImg/CrossFitApp.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 4. UX/UI Interface
 
-### Advanced Configuration
+Landing page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![prototype](./src/assets/readmeImg/landing_page.png)
 
-### Deployment
+![prototype](./src/assets/readmeImg/login.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![prototype](./src/assets/readmeImg/LP_2.png)
 
-### `npm run build` fails to minify
+![prototype](./src/assets/readmeImg/footer.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Administration Interface
+
+![prototype](./src/assets/readmeImg/dashboard.png)
+
+![prototype](./src/assets/readmeImg/calendar.png)
+
+![prototype](./src/assets/readmeImg/modal.png)
+
+![prototype](./src/assets/readmeImg/UsersRegister.png)
+
+![prototype](./src/assets/readmeImg/table.png)
+
+Users Interface
+
+![prototype](./src/assets/readmeImg/CrossFtCommunity.png)
+
+![prototype](./src/assets/readmeImg/UserProfile.png)
+
+![prototype](./src/assets/readmeImg/UserWorkout.png)

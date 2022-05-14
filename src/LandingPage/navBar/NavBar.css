@@ -18,6 +18,9 @@
   font-family: "Allerta Stencil", sans-serif;
 }
 
+.navbar-collapse {
+  align-items: center;
+}
 .logoText {
   font-family: "Allerta Stencil", sans-serif;
   font-size: 1.4rem;
@@ -25,11 +28,13 @@
   font-weight: 200;
 }
 
-a.nav-link {
+a.logoText {
   color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
 }
 
-a.nav-link:hover {
+a.logoText:hover {
   color: rgb(210, 153, 11);
 }
 
@@ -57,4 +62,24 @@ a.nav-link:hover {
 .login:active {
   position: relative;
   top: 1px;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-right: 0;
+}
+.userName {
+  color: white;
+  font-size: 0.7rem;
+  margin: 0;
+}
+.dropDownAvatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
