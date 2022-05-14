@@ -34,7 +34,7 @@ const App = () => {
           <div className="middle-component">
             <Routes>
               <Route index element={<Home />} />
-              <Route path="/" element={<Home />} />
+              <Route path="/crossftAjusco" element={<Home />} />
               {/*<Route
                 path="/"
                 element={
