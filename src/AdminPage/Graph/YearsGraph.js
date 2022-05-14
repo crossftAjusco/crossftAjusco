@@ -9,15 +9,22 @@ function createData(time, amount) {
 }
 
 const data = [
-  createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', undefined),
+  createData('5', 0),
+  createData('10', 0),
+  createData('15', 0),
+  createData('20', 0),
+  createData('25', 0),
+  createData('30', 9),
+  createData('35', 0),
+  createData('40', 0),
+  createData('45', 0),
+  createData('50', 0),
+  createData('55', 0),
+  createData('60', 0),
+  createData('65', 0),
+  createData('70', 0),
+  createData('75', 0),
+  createData('80', 0),
 ];
 
 export default function YearsGraph() {
@@ -25,7 +32,7 @@ export default function YearsGraph() {
 
   return (
     <React.Fragment>
-      <Title>Years</Title>
+      <Title>Edad de las personas</Title>
       <ResponsiveContainer>
         <LineChart
           data={data}
@@ -54,7 +61,7 @@ export default function YearsGraph() {
                 ...theme.typography.body1,
               }}
             >
-              Sales ($)
+              Número
             </Label>
           </YAxis>
           <Line
