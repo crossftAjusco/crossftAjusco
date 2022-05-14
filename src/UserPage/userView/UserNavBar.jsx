@@ -7,10 +7,6 @@ import PersonIcon from '@mui/icons-material/Person';
 import PeopleIcon from '@mui/icons-material/People';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import LayersIcon from '@mui/icons-material/Layers';
-<<<<<<< HEAD
-=======
-
->>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
 import { NavLink } from 'react-router-dom';
 import { grey, yellow } from '@mui/material/colors';
 import { IconButton, Tooltip } from '@mui/material';
@@ -29,23 +25,6 @@ const theme = createTheme({
 
 
 export const mainListItems = (
-<<<<<<< HEAD
-  <ThemeProvider theme={theme}>
-  <div className='userIcons'>
-      <NavLink to='reglamento'>
-      <Tooltip title="Reglamento">
-    <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-    <AutoStoriesIcon size='large' />
-    </IconButton>
-      </Tooltip>
-      </NavLink>
-      <NavLink to='profile'>
-      <Tooltip title="Mi Perfil">
-    <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-    <PersonIcon size='large' />
-    </IconButton>
-      </Tooltip>
-=======
   <React.Fragment>
       <NavLink to='reglamento'>
     <ListItemButton>
@@ -62,7 +41,6 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary=" Mi Perfil" />
     </ListItemButton>
->>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
       </NavLink>
       <NavLink to='comunidad'>
         <Tooltip title='Comunidad'>
@@ -72,25 +50,7 @@ export const mainListItems = (
         </Tooltip>
       </NavLink>
       <NavLink to='pagos'>
-<<<<<<< HEAD
-        <Tooltip title='Pagos'>
-         <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-           <AttachMoneyIcon size='large' />
-         </IconButton>
-        </Tooltip>
-      </NavLink>
-      <NavLink to='eventos'>
-        <Tooltip title='Eventos'>
-         <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-           <LayersIcon size='large' />
-         </IconButton>
-        </Tooltip>
-      </NavLink>
-     </div>
-  </ThemeProvider>
-);
-=======
-    <ListItemButton>
+      <ListItemButton>
       <ListItemIcon>
         <AttachMoneyIcon />
       </ListItemIcon>
@@ -107,6 +67,3 @@ export const mainListItems = (
      </NavLink>
   </React.Fragment>
 );
-
-
->>>>>>> b9ed76b16d3e3319758f06e1872cd4881aef5979
