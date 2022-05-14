@@ -11,7 +11,6 @@ const db = getFirestore(app);
 const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
     const handleClose = () => setShow(false);
     const [dataUser, setUserData] = useState([]); 
-    const [showEdit, setShowEdit] = useState(true);
 
     const docRef = doc (db, `Users/${modalUserData.id}`);
     console.log(tipo)
