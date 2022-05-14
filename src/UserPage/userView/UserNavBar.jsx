@@ -25,21 +25,22 @@ const theme = createTheme({
 
 
 export const mainListItems = (
-  <ThemeProvider theme={theme}>
-  <div className='userIcons'>
+  <React.Fragment>
       <NavLink to='reglamento'>
-      <Tooltip title="Reglamento">
-    <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-    <AutoStoriesIcon size='large' />
-    </IconButton>
-      </Tooltip>
-      </NavLink>
-      <NavLink to='profile'>
-      <Tooltip title="Mi Perfil">
-    <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-    <PersonIcon size='large' />
-    </IconButton>
-      </Tooltip>
+    <ListItemButton>
+      <ListItemIcon>
+        <AutoStoriesIcon  />
+      </ListItemIcon>
+      <ListItemText primary="Reglamento" />
+    </ListItemButton>
+     </NavLink>
+     <NavLink to='profile'>
+    <ListItemButton>
+      <ListItemIcon>
+        <PersonIcon />
+      </ListItemIcon>
+      <ListItemText primary=" Mi Perfil" />
+    </ListItemButton>
       </NavLink>
       <NavLink to='comunidad'>
         <Tooltip title='Comunidad'>
@@ -49,19 +50,20 @@ export const mainListItems = (
         </Tooltip>
       </NavLink>
       <NavLink to='pagos'>
-        <Tooltip title='Pagos'>
-         <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-           <AttachMoneyIcon size='large' />
-         </IconButton>
-        </Tooltip>
-      </NavLink>
-      <NavLink to='eventos'>
-        <Tooltip title='Eventos'>
-         <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-           <LayersIcon size='large' />
-         </IconButton>
-        </Tooltip>
-      </NavLink>
-     </div>
-  </ThemeProvider>
+      <ListItemButton>
+      <ListItemIcon>
+        <AttachMoneyIcon />
+      </ListItemIcon>
+      <ListItemText primary="Pagos" />
+    </ListItemButton>
+     </NavLink>
+     <NavLink to='eventos'>
+    <ListItemButton>
+      <ListItemIcon>
+        <LayersIcon />
+      </ListItemIcon>
+      <ListItemText primary="Eventos" />
+    </ListItemButton>
+     </NavLink>
+  </React.Fragment>
 );
