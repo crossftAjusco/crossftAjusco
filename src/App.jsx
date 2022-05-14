@@ -84,7 +84,6 @@ const App = () => {
                 <Route path="usuarios" element={<Users />} />
                 <Route path="comunidad" element={<ReadPost />} />
               </Route>
-
               <Route
                 path="/UserView/*"
                 element={
@@ -101,7 +100,6 @@ const App = () => {
                 <Route path="eventos" element={<UserDash />} />
                 <Route path="reglamento" element={<UserRules />} />
               </Route>
-
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>
