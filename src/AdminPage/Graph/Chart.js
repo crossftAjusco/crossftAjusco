@@ -10,15 +10,37 @@ function createData(time, amount) {
 }
 
 const data = [ /* x,y */
-  createData('00:00', 0),
-  createData('03:00', 300),
-  createData('06:00', 600),
-  createData('09:00', 800),
-  createData('12:00', 1500),
-  createData('15:00', 2000),
-  createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', undefined),
+  createData('1', 0),
+  createData('2', 0),
+  createData('3', 0),
+  createData('4', 900),
+  createData('5', 0),
+  createData('6', 300),
+  createData('7', 0),
+  createData('8', 0),
+  createData('9', 0),
+  createData('10', 0),
+  createData('11', 0),
+  createData('12', 0),
+  createData('13', 0),
+  createData('14', 0),
+  createData('15', 0),
+  createData('16', 0),
+  createData('17', 0),
+  createData('18', 0),
+  createData('19', 0),
+  createData('20', 0),
+  createData('21', 0),
+  createData('22', 0),
+  createData('23', 0),
+  createData('24', 0),
+  createData('25', 0),
+  createData('26', 0),
+  createData('27', 0),
+  createData('28', 300),
+  createData('29', 0),
+  createData('30', 0),
+  createData('31', 0),
 ];
 
 export default function Chart() {
@@ -45,7 +67,7 @@ export default function Chart() {
   */
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Ingresos</Title>
       <ResponsiveContainer>
         <BarChart
           data={data}
@@ -74,7 +96,7 @@ export default function Chart() {
                 ...theme.typography.body1,
               }}
             >
-              Sales ($)
+              Mayo ($)
             </Label>
           </YAxis>
           <Bar
