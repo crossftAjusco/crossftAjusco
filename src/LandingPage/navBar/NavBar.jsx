@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
 import { useAuth } from "../../Context/authContext";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate, NavLink, Link } from "react-router-dom";
 import Logo from "../../assets/lp_imgs/Logo.jpg";
 import "./NavBar.css";
 import {
@@ -74,9 +74,9 @@ export const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="¿Quiénes somos?" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="acerca_de">Acerca de</NavDropdown.Item>
-              <NavDropdown.Item href="coach">Coach</NavDropdown.Item>
-              <NavDropdown.Item href="precios">Precio</NavDropdown.Item>
+              <Link to="/acerca_de">Acerca de</Link>
+              <Link to="/acerca_coach">Coach</Link>
+              <Link to="/precios">Precio</Link>
 
               <NavDropdown.Divider />
             </NavDropdown>
