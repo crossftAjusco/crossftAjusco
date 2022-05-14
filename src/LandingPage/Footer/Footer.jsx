@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
           </h4>
           <br />
-          <h5>Lunes a viernes</h5>
+          <h5>Lunes a Sábado</h5>
           <h6>06:00-06:50</h6>
           <h6>07:00-08:00</h6>
           <h6>08:10-09:10</h6>
