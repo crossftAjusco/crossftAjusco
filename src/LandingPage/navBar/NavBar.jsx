@@ -44,13 +44,13 @@ export const Navigation = () => {
   //una vez que cierra sesión se va navigate('direccón')
 
   const handleLogin = () => {
-    navigate("/crossftajusco.github.io/crossftAjusco/login");
+    navigate("/login");
   };
 
   const handleLogout = async () => {
     await logout();
     setAdmin(false);
-    navigate("crossftAjusco/home");
+    navigate("/home");
   };
 
   const handleUser = () => {
@@ -73,15 +73,9 @@ export const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="¿Quiénes somos?" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/crossftAjusco/acerca_de">
-                Acerca de
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/crossftAjusco/coach">
-                Coach
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/crossftAjusco/precios">
-                Precio
-              </NavDropdown.Item>
+              <NavDropdown.Item href="acerca_de">Acerca de</NavDropdown.Item>
+              <NavDropdown.Item href="coach">Coach</NavDropdown.Item>
+              <NavDropdown.Item href="precios">Precio</NavDropdown.Item>
 
               <NavDropdown.Divider />
             </NavDropdown>
