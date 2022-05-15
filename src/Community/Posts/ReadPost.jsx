@@ -79,9 +79,7 @@ export const ReadPost = () => {
           );
         })}
       </main>
-      <aside className="interestArea">
-        <Sites />
-      </aside>
+     
     </div>
   );
 };

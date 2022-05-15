@@ -14,9 +14,14 @@ export const UserRules = () => {
   //Se configura el hoock para traer los datos de los usuarios desde AutContext
   const { user, users } = useAuth();
   console.log(user.email)
-  //Configuracción del contenedor del documento pdf
-  const style = {display: "block", width: "100%", height: "100%"}
-  //Utilizamos el método filter para traer los datos de un usuario    
+  //console.log(users[0])
+  const style = {display: "block", margin: "auto", width: "100%", height: "100%"}
+
+  /*To Prevent right click on screen*/
+  document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+  });
+      
   const userData = users.filter( (us) => {
     //Comparamos el email de usuario logueado y el del usurio filtrado
     if (us.email === user.email) return true
@@ -43,7 +48,7 @@ export const UserRules = () => {
                   }}>  
       <div className="p1">
         <p>
-          Este es tu reglamento de usuario, puedes descargarlo en formato pdf y leerlo cuando desees. 
+          Este es tu reglamento de usuario, es tu deber conocer las normas dentro de la comunidad, puedes descargarlo en formato pdf y leerlo cuando desees. 
         </p>
         <a target="_blanck" href={Reglamento}>
       <IconButton color="success">
@@ -53,7 +58,6 @@ export const UserRules = () => {
         </IconButton>
         </a>
       </div>
-
       
     <object data={Reglamento} style={style} label="pdf">
     </object>
@@ -75,7 +79,6 @@ export const UserRules = () => {
           Al momento de pertenecer a la comunidad de 'Cross FT Ajusco' hago constatar que he leído y entendido las normas presentadas en el 'Reglamento Interno de Cross FT Ajusco', por lo que acepto de conformidad cumplir con lo establecido en el mismo, así como con las instrucciones e indicaciones que emitan los instructores y/o monitores acargo. 
 Así mismo, acepto las responsabilidades, derechos y obligaciones establecidos para las y los participantes de las actividades de 'Cross FT Ajusco' en la normatividad interna y externa que rige a la Institución.
 </p>  
-
 <th>Indicaciones Higiénicas y de Salud</th> 
 <tr>• Por ser un espacio semi abierto,  y apegados a una recomendación de la OMS respecto al uso de cubrebocas y en las actividades deportivas, el uso de este queda a elección personal 
 </tr>
@@ -84,7 +87,6 @@ Así mismo, acepto las responsabilidades, derechos y obligaciones establecidos p
 <tr>• Trae una toalla pequeña </tr>
 <tr>• Usa desodorante</tr>
 <tr>• Ten buenos hábitos de higiene</tr> 
-
                 </div> 
                 </ScrollableFeed>      
                 </Paper>
@@ -93,4 +95,4 @@ Así mismo, acepto las responsabilidades, derechos y obligaciones establecidos p
           </Container>
         </Box>                 
     </>
-  )}; 
+  )};

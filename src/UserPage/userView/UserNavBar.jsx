@@ -11,7 +11,6 @@ import { NavLink } from 'react-router-dom';
 import { grey, yellow } from '@mui/material/colors';
 import { IconButton, Tooltip } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 const theme = createTheme({
   palette: {
     primary: {
@@ -65,3 +64,4 @@ export const mainListItems = (
      </div>
   </ThemeProvider>
 );
+ 

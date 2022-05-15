@@ -17,7 +17,7 @@ export function UserDash() {
     <h2>Próximos Eventos</h2>
     </div>
       <Box sx={{ display: "flex" }}>
-          <Container maxWidth="lg">
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={1}>
               <Grid item xs={12} md={8} lg={12}>
               <Paper

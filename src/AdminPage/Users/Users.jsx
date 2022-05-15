@@ -61,7 +61,7 @@ function Row(users) {
         </TableCell>
         <TableCell >
           <Grid>
-            <Typography color="textPrimary" variant="body2">{row.phone}</Typography>
+            <a href="" target="_blank" > <Typography color="textPrimary" variant="body2">{row.phone}</Typography></a>
             <Typography color="textSecondary" variant="body2">{row.phone_contact}</Typography>
           </Grid>
         </TableCell>

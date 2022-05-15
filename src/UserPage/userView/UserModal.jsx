@@ -10,10 +10,8 @@ const db = getFirestore(app);
 //creamos la función para traer los datos de la fila seleccionada en un modal
 const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
     const handleClose = () => setShow(false);
-    const [dataUser, setUserData] = useState({});
-    
+    const [dataUser, setUserData] = useState([]); 
 
-    
     const docRef = doc (db, `Users/${modalUserData.id}`);
     console.log(tipo)
     //creamos la funcion para actualizar los datos del modal
@@ -23,25 +21,28 @@ const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
    
     console.log(typeof(phone))
     await updateDoc(docRef, {
-        phone: phone, 
-        
+        phone: phone,
+
     });
     
-      setUserData();
+      setUserData([]);
       handleClose();
     };
+
     
     return(
         <>
-        <Modal show={show} onHide={handleClose} key={modalUserData.id}>
+        <div>
+        <Modal show={show} onHide={handleClose} key={modalUserData.id} id="modal1">
       <Modal.Header>
         <Modal.Title>Cambiar Datos:</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form>
-          <Form.Group className="mb-3" controlId={"exampleForm.ControlInput1"}>
-            <Form.Label>{tipo}</Form.Label>
+        <Form >
+          <Form.Group className="mb-3" >
+            <Form.Label controlId={tipo}>{tipo}</Form.Label>
             <Form.Control
+              controId={tipo}
               placeholder={data}
               autoFocus 
               onChange={(e) => setUserData (e.target.value)}
@@ -53,12 +54,15 @@ const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
         <Button variant="secondary" onClick={handleClose}>
           Cancelar
         </Button>
-        <Button variant="primary" onClick={updateA} type="submit">
+        <Button variant="primary" onClick={updateA}  controlId={tipo} type="submit">
           Guardar cambios
         </Button>
       </Modal.Footer>
     </Modal>
+    
+    </div>
     </>
+    
 
     )
 }
