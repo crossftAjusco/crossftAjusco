@@ -4,6 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 {
   /*Este componente se enciende en el componente general app y se muestra
@@ -84,6 +85,13 @@ const Footer = () => {
             <InstagramIcon />
           </a>
           <h6>Cross F T Ajusco</h6>
+          <a
+            href="https://www.youtube.com/channel/UCoDuKqxn9dSVBf5ouc8dXNQ"
+            target="_blank"
+          >
+            <YouTubeIcon />
+          </a>
+          <h6>Youtube</h6>
         </div>
       </section>
       {/*Copyright */}
