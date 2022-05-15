@@ -6,7 +6,7 @@ const db = getFirestore(app)
 
 const NuevoUsuario = async (valores) => {
     //Se trae los valores al clickearle en "onSubmit"
-    console.log(valores);
+    // console.log(valores);
     try { //Desde la documentación, se crea la referencia, se agrega un documento nuevo "addDoc"
         const userRef = await addDoc(collection(db, 'Users'), valores);
         // console.log("Document written with ID: ", userRef.id); //Se muestra en consola el ID generado automáticamente
