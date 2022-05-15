@@ -26,11 +26,11 @@ const Footer = () => {
             </div>
           </h4>
           <br />
-          <h5>
+          <h6>
             Francisco Javier Mina 6-C, San Miguel Ajusco,
             <br />
             Tlalpan,14710, CDMX.
-          </h5>
+          </h6>
           <figure className="img">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1164.1010016038629!2d-99.20378410923666!3d19.221197554039943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdfdeda7d625df%3A0x31edb69ea05af702!2sCross%20F%20T%20Ajusco!5e0!3m2!1ses-419!2smx!4v1649032398493!5m2!1ses-419!2smx"></iframe>
           </figure>
@@ -44,13 +44,16 @@ const Footer = () => {
             </div>
           </h4>
           <br />
-          <h5>Lunes a viernes</h5>
+          <h6>Lunes a viernes</h6>
           <h6>06:00-06:50</h6>
           <h6>07:00-08:00</h6>
           <h6>08:10-09:10</h6>
           <h6>18:00-19:00</h6>
           <h6>19:10-20:10</h6>
           <h6>20:10-21:20</h6>
+          <h5>Sábado</h5>
+          <h6>7:00-8:10</h6>
+          <h6>8:10-9:10</h6>
         </div>
         {/*Contacto y redes sociales */}
         <div className="socialmedia">
@@ -91,7 +94,7 @@ const Footer = () => {
           >
             <YouTubeIcon />
           </a>
-          <h6>Youtube</h6>
+          <h6>CrossFT Ajusco</h6>
         </div>
       </section>
       {/*Copyright */}

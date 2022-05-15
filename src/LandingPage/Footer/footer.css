@@ -16,6 +16,8 @@
 
 .box {
   width: fit-content;
+  margin-bottom: 12px;
+  position: relative;
 }
 .box3 {
   width: fit-content;
