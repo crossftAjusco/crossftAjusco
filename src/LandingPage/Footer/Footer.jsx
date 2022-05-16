@@ -75,7 +75,7 @@ const Footer = () => {
           <h6>Mail</h6>
 
           <a
-            href="https://api.whatsapp.com/send?phone=5569083741"
+            href="https://api.whatsapp.com/send?phone=525569083741&text=Buen%20dia%20Lalo!%20me%20gustaria%20ser%20parte%20de%20CrossFT"
             target="_blank"
           >
             <WhatsAppIcon />
