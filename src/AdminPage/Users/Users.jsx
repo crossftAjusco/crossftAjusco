@@ -24,6 +24,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import { ClassNames } from '@emotion/react';
 import './Users.css'
 import { yellow } from '@mui/material/colors';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 function searchingTerm(term) {
   return function (x) {
@@ -61,8 +63,8 @@ function Row(users) {
         </TableCell>
         <TableCell >
           <Grid>
-            <a href="" target="_blank" > <Typography color="textPrimary" variant="body2">{row.phone}</Typography></a>
-            <Typography color="textSecondary" variant="body2">{row.phone_contact}</Typography>
+            <a href={`https://api.whatsapp.com/send?phone=52${row.phone}&text=¡Hola!%20Somos%20AjuscoCrossFT...%20`} target="_blank" > <Typography color="textPrimary" variant="body2"><WhatsAppIcon className="activate" color="success"/> {row.phone}</Typography></a>
+            <Typography color="textSecondary" variant="body2"><ContentCopyIcon/> {row.phone_contact}</Typography>
           </Grid>
         </TableCell>
         <TableCell>{row.gender}</TableCell>
