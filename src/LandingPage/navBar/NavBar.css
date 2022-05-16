@@ -35,7 +35,7 @@ a.logoText {
 }
 
 a.logoText:hover {
-  color: rgb(210, 153, 11);
+  color: rgb(210, 153, 11) !important;
 }
 
 .login {
@@ -82,4 +82,15 @@ a.logoText:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+a {
+  text-decoration: none !important;
+  color: #f8f7f4 !important;
+}
+
+.dropdown-menu.show {
+  display: grid !important;
+  justify-content: center;
+  background-color: #212529;
 }
