@@ -74,9 +74,7 @@ const Carrousel = () => {
             deportiva y certificaciones avaladas por CONAE (Colegio Nacional de
             Entrenadores)
           </h3>
-          <p>
-            He participado en diversos eventos de Crossfit como el Spartan Race
-          </p>
+          <p>Participé en eventos de Crossfit como el Spartan Race</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -91,7 +89,7 @@ const Carrousel = () => {
       <Carousel.Item>
         <img className="picture" src={img8} alt="Third slide" />
         <Carousel.Caption className="carousel-caption carousel-label">
-          <h3>Visítanos!</h3>
+          <h3>¡Visítanos!</h3>
           <p>
             Agenda una cita vía{" "}
             <i class="fas fa-whatsapp-square    ">WhatsApp</i>

@@ -60,7 +60,6 @@ export const Navigation = () => {
   const handleAdmin = () => {
     navigate("/admin");
   };
-  
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -74,11 +73,15 @@ export const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="¿Quiénes somos?" id="collasible-nav-dropdown">
-              <Link to="/acerca_de">Acerca de</Link>
-              <Link to="/acerca_coach">Coach</Link>
-              <Link to="/precios">Precio</Link>
-
-              <NavDropdown.Divider />
+              <tr>
+                <Link to="/acerca_de">Acerca de</Link>
+              </tr>
+              <tr>
+                <Link to="/coach">Coach</Link>
+              </tr>
+              <tr>
+                <Link to="/precios">Precio</Link>
+              </tr>
             </NavDropdown>
             {/* 
               <Nav.Link className="navtext" href="/crossftAjusco/recomendaciones_de_salud">
