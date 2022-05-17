@@ -5,7 +5,6 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import ScrollableFeed from 'react-scrollable-feed'
 import Reglamento from "../../assets/pdf/Reglamento.pdf"
 import IconButton from '@mui/material/IconButton';
 import FileOpenIcon from '@mui/icons-material/FileOpen';
@@ -73,7 +72,6 @@ export const UserRules = () => {
                   }}>
         <h3>{uD.name} {uD.last_name}</h3> 
         <h4>Este es mi reglamento de usuario:</h4>
-        <ScrollableFeed>
         <div key={uD.id}>
           <p>
           Al momento de pertenecer a la comunidad de 'Cross FT Ajusco' hago constatar que he leído y entendido las normas presentadas en el 'Reglamento Interno de Cross FT Ajusco', por lo que acepto de conformidad cumplir con lo establecido en el mismo, así como con las instrucciones e indicaciones que emitan los instructores y/o monitores acargo. 
@@ -88,7 +86,7 @@ Así mismo, acepto las responsabilidades, derechos y obligaciones establecidos p
 <tr>• Usa desodorante</tr>
 <tr>• Ten buenos hábitos de higiene</tr> 
                 </div> 
-                </ScrollableFeed>      
+                    
                 </Paper>
               </Grid>   
             </Grid>
