@@ -70,7 +70,7 @@ export const UserPayments = () => {
     
     <>        
     <div className="title1">  
-    <h2>Mis Pagos HELLOW MICHES PAL SABADO 28</h2>
+    <h2>Mis Pagos HELLOW MICHES PAL SABADO 28 CIELA HUUU</h2>
     </div>   
         <Box sx={{ display: "flex" }}>
           <Container maxWidth="lg" className="cont1">
