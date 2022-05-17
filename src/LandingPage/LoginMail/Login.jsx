@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { Alert } from "../Alerts/Alert";
 import "./login.css";
 import Logo from "../../assets/lp_imgs/Logo.jpg"
+import GoogleIcon from '@mui/icons-material/Google';
 
 export const Login = () => {
   //aparecen en blanco cada campo
@@ -108,7 +109,7 @@ export const Login = () => {
         className="botn2"
         onClick={handleWithGoogleSignin}
       >
-        Inicia sesión con Google
+        Inicia sesión con Google <GoogleIcon/>
         </button>
         </center>
       <br />
