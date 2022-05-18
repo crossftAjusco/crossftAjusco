@@ -40,9 +40,9 @@ const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
       <Modal.Body>
         <Form >
           <Form.Group className="mb-3" >
-            <Form.Label controlId={tipo}>{tipo}</Form.Label>
+            <Form.Label controlid={tipo}>{tipo}</Form.Label>
             <Form.Control
-              controId={tipo}
+              controlid={tipo}
               placeholder={data}
               autoFocus 
               onChange={(e) => setUserData (e.target.value)}
@@ -54,7 +54,7 @@ const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
         <Button variant="secondary" onClick={handleClose}>
           Cancelar
         </Button>
-        <Button variant="primary" onClick={updateA}  controlId={tipo} type="submit">
+        <Button variant="primary" onClick={updateA} controlid={tipo} type="submit">
           Guardar cambios
         </Button>
       </Modal.Footer>
