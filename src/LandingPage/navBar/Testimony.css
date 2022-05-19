@@ -1,0 +1,39 @@
+.testimonial .slick-arrow.slick-prev,
+.testimonial .slick-arrow.slick-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
+
+.slick-arrow.slick-next {
+  right: -70px;
+}
+.slick-arrow.slick-prev {
+  left: -70px;
+}
+.testimonial .slick-dots li button:before {
+  font-size: 15px;
+}
+
+.testimonial .slick-dots li {
+  top: 15px;
+}
+.testimonial {
+  background-image: url("../../assets/lp_imgs/Login.jpg");
+}
+
+.marker {
+  color: rgb(210, 153, 11);
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-size: 29px;
+}
