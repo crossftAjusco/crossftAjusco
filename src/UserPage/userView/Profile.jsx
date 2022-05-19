@@ -27,7 +27,8 @@ const Profile = () => {
     const [ users, setUsers ] = useState([]);
     const [tipo, setTipo] = useState('');
     const [data, setData] = useState('');
-    const [modalUserData, setModalUserData] = useState({});
+    const [modalUserData, setModalUserData] = useState([]);
+    const [arrFilt, setArrFilt] = useState([]);
     const [show, setShow] = useState(false); //hoock para la ventana modal desactivada
     const handleShow = () => setShow(true);  //hoock para la ventana modal activada
   
@@ -35,12 +36,7 @@ const Profile = () => {
      //console.log('paso')
     
     setModalUserData ({
-      teléfono: user[0].phone,
-      email: user[0].email, 
-      alergias: user[0].alergies,
-      injuries: user[0].injuries,
-      height: user[0].height,
-      id: user[0].id
+     
     }) 
     console.log('paso2')
     handleShow();
@@ -55,15 +51,19 @@ const Profile = () => {
           console.log(doc.id)
           info = doc.data()
           info.id = doc.id
-          console.log(doc.id)
+          console.log(info.id)
           return true
         }
+       
       });
-    
+     
+      
+
        setUsers(info)
       
     });
-
+    
+    
      return () =>  {
        unsub();
        
@@ -78,7 +78,7 @@ const Profile = () => {
   
   return (
     <>
-    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={users} data={data} />  
+    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={users} data={data} id="modal1" />  
     <div>
     <div className="title1">
     <h2>Mi Perfil</h2>
@@ -102,18 +102,10 @@ const Profile = () => {
                   contraseña contacta a tu coach.
                 </p>
                 <Divider component="li" />
-                <li>
-                  <Typography
-                    sx={{ mt: 0.5, ml: 2 }}
-                    color="text.secondary"
-                    display="block"
-                    variant="caption"
-                  >
-                  </Typography>
-                </li>
-                <ListItem>
+                
+                <ListItem id="item1">
                   <ListItemText  primary="Teléfono:" secondary={users.phone} />
-                  <Button id="btn1" size="large" variant="success"  
+                  <Button id="btn1"  size="large" variant="success"  
                   onClick={()=> {
                     handleClick()
                     setTipo('Teléfono')
@@ -122,8 +114,12 @@ const Profile = () => {
                     <ModeEditOutlineIcon/>
                   </Button>
                 </ListItem>
+
+
                 <Divider component="li" />    
-                <ListItem>
+                <ListItem id="item2">
+
+                  
                   <ListItemText primary="Alergias:" secondary={users.allergies} />
                   <Button id="btn1" size="large" variant="success"  
                   onClick={()=> {
