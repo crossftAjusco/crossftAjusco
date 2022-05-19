@@ -8,6 +8,12 @@ import img5 from "../../assets/lp_imgs/celebrate.jpg";
 import img6 from "../../assets/lp_imgs/spartan.jpg";
 import img7 from "../../assets/lp_imgs/team.jpg";
 import img8 from "../../assets/lp_imgs/trainning.jpg";
+import img9 from "../../assets/lp_imgs/ballalo.jpg";
+import img10 from "../../assets/lp_imgs/ligas.jpg";
+import img11 from "../../assets/lp_imgs/pesas.jpg";
+import img12 from "../../assets/lp_imgs/ringCF.jpg";
+import img13 from "../../assets/lp_imgs/rope.jpg";
+
 {
   /*Este componente aparece en la página de inicio y contiene las imagenes
 representativas del negocio, con una pequeña descripción */
@@ -69,12 +75,12 @@ const Carrousel = () => {
       <Carousel.Item>
         <img className="picture" src={img6} alt="Third slide" />
         <Carousel.Caption className="carousel-caption carousel-label">
-          <h3>
+          <h3>Participé en eventos de Crossfit como el Spartan Race</h3>
+          <p>
             Cuento con una amplía trayectoria en la enseñanza y capacitacion
             deportiva y certificaciones avaladas por CONAE (Colegio Nacional de
             Entrenadores)
-          </h3>
-          <p>Participé en eventos de Crossfit como el Spartan Race</p>
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -87,12 +93,56 @@ const Carrousel = () => {
       </Carousel.Item>
 
       <Carousel.Item>
+        <img className="picture" src={img9} alt="Third slide" />
+        <Carousel.Caption className="carousel-caption carousel-label">
+          <h3>Conoce nuestras instalaciones</h3>
+          <p>Visítanos cuando gustes, o contáctanos vía telefónica</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img className="picture" src={img10} alt="Third slide" />
+        <Carousel.Caption className="carousel-caption carousel-label">
+          <h3>
+            Contamos con una diversidad de herramientas para un entrenamiento
+            completo
+          </h3>
+          <p></p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img className="picture" src={img11} alt="Third slide" />
+        <Carousel.Caption className="carousel-caption carousel-label">
+          <h3>Entrenar en equipo es más divertido</h3>
+          <p>Contamos con diversidad de pesas</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img className="picture" src={img12} alt="Third slide" />
+        <Carousel.Caption className="carousel-caption carousel-label">
+          <h3>Los entrenamientos son dinámicos y variados</h3>
+          <p>¡Nunca te aburrirás!</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img className="picture" src={img13} alt="Third slide" />
+        <Carousel.Caption className="carousel-caption carousel-label">
+          <h3>
+            También contamos con espacio necesario para entrenar al aire libre
+          </h3>
+          <p></p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item>
         <img className="picture" src={img8} alt="Third slide" />
         <Carousel.Caption className="carousel-caption carousel-label">
           <h3>¡Visítanos!</h3>
           <p>
-            Agenda una cita vía{" "}
-            <i class="fas fa-whatsapp-square    ">WhatsApp</i>
+            Agenda una cita vía <i class="fas fa-whatsapp-square">WhatsApp</i>
           </p>
         </Carousel.Caption>
       </Carousel.Item>

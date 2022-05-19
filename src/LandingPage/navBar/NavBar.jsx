@@ -74,13 +74,18 @@ export const Navigation = () => {
           <Nav className="me-auto">
             <NavDropdown title="¿Quiénes somos?" id="collasible-nav-dropdown">
               <tr>
-                <Link to="/acerca_de">Acerca de</Link>
+                <Link className="underline" to="/acerca_de">
+                  Acerca de
+                </Link>
               </tr>
               <tr>
                 <Link to="/coach">Coach</Link>
               </tr>
               <tr>
-                <Link to="/precios">Precio</Link>
+                <Link to="/tarifas">Tarifas</Link>
+              </tr>
+              <tr>
+                <Link to="/testimonios">Testimonios</Link>
               </tr>
             </NavDropdown>
             {/* 
