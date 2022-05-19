@@ -9,7 +9,7 @@ import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 const PreviousBtn = (props) => {
   const { className, onClick } = props;
   return (
-    <div className={className} onclick={onClick}>
+    <div className={className} onClick={onClick}>
       <ArrowBackIos style={{ color: "gray", fontSize: "45px" }} />
     </div>
   );
@@ -24,26 +24,42 @@ const NextBtn = (props) => {
   );
 };
 const Testimony = () => {
+  const laura = `Es el mejor lugar para entrenar, gracias a la metodologia del
+  profesor logre romper mis limites, ahora voy por mi segundo maraton y esta vez voy
+  por el primer lugar`;
   return (
-    <div
-      className="testimonial"
-      style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
-    >
-      <div style={{ width: "50%", textAlign: "center" }}>
-        <h1 style={{ marginBottom: 20 }}>Testimonios</h1>
-        <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
-          <Card img="https://i.ibb.co/g4mnQr1/Captura-de-pantalla-2022-05-18-a-la-s-14-10-17.png" />
-          <Card img="https://hagadone.media.clients.ellingtoncms.com/ARTICLE_190629924_AR_0_VKRMBLFPLLVN_t1170.jpg?5cc718665ab672dba93d511ab4c682bb370e5f86" />
-          <Card img="https://lionsheadcf.com/wp-content/uploads/2020/08/lindsay-davis-scaled.jpg" />
-        </Slider>
+    <section className="wall">
+      <div
+        className="testimonial"
+        style={{ display: "flex", justifyContent: "center", marginTop: 0 }}
+      >
+        <div style={{ width: "50%", textAlign: "center" }}>
+          <h1 className="marker" style={{ marginBottom: 20 }}>
+            Testimonios
+          </h1>
+          <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
+            <Card
+              img="https://i.ibb.co/g4mnQr1/Captura-de-pantalla-2022-05-18-a-la-s-14-10-17.png"
+              content={laura}
+            />
+            <Card img="https://hagadone.media.clients.ellingtoncms.com/ARTICLE_190629924_AR_0_VKRMBLFPLLVN_t1170.jpg?5cc718665ab672dba93d511ab4c682bb370e5f86" />
+            <Card img="https://lionsheadcf.com/wp-content/uploads/2020/08/lindsay-davis-scaled.jpg" />
+          </Slider>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-const Card = ({ img }) => {
+const Card = ({ img, content }) => {
+  const vania = `Lalo es una persona muy preparada que sabe lo que hace al planear y
+        estructurar los entrenamientos, definitivamente una persona regresa al
+        tomar una clase de prueba. Es dinámico, nada rutinario y siempre hay
+        algo qué aprender para perfeccionar las técnicas. CrossFT es mi lugar
+        favorito para ponerme en forma!`;
   return (
     <div
+      content={content}
       style={{
         display: "flex",
         alignItems: "center",
@@ -55,14 +71,21 @@ const Card = ({ img }) => {
         imgProps={{ style: { borderRadius: "50%" } }}
         src={img}
         style={{
-          width: 120,
-          height: 120,
+          width: 100,
+          height: 100,
           border: "1px solid lightgray",
-          padding: 7,
-          marginBottom: 20,
+          padding: 5,
+          marginBottom: 15,
         }}
       />
-      <p>texto</p>
+
+      {/*<p style={{ color: "white", fontFamily: "monospace" }}>
+        Lalo es una persona muy preparada que sabe lo que hace al planear y
+        estructurar los entrenamientos, definitivamente una persona regresa al
+        tomar una clase de prueba. Es dinámico, nada rutinario y siempre hay
+        algo qué aprender para perfeccionar las técnicas. CrossFT es mi lugar
+        favorito para ponerme en forma!
+      </p>
       <p
         style={{
           fontWeight: 400,
@@ -71,8 +94,8 @@ const Card = ({ img }) => {
           marginTop: 25,
         }}
       >
-        <span>nombre de la persona </span>, texto
-      </p>
+        <span>Vania Ramírez </span>, Frontend Developer Sr.
+      </p>*/}
     </div>
   );
 };

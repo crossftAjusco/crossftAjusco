@@ -27,3 +27,13 @@
 .testimonial .slick-dots li {
   top: 15px;
 }
+.testimonial {
+  background-image: url("../../assets/lp_imgs/Login.jpg");
+}
+
+.marker {
+  color: rgb(210, 153, 11);
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-size: 29px;
+}
