@@ -4,9 +4,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
 import StraightenIcon from '@mui/icons-material/Straighten';
 import Button from 'react-bootstrap/Button';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
@@ -23,21 +21,20 @@ import app from "../../firebase";
 const db = getFirestore(app);
 
 const Profile = () => {
-    const { user } = useAuth();
-    const [ users, setUsers ] = useState([]);
-    const [tipo, setTipo] = useState('');
+    const { user } = useAuth();  //Hoock para comprobar la autenticación del usuario 
+    const [ users, setUsers ] = useState([]); //Hoock para traer la data del usuario logueado del
+    const [tipo, setTipo] = useState(''); 
     const [data, setData] = useState('');
     const [modalUserData, setModalUserData] = useState([]);
-    const [arrFilt, setArrFilt] = useState([]);
+    const [arrFilt, setArrFilt] = useState([]);//hoock para el arreglo con los datos a utilizar en el modal
     const [show, setShow] = useState(false); //hoock para la ventana modal desactivada
-    const handleShow = () => setShow(true);  //hoock para la ventana modal activada
+    const handleShow = () => setShow(true);  //hoock para la ventana modal activada al dar click
   
   const handleClick = (e) => {
      //console.log('paso')
-    
     setModalUserData ({
-     
     }) 
+  
     console.log('paso2')
     handleShow();
   }
@@ -62,6 +59,8 @@ const Profile = () => {
        setUsers(info)
       
     });
+
+    
     
     
      return () =>  {
