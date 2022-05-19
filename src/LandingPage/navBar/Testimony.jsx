@@ -51,7 +51,7 @@ const Testimony = () => {
   );
 };
 
-const Card = ({ img, content }) => {
+const Card = ({ img }) => {
   const vania = `Lalo es una persona muy preparada que sabe lo que hace al planear y
         estructurar los entrenamientos, definitivamente una persona regresa al
         tomar una clase de prueba. Es dinámico, nada rutinario y siempre hay
@@ -59,7 +59,6 @@ const Card = ({ img, content }) => {
         favorito para ponerme en forma!`;
   return (
     <div
-      content={content}
       style={{
         display: "flex",
         alignItems: "center",
