@@ -21,53 +21,57 @@ import app from "../../firebase";
 const db = getFirestore(app);
 
 const Profile = () => {
-    const { user } = useAuth();  //Hoock para comprobar la autenticación del usuario 
-    const [ users, setUsers ] = useState([]); //Hoock para traer la data del usuario logueado del
-    const [tipo, setTipo] = useState(''); 
-    const [data, setData] = useState('');
-    const [modalUserData, setModalUserData] = useState([]);
-    const [arrFilt, setArrFilt] = useState([]);//hoock para el arreglo con los datos a utilizar en el modal
+    const { user } = useAuth();  // Hoock para comprobar la autenticación del usuario 
+    const [ users, setUsers ] = useState({}); //Hoock para traer la data del usuario logueado
+    const [tipo, setTipo] = useState('');
+    const [data, setData] = useState({});
+    const [modalUserData, setModalUserData] = useState({});
     const [show, setShow] = useState(false); //hoock para la ventana modal desactivada
     const handleShow = () => setShow(true);  //hoock para la ventana modal activada al dar click
   
   const handleClick = (e) => {
      //console.log('paso')
     setModalUserData ({
+      
     }) 
-  
     console.log('paso2')
     handleShow();
   }
 
  useEffect(() => {
     let info = {}
+    
     const q = query(collection(db,"Users"));
     const unsub = onSnapshot(q, (snap) => {
       const array = snap.docs.filter((doc) => {
          if(user.email === doc.data().email) {
-          console.log(doc.id)
+          //console.log(doc.id)
           info = doc.data()
           info.id = doc.id
-          console.log(info.id)
+          //console.log(info.id)
           return true
         }
-       
       });
-     
-      
-
-       setUsers(info)
-      
+       //setUsers(info)
+       console.log(info)     //Comprobamos que el objeto trae toda la data del usuario  
+       console.log(info.phone)   // Comprobamos que se puede acceder a la key del objeto
+       let filtArr = {
+        phone: info.phone,          
+        allergies: info.allergies,
+        injuries: info.injuries,
+        height: info.height,
+        weight: info.weight,
+        waist: info.waist,
+        neck: info.neck
+      }
+      console.log(filtArr) //Comprobamos que el nuevo objeto con la data a utilizar en el modal
+      setUsers(filtArr)
     });
-
-    
-    
-    
      return () =>  {
        unsub();
-       
     };
-  }, []);
+  }, 
+  []);
 
  
  
@@ -77,7 +81,7 @@ const Profile = () => {
   
   return (
     <>
-    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={users} data={data} id="modal1" />  
+    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={modalUserData} data={data} id="modal1" />  
     <div>
     <div className="title1">
     <h2>Mi Perfil</h2>
@@ -101,34 +105,24 @@ const Profile = () => {
                   contraseña contacta a tu coach.
                 </p>
                 <Divider component="li" />
-                
-                <ListItem id="item1">
-                  <ListItemText  primary="Teléfono:" secondary={users.phone} />
-                  <Button id="btn1"  size="large" variant="success"  
-                  onClick={()=> {
-                    handleClick()
-                    setTipo('Teléfono')
-                    setData(users.phone)
-                  }}> 
-                    <ModeEditOutlineIcon/>
-                  </Button>
-                </ListItem>
+                {  Object.keys(users).map((Key,i)=> {
+                  return (
+                    <ListItem> 
+                     <ListItemText key={i} primary={[Key]} secondary={users[Key]} />
+                        <Button key={users[i]} id="btn1" size="large" variant="success"
 
-
-                <Divider component="li" />    
-                <ListItem id="item2">
-
-                  
-                  <ListItemText primary="Alergias:" secondary={users.allergies} />
-                  <Button id="btn1" size="large" variant="success"  
-                  onClick={()=> {
-                    handleClick()
-                    setTipo('Alergias')
-                    setData(users.allergies)
-                  }}>
-                    <ModeEditOutlineIcon/>
-                  </Button>
-                </ListItem>
+                        onClick={()=> {
+                          handleClick()
+                          setTipo([Key])
+                          setData(users[Key])
+                        }
+                         } >
+                          <ModeEditOutlineIcon/>
+                        </Button>    
+                    </ListItem>
+                    )
+                })
+              }                
               </List> 
             </ScrollableFeed>   
             </Paper> 
