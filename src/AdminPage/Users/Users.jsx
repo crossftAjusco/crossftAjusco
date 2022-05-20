@@ -25,8 +25,8 @@ import { ClassNames } from '@emotion/react';
 import './Users.css'
 import { yellow } from '@mui/material/colors';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 function searchingTerm(term) {
   return function (x) {
@@ -58,7 +58,11 @@ function Row(users) {
             </Grid>
             <Grid lg={5}>
               <Typography>{row.name} {row.lastname}</Typography>
-              <Typography color="textSecondary" variant="body2">{row.email}</Typography>
+              <a href={`mailto:${row.email}?subject=Ajusco-CrossFt.%20&body=Buen%20día%20somos%20Ajusco-CrossFt...`} title="Enviar Email">
+                <Typography color="textSecondary" variant="body2">
+                  {row.email}
+                </Typography>
+              </a> 
             </Grid>
           </Grid>
         </TableCell>
