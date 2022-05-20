@@ -26,6 +26,7 @@ import './Users.css'
 import { yellow } from '@mui/material/colors';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 function searchingTerm(term) {
   return function (x) {
@@ -63,8 +64,18 @@ function Row(users) {
         </TableCell>
         <TableCell >
           <Grid>
-            <a href={`https://api.whatsapp.com/send?phone=52${row.phone}&text=¡Hola!%20Somos%20AjuscoCrossFT...%20`} target="_blank" > <Typography color="textPrimary" variant="body2"><WhatsAppIcon className="activate" color="success"/> {row.phone}</Typography></a>
-            <Typography color="textSecondary" variant="body2"><ContentCopyIcon/> {row.phone_contact}</Typography>
+            <a href={`https://api.whatsapp.com/send?phone=52${row.phone}&text=¡Hola!%20Somos%20AjuscoCrossFT...%20`} target="_blank" title="Enviar WhatsApp">
+              <Typography color="textPrimary" variant="body2">
+                <WhatsAppIcon className="activate" color="success" />
+                {row.phone}
+              </Typography>
+            </a>
+            <a href={`tel:${row.phone_contact}`}  className="llamar" title="Llamar contacto">
+              <Typography color="textPrimary" variant="body2">
+              <LocalPhoneIcon />
+                {row.phone_contact}
+              </Typography>
+              </a>
           </Grid>
         </TableCell>
         <TableCell>{row.gender}</TableCell>
