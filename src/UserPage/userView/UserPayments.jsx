@@ -67,10 +67,9 @@ export const UserPayments = () => {
     );
   
   return (
-    
     <>        
     <div className="title1">  
-    <h2>Mis Pagos HELLOW MICHES PAL SABADO 28 CIELA HUUUU6</h2>
+    <h2>Mis Pagos </h2>
     </div>   
         <Box sx={{ display: "flex" }}>
           <Container maxWidth="lg" className="cont1">
