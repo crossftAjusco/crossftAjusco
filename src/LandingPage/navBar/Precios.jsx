@@ -1,17 +1,15 @@
 import React from "react";
 import "./Precios.css";
-import mensualidad from "../../assets/lp_imgs/mensualidad.png";
-import visita from "../../assets/lp_imgs/visit.png";
-import focus from "../../assets/lp_imgs/training.png";
-import nutri from "../../assets/lp_imgs/nutri.png";
+import mensualidad from "../../assets/lp_imgs/estandar.jpg";
+import enfocado from "../../assets/lp_imgs/enfocado.jpg";
+import nutri from "../../assets/lp_imgs/nutriconComp.jpg";
 
 const Precios = () => {
   return (
     <div className="cost">
-      <img src={mensualidad} alt="month" />
-      <img src={visita} alt="visit" />
-      <img src={focus} alt="focus" />
-      <img src={nutri} alt="nutrition" />
+      <img className="pricestyle" src={mensualidad} alt="month" />
+      <img src={enfocado} alt="visit" />
+      <img src={nutri} alt="focus" />
     </div>
   );
 };
