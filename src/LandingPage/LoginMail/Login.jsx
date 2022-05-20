@@ -111,31 +111,30 @@ export const Login = () => {
             Inicia sesión con Email  <MailOutlineIcon/>
           </Button>
         <Form.Group>
-          {showEdit ? null : (
-              <>
-              <form onSubmit={handleSubmit} className="form">
-          <label htmlFor="email" className="tittle">Email:</label><br />
-          <input
-            type="email"
-            name="email"
-            placeholder="ejemplo_123@mail.com"
-            onChange={handleChange}
-          ></input>
-          <br />
-          <label htmlFor="password" className="tittle">Contraseña:</label><br />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            onChange={handleChange}
-            placeholder="Contraseña" />
-          <br /><center>
-            <button className="botn"> Entrar </button>
-          </center>
+          {showEdit ? null : (<>
+            <form onSubmit={handleSubmit} className="form">
+              <label htmlFor="email" className="tittle">Email:</label><br />
+              <input
+                type="email"
+                name="email"
+                placeholder="ejemplo_123@mail.com"
+                onChange={handleChange}
+              ></input>
+              <br />
+              <label htmlFor="password" className="tittle">Contraseña:</label><br />
+              <input
+                type="password"
+                name="password"
+                id="password"
+                onChange={handleChange}
+                placeholder="Contraseña" />
+              <br /><center>
+              <button className="botn"> Entrar </button>
+              </center>
               </form>
               <a href="#!" onClick={handleResetPassword} className="ancla">
-          ¿Olvidaste tu contraseña?{" "}
-        </a>
+                ¿Olvidaste tu contraseña?{" "}
+              </a>
               </>
           )}
           </Form.Group>
