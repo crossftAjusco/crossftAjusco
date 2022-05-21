@@ -18,7 +18,7 @@ const InfoGeneral = () => {
     <div>
       <section className="Info">
         <div className="details">
-          <h4>
+          <h4 className="slogan">
             <i>Entrena para ser fuerte, no solo para parecerlo</i>
           </h4>
           <br />
