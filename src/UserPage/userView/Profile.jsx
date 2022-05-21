@@ -62,7 +62,7 @@ const Profile = () => {
         height: info.height,
         weight: info.weight,
         waist: info.waist,
-        neck: info.neck
+        neck: info.neck,
       }
       console.log(filtArr) //Comprobamos que el nuevo objeto con la data a utilizar en el modal
       setUsers(filtArr)
@@ -110,7 +110,6 @@ const Profile = () => {
                     <ListItem> 
                      <ListItemText key={i} primary={[Key]} secondary={users[Key]} />
                         <Button key={users[i]} id="btn1" size="large" variant="success"
-
                         onClick={()=> {
                           handleClick()
                           setTipo([Key])
