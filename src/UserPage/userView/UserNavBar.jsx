@@ -39,9 +39,9 @@ export const mainListItems = (
       </NavLink>
       <NavLink to='comunidad'>
         <Tooltip title='Comunidad'>
-         <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-           <PeopleIcon size='large' />
-         </IconButton>
+        <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+          <PeopleIcon size='large' />
+        </IconButton>
         </Tooltip>
       </NavLink>
       <NavLink to='pagos'>
