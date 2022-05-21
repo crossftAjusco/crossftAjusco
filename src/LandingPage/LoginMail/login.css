@@ -35,10 +35,12 @@
 
 .titulo{
   color: whitesmoke;
+  font-family: 'Allerta Stencil', sans-serif;
   margin-top: 4vh;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   padding: 0.7vh auto;
   text-shadow: #191503fc 4px 5px 2px;
+
 }
 
 .tittle{
