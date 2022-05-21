@@ -28,13 +28,23 @@ const Profile = () => {
     const [modalUserData, setModalUserData] = useState({});
     const [show, setShow] = useState(false); //hoock para la ventana modal desactivada
     const handleShow = () => setShow(true);  //hoock para la ventana modal activada al dar click
+    const [userId, setId] = useState('')
   
   const handleClick = (e) => {
-     //console.log('paso')
+     console.log(users.phone)
     setModalUserData ({
+      phone: users.phone,
+      allergies: users.allergies,
+      injuries: users.injuries,
+      height: users.height,
+      weight: users.weight,
+      waist: users.waist,
+      neck: users.neck,
       
     }) 
     console.log('paso2')
+    
+    console.log(user)
     handleShow();
   }
 
@@ -53,8 +63,9 @@ const Profile = () => {
         }
       });
        //setUsers(info)
+       setId(info.id)
        console.log(info)     //Comprobamos que el objeto trae toda la data del usuario  
-       console.log(info.phone)   // Comprobamos que se puede acceder a la key del objeto
+       console.log(info.id)   // Comprobamos que se puede acceder a la key del objeto
        let filtArr = {
         phone: info.phone,          
         allergies: info.allergies,
@@ -64,24 +75,20 @@ const Profile = () => {
         waist: info.waist,
         neck: info.neck
       }
+      
       console.log(filtArr) //Comprobamos que el nuevo objeto con la data a utilizar en el modal
       setUsers(filtArr)
     });
      return () =>  {
        unsub();
     };
-  }, 
-  []);
+  },[]);
 
- 
- 
-  
   console.log(users)
-  
   
   return (
     <>
-    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={modalUserData} data={data} id="modal1" />  
+    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={modalUserData} data={data} id={userId} />  
     <div>
     <div className="title1">
     <h2>Mi Perfil</h2>
@@ -105,12 +112,11 @@ const Profile = () => {
                   contraseña contacta a tu coach.
                 </p>
                 <Divider component="li" />
-                {  Object.keys(users).map((Key,i)=> {
+                {Object.keys(users).map((Key,i)=> {
                   return (
                     <ListItem> 
                      <ListItemText key={i} primary={[Key]} secondary={users[Key]} />
                         <Button key={users[i]} id="btn1" size="large" variant="success"
-
                         onClick={()=> {
                           handleClick()
                           setTipo([Key])
