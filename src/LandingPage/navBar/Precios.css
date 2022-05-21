@@ -1,3 +1,38 @@
 .cost {
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sect {
   background-image: url("../../assets/lp_imgs/Login.jpg");
+  align-items: center;
+  padding-top: 7px;
+}
+.sloggi {
+  color: rgb(210, 153, 11);
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-size: 28px;
+  justify-content: center;
+}
+
+.pricestyle {
+  height: 470px;
+  width: 350px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+.sizeprice {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 7px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.pricestyle .sizeprice:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
