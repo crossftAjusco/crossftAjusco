@@ -33,16 +33,15 @@ const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
     return(
         <>
         <div>
-        <Modal show={show} onHide={handleClose} key={modalUserData.id} id="modal1">
+        <Modal show={show} onHide={handleClose} key={modalUserData.id}>
       <Modal.Header>
         <Modal.Title>Cambiar Datos:</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form >
           <Form.Group className="mb-3" >
-            <Form.Label controlId={tipo}>{tipo}</Form.Label>
+            <Form.Label>{tipo}</Form.Label>
             <Form.Control
-              controId={tipo}
               placeholder={data}
               autoFocus 
               onChange={(e) => setUserData (e.target.value)}
@@ -54,7 +53,7 @@ const UserModal = ({show, setShow, modalUserData, tipo, data}) => {
         <Button variant="secondary" onClick={handleClose}>
           Cancelar
         </Button>
-        <Button variant="primary" onClick={updateA}  controlId={tipo} type="submit">
+        <Button variant="primary" onClick={updateA} type="submit" >
           Guardar cambios
         </Button>
       </Modal.Footer>
