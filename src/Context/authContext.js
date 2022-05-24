@@ -10,7 +10,7 @@ import {
   signInWithPopup,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { collection, getDocs, getFirestore, query, where, onSnapshot } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, where, onSnapshot, doc } from "firebase/firestore";
 import app from "../firebase";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
@@ -54,19 +54,27 @@ export const AuthProvider = ({ children }) => {
 //permite navegar entre rutas
   const navigate = useNavigate();
 //función que permite ver los datos de los usuarios registrados desde fb
-  async function traerUsers() {
-    const coleccRef = collection(firestore, "Users");
-    const users = [];
-    const querySnapshot = await getDocs(coleccRef); 
-    querySnapshot.forEach((doc) => {
-      let user = doc.data();
-      user.id = doc.id;
-      users.push(user);
-    });
-    return users;
-  }
+  // async function traerUsers() {
+  //   const q = query(collection(firestore, 'Users'));
+  //   const users = [];
+  //   const unSubscribe = onSnapshot(q, (snap) => {
+  //     const array = snap.forEach((doc) => {
+  //       users.push(doc.data())
+  //     });
+      
+  //   });
+  //   return users;
+  // }
 
   useEffect(() => {
+    const q = query(collection(firestore, 'Users'));
+    const users = [];
+    const unSubscribe = onSnapshot(q, (snap) => {
+      const array = snap.forEach((doc) => {
+        users.push(doc.data())
+      });
+    });
+
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       //Permite ver los datos del usuario "logueado"
       //console.log(currentUser.email)
@@ -74,11 +82,12 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     });
     async function traerColl() {
-      const usersObtenidos = await traerUsers();
+      const usersObtenidos = users;
+      // console.log(usersObtenidos);
       setUsers(usersObtenidos);
     }
     traerColl();
-    return () => unsubscribe;
+    return () => unsubscribe && unSubscribe;
   }, []);
 
   return (
