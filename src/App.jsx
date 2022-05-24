@@ -21,7 +21,6 @@ import { UserDash } from "./UserPage/userView/UserDash.jsx";
 import { UserRules } from "./UserPage/userView/UserRules.jsx";
 import InfoGeneral from "./LandingPage/navBar/InfoGeneral.jsx";
 import Precios from "./LandingPage/navBar/Precios";
-import Health from "./LandingPage/navBar/Health.jsx";
 import Biopic from "./LandingPage/navBar/Biopic.jsx";
 import Testimony from "./LandingPage/navBar/Testimony.jsx";
 
@@ -35,30 +34,13 @@ const App = () => {
           <div className="middle-component">
             <Routes>
               <Route index element={<Home />} />
-              <Route path="/crossftAjusco" element={<Home />} />
-              {/*<Route
-                path="/"
-                element={
-                  <Navigate to="/crossftajusco.github.io/crossftAjusco" />
-                }
-              />
-              <Route
-                path="/crossftajusco.github.io/crossftAjusco"
-                element={<Home />} 
 
-              <Route
-                path="/crossftajusco.github.io/crossftAjusco/home"
-                element={<Home />}
-              />*/}
               <Route path="login" element={<Login />} />
               <Route path="acerca_de" element={<InfoGeneral />} />
               <Route path="coach" element={<Biopic />} />
               <Route path="tarifas" element={<Precios />} />
               <Route path="testimonios" element={<Testimony />} />
-              <Route
-                path="/crossftajusco.github.io/crossftAjusco/recomendaciones_de_salud"
-                element={<Health />}
-              />
+
               <Route
                 path="/admin/*"
                 element={

@@ -8,7 +8,11 @@
   z-index: 1;
   border-radius: 5px;
 }
-
+.pghp {
+  font-family: "Saira Condensed", sans-serif;
+  color: azure;
+  font-size: 16px;
+}
 .slick-prev::before,
 .slick-next::before {
   display: none;

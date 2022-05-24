@@ -30,7 +30,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 function searchingTerm(term) {
   return function (x) {
-    console.log(x)
+    // console.log(x)
     return x.name.toLowerCase().includes(term) || !term
   }
 };
@@ -155,7 +155,7 @@ function Row(users) {
 
 export default function CollapsibleTable() {
   const { users } = useAuth()
-  console.log(users)
+  // console.log(users)
 
   const [usuarios, setUsuarios] = React.useState([]);
   const [term, setTerm] = React.useState("");
