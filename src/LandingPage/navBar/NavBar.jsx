@@ -50,7 +50,7 @@ export const Navigation = () => {
   const handleLogout = async () => {
     await logout();
     setAdmin(false);
-    navigate("/home");
+    navigate("/");
   };
 
   const handleUser = () => {

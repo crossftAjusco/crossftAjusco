@@ -1,7 +1,4 @@
 import * as React from 'react';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import PersonIcon from '@mui/icons-material/Person';
 import PeopleIcon from '@mui/icons-material/People';
@@ -42,9 +39,9 @@ export const mainListItems = (
       </NavLink>
       <NavLink to='comunidad'>
         <Tooltip title='Comunidad'>
-         <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
-           <PeopleIcon size='large' />
-         </IconButton>
+        <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+          <PeopleIcon size='large' />
+        </IconButton>
         </Tooltip>
       </NavLink>
       <NavLink to='pagos'>

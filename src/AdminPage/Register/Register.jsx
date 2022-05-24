@@ -196,11 +196,11 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
                       component={() => (
                         <div className="error">{errors.gender}</div> )} />
                       <label className="check">
-                        <Field type="radio" name="gender" value="femenino" />
+                        <Field type="radio" name="gender" value="Femenino" />
                         femenino
                       </label>
                       <label className="check">
-                        <Field type="radio" name="gender" value="masculino" />
+                        <Field type="radio" name="gender" value="Masculino" />
                         masculino
                     </label>
                   </div>
