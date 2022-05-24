@@ -104,7 +104,7 @@ const Carrousel = () => {
         <img className="picture" src={img10} alt="Third slide" />
         <Carousel.Caption className="carousel-caption carousel-label">
           <h3>
-            Contamos con una diversidad de herramientas para un entrenamiento
+            Contamos con el equipo necesario para brindarte un entrenamiento
             completo
           </h3>
           <p></p>
