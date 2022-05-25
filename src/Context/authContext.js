@@ -10,7 +10,7 @@ import {
   signInWithPopup,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { collection, getDocs, getFirestore, query, where, onSnapshot } from "firebase/firestore";
+import { collection, getDocs, getFirestore, query, where, onSnapshot, doc } from "firebase/firestore";
 import app from "../firebase";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
@@ -53,31 +53,30 @@ export const AuthProvider = ({ children }) => {
   };
 //permite navegar entre rutas
   const navigate = useNavigate();
-//función que permite ver los datos de los usuarios registrados desde fb
-  async function traerUsers() {
-    const coleccRef = collection(firestore, "Users");
-    const users = [];
-    const querySnapshot = await getDocs(coleccRef); 
-    querySnapshot.forEach((doc) => {
-      let user = doc.data();
-      user.id = doc.id;
-      users.push(user);
-    });
-    return users;
-  }
-
+  
   useEffect(() => {
+    const q = query(collection(firestore, 'Users'));
+    let usuarios = [];
+    setUsers(null);
+    const unSubscribe = onSnapshot(q, (snap) => {
+      const array = snap.forEach((doc) => {
+        return usuarios.push(doc.data());
+      });
+    });
+    console.log(usuarios)
+    setUsers(usuarios)
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       //Permite ver los datos del usuario "logueado"
       //console.log(currentUser.email)
       setUser(currentUser);
       setLoading(false);
     });
-    async function traerColl() {
-      const usersObtenidos = await traerUsers();
-      setUsers(usersObtenidos);
-    }
-    traerColl();
+    // function traerColl() {
+    //   const usersObtenidos = users;
+    //   console.log(usersObtenidos);
+    //   setUsers(usersObtenidos);
+    // }
+    // traerColl();
     return () => unsubscribe;
   }, []);
 

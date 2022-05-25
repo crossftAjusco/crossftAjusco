@@ -21,14 +21,15 @@ import app from "../../firebase";
 const db = getFirestore(app);
 
 const Profile = () => {
-    const { user } = useAuth();  // Hoock para comprobar la autenticación del usuario 
-    const [ users, setUsers ] = useState({}); //Hoock para traer la data del usuario logueado
-    const [tipo, setTipo] = useState('');
-    const [data, setData] = useState({});
-    const [modalUserData, setModalUserData] = useState({});
-    const [show, setShow] = useState(false); //hoock para la ventana modal desactivada
-    const handleShow = () => setShow(true);  //hoock para la ventana modal activada al dar click
-    const [userId, setId] = useState('')
+    const { user } = useAuth();  // Hook para comprobar la autenticación del usuario 
+    const [ users, setUsers ] = useState({}); //Hook para traer la data del usuario logueado
+    const [tipo, setTipo] = useState('');  //Hook para guardar el tipo de dato del modal
+    const [data, setData] = useState({});  //Hook guardar el dato del modal
+    const [Key, setKey] = useState('');  //Hook para pasar el numero dinamico del tipo de dato en la lista renderizada 
+    const [modalUserData, setModalUserData] = useState({}); // Hoock para guardar la data a ocupar en el modal de editar
+    const [show, setShow] = useState(false); //Hook para la ventana modal desactivada
+    const handleShow = () => setShow(true);  //Hook para la ventana modal activada al dar click
+    const [userId, setId] = useState('') //Hook para guardar el id del usuario
   
   const handleClick = (e) => {
      console.log(users.phone)
@@ -40,7 +41,6 @@ const Profile = () => {
       weight: users.weight,
       waist: users.waist,
       neck: users.neck,
-      
     }) 
     console.log('paso2')
     
@@ -88,7 +88,7 @@ const Profile = () => {
   
   return (
     <>
-    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={modalUserData} data={data} id={userId} />  
+    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={modalUserData} data={data} id={userId} keys={Key}/>  
     <div>
     <div className="title1">
     <h2>Mi Perfil</h2>
@@ -112,15 +112,19 @@ const Profile = () => {
                   contraseña contacta a tu coach.
                 </p>
                 <Divider component="li" />
-                {Object.keys(users).map((Key,i)=> {
+                {Object.keys(users).map((item,index)=> {
+                  const itemKey = `key-${index}`
+                  //console.log(itemKey)
+                  //console.log(typeof(itemKey))
                   return (
                     <ListItem> 
-                     <ListItemText key={i} primary={[Key]} secondary={users[Key]} />
-                        <Button key={users[i]} id="btn1" size="large" variant="success"
+                     <ListItemText key={itemKey} primary={[item]} secondary={users[item]} />
+                        <Button  id="btn1" size="large" variant="success"
                         onClick={()=> {
                           handleClick()
-                          setTipo([Key])
-                          setData(users[Key])
+                          setKey(itemKey)
+                          setTipo([item])
+                          setData(users[item])
                         }
                          } >
                           <ModeEditOutlineIcon/>
