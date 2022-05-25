@@ -13,7 +13,7 @@ import Menu from "@mui/material/Menu";
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
 import { useAuth } from "../../Context/authContext";
 import { useNavigate, NavLink, Link } from "react-router-dom";
-import Logo from "../../assets/lp_imgs/Logo.jpg";
+import Logo from "../../assets/lp_imgs/LogoZero.png";
 import "./NavBar.css";
 import {
   Avatar,
