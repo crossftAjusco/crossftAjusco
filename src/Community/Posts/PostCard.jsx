@@ -16,7 +16,7 @@ import { useAuth } from "../../Context/authContext";
 import { MenuEditDelete } from "./MenuEditDelete";
 import { Zoom } from "./Zoom";
 import { ViewerPDF } from "./ViewerPDF";
-import { Comments } from "../Comments/Comments";
+import { CreateComment } from "../Comments/CreateComment";
 import { CatchLink } from "./CatchLink";
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -170,7 +170,7 @@ export const PostCard = ({
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>
-              <Comments />
+              <CreateComment/>
             </Typography>
           </CardContent>
         </Collapse>
