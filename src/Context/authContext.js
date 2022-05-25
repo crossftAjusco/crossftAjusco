@@ -53,41 +53,31 @@ export const AuthProvider = ({ children }) => {
   };
 //permite navegar entre rutas
   const navigate = useNavigate();
-//función que permite ver los datos de los usuarios registrados desde fb
-  // async function traerUsers() {
-  //   const q = query(collection(firestore, 'Users'));
-  //   const users = [];
-  //   const unSubscribe = onSnapshot(q, (snap) => {
-  //     const array = snap.forEach((doc) => {
-  //       users.push(doc.data())
-  //     });
-      
-  //   });
-  //   return users;
-  // }
-
+  
   useEffect(() => {
     const q = query(collection(firestore, 'Users'));
-    const users = [];
+    let usuarios = [];
+    setUsers(null);
     const unSubscribe = onSnapshot(q, (snap) => {
       const array = snap.forEach((doc) => {
-        users.push(doc.data())
+        return usuarios.push(doc.data());
       });
     });
-
+    console.log(usuarios)
+    setUsers(usuarios)
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       //Permite ver los datos del usuario "logueado"
       //console.log(currentUser.email)
       setUser(currentUser);
       setLoading(false);
     });
-    async function traerColl() {
-      const usersObtenidos = users;
-      // console.log(usersObtenidos);
-      setUsers(usersObtenidos);
-    }
-    traerColl();
-    return () => unsubscribe && unSubscribe;
+    // function traerColl() {
+    //   const usersObtenidos = users;
+    //   console.log(usersObtenidos);
+    //   setUsers(usersObtenidos);
+    // }
+    // traerColl();
+    return () => unsubscribe;
   }, []);
 
   return (
