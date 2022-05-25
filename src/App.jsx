@@ -33,7 +33,8 @@ const App = () => {
 
           <div className="middle-component">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route index element={<Home />} />
+              <Route path="/crossftAjusco" element={<Home />} />
               <Route path="login" element={<Login />} />
               <Route path="acerca_de" element={<InfoGeneral />} />
               <Route path="coach" element={<Biopic />} />
