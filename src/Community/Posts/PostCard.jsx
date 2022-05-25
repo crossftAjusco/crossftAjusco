@@ -16,8 +16,9 @@ import { useAuth } from "../../Context/authContext";
 import { MenuEditDelete } from "./MenuEditDelete";
 import { Zoom } from "./Zoom";
 import { ViewerPDF } from "./ViewerPDF";
-import { CreateComment } from "../Comments/CreateComment";
+import { ReadComment } from "../Comments/ReadComment";
 import { CatchLink } from "./CatchLink";
+import { CreateComment } from "../Comments/CreateComment";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -46,6 +47,7 @@ export const PostCard = ({
   hour,
   minute,
   link,
+  comments
 }) => {
   const [expanded, setExpanded] = useState(false);
   const { user } = useAuth();
@@ -53,6 +55,8 @@ export const PostCard = ({
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+//console.log(comments)
 
   //Diferenciador tipos de archivos
   let pdfPost;
@@ -170,7 +174,19 @@ export const PostCard = ({
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>
-              <CreateComment/>
+              {/*------------------- Comentarios al post -----------------------*/}
+            <CreateComment idOrigin={id}/>
+            {comments.map((comment) => {
+              return(
+                <div key={comment.id}>
+                  {id === comment.idOrigin ? 
+                  <div>
+                    <div>{comment.comment}</div>
+                    <div>{comment.author}</div>
+                  </div> : null}
+              </div>
+              )
+            })}
             </Typography>
           </CardContent>
         </Collapse>

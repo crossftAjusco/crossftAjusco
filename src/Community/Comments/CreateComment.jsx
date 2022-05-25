@@ -6,7 +6,8 @@ import { useAuth } from '../../Context/authContext';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { db } from "../../firebase";
 
-export const CreateComment = () => {
+export const CreateComment = ({idOrigin}) => {
+    
     const { user } = useAuth();
     const [comment, setComment] = useState("")
 
@@ -30,6 +31,7 @@ export const CreateComment = () => {
                 date: date,
                 author: user.displayName,
                 avatar: user.photoURL,
+                idOrigin: idOrigin
             });
             console.log("Comment writen with ID: ", docRef.id)
         } catch (error) {
@@ -63,6 +65,11 @@ return (
             </FloatingLabel>
             {comment === "" ? null : <Button onClick={handleComment} size="small" variant="outlined" style={{float: "right", marginBottom: "3%"}}>Comentar</Button> }
         </Form>
+
+    {/*Lectura de comentarios condicionada según idOrigin de Post comentado*/}
+        <div>
+            {/*<ReadComment/>*/}
+        </div>
     </div>
 )
 }
