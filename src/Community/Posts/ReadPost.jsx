@@ -59,7 +59,7 @@ useEffect(() => {
       <div className="avatarAside">
         <Avatar
           src={user.photoURL}
-          sx={{ width: 24, height: 24, marginTop: '1%' }}
+          sx={{ width: 24, height: 24, marginTop: '320%' }}
         ></Avatar>
       </div>
       <div className="createPost">
