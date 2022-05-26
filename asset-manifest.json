@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/crossftAjusco/static/css/main.b6a482f4.css",
-    "main.js": "/crossftAjusco/static/js/main.c3d92cc2.js",
+    "main.css": "/crossftAjusco/static/css/main.08998d17.css",
+    "main.js": "/crossftAjusco/static/js/main.ff20d186.js",
     "static/js/787.0fac509b.chunk.js": "/crossftAjusco/static/js/787.0fac509b.chunk.js",
-    "static/media/Logo.jpg": "/crossftAjusco/static/media/Logo.74ce37c375a0e38db1bb.jpg",
+    "static/media/LogoZero.png": "/crossftAjusco/static/media/LogoZero.6842cdfeddb12dd19cda.png",
     "static/media/Login.jpg": "/crossftAjusco/static/media/Login.753fcc053b1eaa4e8ca4.jpg",
     "static/media/team.jpg": "/crossftAjusco/static/media/team.47e71952c611adaeb99c.jpg",
     "static/media/bosque.jpg": "/crossftAjusco/static/media/bosque.d8ef76a30c30014e300c.jpg",
@@ -16,7 +16,6 @@
     "static/media/newST.png": "/crossftAjusco/static/media/newST.63cbf731103ef8012708.png",
     "static/media/rope.jpg": "/crossftAjusco/static/media/rope.17da82cabcee814fefa9.jpg",
     "static/media/ringCF.jpg": "/crossftAjusco/static/media/ringCF.7f70efb09c769a0c7918.jpg",
-    "static/media/Eduardo Romero Flores.png": "/crossftAjusco/static/media/Eduardo Romero Flores.a81e465bb880ca606859.png",
     "static/media/pesas.jpg": "/crossftAjusco/static/media/pesas.00422af1c29a3b5d6deb.jpg",
     "static/media/focused.png": "/crossftAjusco/static/media/focused.ffa5478993268bd38cc9.png",
     "static/media/trainning.jpg": "/crossftAjusco/static/media/trainning.addc61738fbeea2ef1a4.jpg",
@@ -27,6 +26,7 @@
     "static/media/p3.jpg": "/crossftAjusco/static/media/p3.5769da027fff032ec880.jpg",
     "static/media/dip5V.jpeg": "/crossftAjusco/static/media/dip5V.63778721b9a02bfa72cf.jpeg",
     "static/media/p4.jpg": "/crossftAjusco/static/media/p4.c0b42b1f16401e7dac09.jpg",
+    "static/media/laloR.png": "/crossftAjusco/static/media/laloR.1ac88430aad9509a4326.png",
     "static/media/dip1V.jpeg": "/crossftAjusco/static/media/dip1V.5064516978e86b8de4ba.jpeg",
     "static/media/dip4H.jpeg": "/crossftAjusco/static/media/dip4H.8ac5c0e341de6aa975ba.jpeg",
     "static/media/dip3V.jpeg": "/crossftAjusco/static/media/dip3V.ddc2c55d213870acfe49.jpeg",
@@ -36,12 +36,12 @@
     "static/media/slick.ttf": "/crossftAjusco/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/crossftAjusco/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/crossftAjusco/index.html",
-    "main.b6a482f4.css.map": "/crossftAjusco/static/css/main.b6a482f4.css.map",
-    "main.c3d92cc2.js.map": "/crossftAjusco/static/js/main.c3d92cc2.js.map",
+    "main.08998d17.css.map": "/crossftAjusco/static/css/main.08998d17.css.map",
+    "main.ff20d186.js.map": "/crossftAjusco/static/js/main.ff20d186.js.map",
     "787.0fac509b.chunk.js.map": "/crossftAjusco/static/js/787.0fac509b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6a482f4.css",
-    "static/js/main.c3d92cc2.js"
+    "static/css/main.08998d17.css",
+    "static/js/main.ff20d186.js"
   ]
 }
