@@ -36,13 +36,30 @@ export const ReadPost = () => {
     getPosts();
   }, []);
 
+
+//-------------------------- Leer Comentarios de este Post -------------------------//
+const [comments, setComments] = useState([]);
+const commentsCollectionRef = collection(db, 'Comments');
+useEffect(() => {
+  const getComments = async () => {
+      const dataComments = await getDocs(commentsCollectionRef);
+ //Obtener data al montar componente
+  const getData = dataComments.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+  }))
+  setComments(getData)
+  };
+  //console.log(comments);
+  getComments()
+},[]);
+
   return (
-    
     <div className="contentCommunity"> 
       <div className="avatarAside">
         <Avatar
           src={user.photoURL}
-          sx={{ width: 24, height: 24, marginTop: '1%' }}
+          sx={{ width: 24, height: 24, marginTop: '320%' }}
         ></Avatar>
       </div>
       <div className="createPost">
@@ -74,12 +91,12 @@ export const ReadPost = () => {
                 file={post.file}
                 link={post.url}
                 setPosts={setPosts}
+                comments={comments}
               />
             </div>
           );
         })}
       </main>
-     
     </div>
   );
 };

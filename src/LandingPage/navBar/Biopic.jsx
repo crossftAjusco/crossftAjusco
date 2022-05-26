@@ -6,63 +6,47 @@ import diplom2 from "../../assets/lp_imgs/dip2H.jpeg";
 import diplom3 from "../../assets/lp_imgs/dip3V.jpeg";
 import diplom4 from "../../assets/lp_imgs/dip4H.jpeg";
 import diplom5 from "../../assets/lp_imgs/dip5V.jpeg";
-import bio from "../../assets/lp_imgs/Eduardo Romero Flores.png";
+import lalo from "../../assets/lp_imgs/laloR.png";
 
 const Biopic = () => {
-  let data = [
-    {
-      id: 1,
-      imgSrc: bio,
-    },
-    {
-      id: 2,
-      imgSrc: diplom2,
-    },
-    {
-      id: 3,
-      imgSrc: diplom1,
-    },
-    {
-      id: 4,
-      imgSrc: diplom3,
-    },
-    {
-      id: 5,
-      imgSrc: diplom4,
-    },
-    {
-      id: 6,
-      imgSrc: diplom5,
-    },
-  ];
-
-  const [model, setModel] = useState(false);
-  const [tempimgSrc, setTempImgSrc] = useState("");
-  const getImg = (imgSrc) => {
-    setTempImgSrc(imgSrc);
-    setModel(false);
-  };
   return (
-    <>
-      <div className={model ? "model open" : "model"}>
-        <img src={tempimgSrc} />
-        <CloseIcon onClick={() => setModel(true)} />
+    <div className="biopic">
+      <div className="boxZero" style={{ width: "200px", height: "300px" }}>
+        <section className="bioText">
+          <h3 className="encabezado">Eduardo Romero Flores</h3>
+          <img
+            className="picL"
+            src={lalo}
+            height="300"
+            width="220"
+            alt="Coach"
+          />
+          <p>
+            Desde pequeño adquirí dos pasiones que nunca he dejado: el
+            <b>deporte</b>y la lectura. En la escuela primaria tuve contacto con
+            el atletismo donde nació y aún pervive mi gusto por correr. Un
+            tiempo apasionado del <b>gimnasio</b>, desde siempre de los espacios
+            abiertos, el deporte siempre ha sido parte de mi vida. Escalar,
+            practicar alpinismo, senderismo, correr en montañas; el
+            <b>entrenamiento funcional</b>
+            así como un poco de artes marciales han marcado mi formación. Además
+            del gusto por el conocimiento; de vital importancia en la práctica
+            deportiva ya sea esta recreativa, amateur o profesional.
+            <br />
+            Cuento con 2 certificaciones oficiales:
+            <li>
+              Entrenador deportivo especializado en 'Entrenamiento Funcional'
+            </li>
+            <li>Entrenador en 'Acondicionamiento Físico'</li>
+          </p>
+        </section>
+        <img className="pictures" src={diplom3} alt="certificado" />
+        <img className="pictures" src={diplom1} alt="certificado" />
+        <img className="pictures" src={diplom2} alt="certificado" />
+        <img className="pictures" src={diplom4} alt="certificado" />
+        <img className="pictures" src={diplom5} alt="certificado" />
       </div>
-      <div className="biopic">
-        {data.map((item, index) => {
-          return (
-            <div
-              className="pics"
-              key={index}
-              onClick={() => getImg(item.imgSrc)}
-            >
-              <img src={item.imgSrc} style={{ width: "100%" }} />
-              <CloseIcon onClick={() => setModel(false)} />
-            </div>
-          );
-        })}
-      </div>
-    </>
+    </div>
   );
 };
 

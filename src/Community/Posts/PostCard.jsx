@@ -16,8 +16,9 @@ import { useAuth } from "../../Context/authContext";
 import { MenuEditDelete } from "./MenuEditDelete";
 import { Zoom } from "./Zoom";
 import { ViewerPDF } from "./ViewerPDF";
-import { Comments } from "../Comments/Comments";
+import { ReadComment } from "../Comments/ReadComment";
 import { CatchLink } from "./CatchLink";
+import { CreateComment } from "../Comments/CreateComment";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -46,6 +47,7 @@ export const PostCard = ({
   hour,
   minute,
   link,
+  comments
 }) => {
   const [expanded, setExpanded] = useState(false);
   const { user } = useAuth();
@@ -53,6 +55,8 @@ export const PostCard = ({
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+//console.log(comments)
 
   //Diferenciador tipos de archivos
   let pdfPost;
@@ -157,6 +161,9 @@ export const PostCard = ({
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
+          <div style={{display: "flex", justifyContent: "end", width:"100%"}}>
+            <div style={{fontSize: "100%", color: "#7E7E7E" }}>Comentarios</div>
+          </div>
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
@@ -166,11 +173,30 @@ export const PostCard = ({
             <ExpandMoreIcon />
           </ExpandMore>
         </CardActions>
-
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>
-              <Comments />
+              {/*------------------- Comentarios al post -----------------------*/}
+            <CreateComment idOrigin={id}/>
+            {comments.map((comment) => {
+              return(
+                <Typography paragraph style={{color: "#545454", fontSize: "90%"}}>
+                <div key={comment.id}> 
+                  {id === comment.idOrigin ? 
+                  <div style={{display: "flex"}}>
+                    <Avatar 
+                      sx={{ width: 24, height: 24}}
+                      aria-label="recipe"
+                      src={comment.avatar}
+                    ></Avatar>
+                    <div style={{display: "grid", placeContent: "end", marginLeft: "10px"}}>
+                      <div>{comment.comment}</div>
+                    </div>
+                  </div> : null}
+              </div>
+              </Typography>
+              )
+            })}
             </Typography>
           </CardContent>
         </Collapse>
