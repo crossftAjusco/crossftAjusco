@@ -12,12 +12,18 @@ import ListItem from '@mui/material/ListItem';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import Collapse from '@mui/material/Collapse';
+
+
 
 export const UserPayments = () => {
   // Se declara una variable para guardar el id del usuario para
   const { user, users } = useAuth();
   const [open, setOpen] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
   console.log(user.email)
   //console.log(users[0])
 
@@ -42,15 +48,6 @@ export const UserPayments = () => {
       }
       setOpen(false);
     };
-   //Tema de material ui para editar Snackbar
-    const theme = createTheme({
-    palette: {
-      neutral: {
-        main: '#64748B',
-        contrastText: 'rgb(210, 153, 11)',
-      },
-    },
-   });
 
   
     const action = (
@@ -60,7 +57,7 @@ export const UserPayments = () => {
           aria-label="close"
           color="inherit"
           onClick={handleClose}
-        >
+          >
           <CloseIcon fontSize="small" />
         </IconButton>
       </React.Fragment>
@@ -106,15 +103,44 @@ export const UserPayments = () => {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
-                })} </td>
+                })}
+      </td>
       </Grid>
       </ListItem>
       </Paper>  
+
+      <Divider component="li" />
+      <Paper elevation={4}>         
+      <ListItem className="li2">
+      <Grid item xs={12} lg={9}>
+      <th>Fecha del último págo realizado: </th>
+      <td> {uD.payment_days[Object.keys(uD.payment_days)[Object.keys(uD.payment_days).length -1]].toDate().toLocaleDateString("es-MX", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+          
+        </td>
+      </Grid>
+      </ListItem>
+      </Paper>
+
       <Divider component="li" />
       <Paper elevation={4}>         
       <ListItem className="li2">
       <Grid item xs={12} lg={9}>
       <th>Pagos Realizados: </th>
+      <td id="contPays"> {uD.payment_days.length} 
+      <IconButton
+            aria-label="expand row"
+            size="small"
+            onClick={() => setOpen2(!open2)}
+          >
+            {open2 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+          </IconButton>
+          </td>
+          <Collapse in={open2} unmountOnExit>
+    
       <td> {uD.payment_days.map((pays) => (
         <td key={pays}> 
          {pays.toDate().toLocaleDateString("es-MX", {
@@ -124,6 +150,8 @@ export const UserPayments = () => {
           })}
           </td>
         ))} </td>
+
+     </Collapse>
       </Grid>
       </ListItem>
       </Paper>
@@ -142,7 +170,7 @@ export const UserPayments = () => {
                     <FileCopyIcon >
                     </FileCopyIcon> 
                     </IconButton>
-                    <ThemeProvider theme={theme}>  
+                    <ThemeProvider>  
                   <Snackbar
                   color="neutral"
                     id="Snack"
