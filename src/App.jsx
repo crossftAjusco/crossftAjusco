@@ -8,7 +8,6 @@ import { Home } from "./LandingPage/Home/Home.jsx";
 import Footer from "./LandingPage/Footer/Footer";
 import { NotFoundPage } from "./NotFoundPage/NotFoundPage.jsx";
 import { UserView } from "./UserPage/userView/UserView.jsx";
-import { Login } from "./LandingPage/LoginMail/Login.jsx";
 import ProtectedRouteUser from "./ProtectedRoute/ProtectedRouteUser.jsx";
 import { Register } from "./AdminPage/Register/Register";
 import Graph from "./AdminPage/Graph/Graph.jsx";
@@ -34,8 +33,7 @@ const App = () => {
           <div className="middle-component">
             <Routes>
               <Route index element={<Home />} />
-
-              <Route path="login" element={<Login />} />
+              <Route path="/crossftAjusco" element={<Home />} />
               <Route path="acerca_de" element={<InfoGeneral />} />
               <Route path="coach" element={<Biopic />} />
               <Route path="tarifas" element={<Precios />} />

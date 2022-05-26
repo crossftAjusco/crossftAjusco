@@ -24,12 +24,6 @@ const NextBtn = (props) => {
   );
 };
 const Testimony = () => {
-  {
-    /*const laura = `Es el mejor lugar para entrenar, gracias a la metodologia del
-  profesor logre romper mis limites, ahora voy por mi segundo maraton y esta vez voy
-por el primer lugar`;*/
-  }
-
   return (
     <section className="wall">
       <div
