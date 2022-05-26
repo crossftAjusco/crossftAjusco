@@ -28,9 +28,17 @@ const Testimony = () => {
     <section className="wall">
       <div
         className="testimonial"
-        style={{ display: "flex", justifyContent: "center", marginTop: 0 }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
       >
-        <div style={{ width: "50%", textAlign: "center" }}>
+        <div
+          style={{
+            width: "50%",
+            textAlign: "center",
+          }}
+        >
           <h1 className="marker" style={{ marginBottom: 20 }}>
             Testimonios
           </h1>
@@ -48,18 +56,20 @@ const Testimony = () => {
             <Card
               img="https://www.okchicas.com/wp-content/uploads/2020/06/%C3%87a%C4%9Fatay-Ulusoy-525x700.jpg"
               paragraph="Entrenar en CrossFt Ajusco cambió mi realidad, mi cotidianidad. Ahora sé y entiendo que se puede vivir de otro modo. Entendí que mi cuerpo tiene otra forma y otro sentir cuando está en movimiento incluso cuando esta en reposo. Y no, no es vanidad, es estar sano y listo para el mañana. Perdí la flojera de levantarme temprano, perdí algunos dolores de espalda y las canas que me salían por estrés. Y creo que también perdí la pena de entrenar solo, pero siempre es mejor estar acompañado."
-              author="Unknown"
+              author="Héctor Fuentes"
             />
             <Card
               img="https://anabelavila.com/wp-content/uploads/2016/02/beneficios-crossfit-mujeres.webp"
-              paragraph="Iniciar con el entrenamiento en Cross F T Ajusco me ha hecho entender que mi cuerpo es maravilloso, que la disciplina es un punto importante en todos los ámbitos de nuestras vidas, todo inicio por salud, hoy puedo decir que vivo enamorada del entrenamiento y de la fuerza que puedo mostrarme a mi misma gracias a la motivación y acompañamiento de Eduardo y Edgar. Cross F T Ajusco es una analogía de vida, para conseguir resultados es necesario poner mucho empeño, dedicación, paciencia, amor, errores y posibles caídas, pero te levantas y continúas."
-              author="Marcela"
+              paragraph="El profesor Eduardo Flores llegó a mi vida después de un período lleno de hábitos pocos saludables y una vida sedentaria. Al inicio me costaba mucho los ejercicios. Sin embargo poco a poco mi cuerpo iba conquistando pequeños retos, que al principio creía inalcanzables. Hoy en día me doy cuenta del gran avance que he tenido en mi pasión (carreras de montaña) y de los alcances que puedo tener. Me siento feliz en espera de mis primeras 50millas. Croft Ajusco es el inicio de grandes sueños.
+              Gracias por toda la dedicación al Crossfit, a entrenarnos de manera individualizada, atendiendo nuestras necesidades físicas, por crear rutinas especiales para los que tenemos alguna lesión, por siempre estar atento a que realicemos adecuadamente los ejercicios, gracias por todos los consejos de vida y la motivación para mejorar física y mentalmente a cada día!!!
+"
+              author="Elizabeth Morales"
             />
             <Card
               img="https://pbs.twimg.com/profile_images/1342152259359137792/BX1YBK2E_400x400.jpg"
               paragraph="Iniciar con el entrenamiento en Cross F T Ajusco me ha hecho entender que mi cuerpo es maravilloso, que la disciplina es un punto importante en todos los ámbitos de nuestras vidas, todo inicio por salud, hoy puedo decir que vivo enamorada del entrenamiento y de la fuerza que puedo mostrarme a mi misma gracias a la motivación y acompañamiento de Eduardo y Edgar. 
               Cross F T Ajusco es una analogía de vida, para conseguir resultados es necesario poner mucho empeño, dedicación, paciencia, amor, errores y posibles caídas, pero te levantas y continúas."
-              author="Frank"
+              author="Isaac Ramírez"
             />
           </Slider>
         </div>
@@ -92,13 +102,14 @@ const Card = ({ img, paragraph, author }) => {
       <p className="pghp">{paragraph}</p>
       <p
         style={{
-          fontWeight: 400,
-          color: "yellow",
+          fontWeight: 500,
           fontStyle: "italic",
           marginTop: 25,
         }}
       >
-        <span>{author}</span>
+        <b>
+          <span className="autor">{author}</span>
+        </b>
       </p>
     </div>
   );
