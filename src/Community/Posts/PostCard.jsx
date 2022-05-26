@@ -178,19 +178,21 @@ export const PostCard = ({
             <Typography paragraph>
               {/*------------------- Comentarios al post -----------------------*/}
             <CreateComment idOrigin={id}/>
+            <br></br>
             {comments.map((comment) => {
               return(
                 <Typography paragraph style={{color: "#545454", fontSize: "90%"}}>
                 <div key={comment.id}> 
                   {id === comment.idOrigin ? 
-                  <div style={{display: "flex"}}>
+                  <div style={{display: "flex", flexDirection: "row", justifyContent: "stretch"}}>
                     <Avatar 
                       sx={{ width: 24, height: 24}}
                       aria-label="recipe"
                       src={comment.avatar}
                     ></Avatar>
-                    <div style={{display: "grid", placeContent: "end", marginLeft: "10px"}}>
+                    <div style={{display: "grid", placeContent: "center", marginLeft: "10px"}}>
                       <div>{comment.comment}</div>
+                      <div style={{fontSize: "65%", color: "#9C9C9C"}}>{comment.fechaComment + " at " + comment.horaComment + ":" + comment.minutosComment + " hrs."}</div>
                     </div>
                   </div> : null}
               </div>
