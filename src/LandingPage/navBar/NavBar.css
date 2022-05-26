@@ -34,7 +34,7 @@ a.logoText {
   margin-left: 1.5rem;
 }
 
-a.logoText:hover {
+.logoText:hover {
   color: rgb(210, 153, 11) !important;
 }
 
