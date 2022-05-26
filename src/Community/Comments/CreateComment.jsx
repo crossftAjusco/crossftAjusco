@@ -7,7 +7,7 @@ import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { db } from "../../firebase";
 
 export const CreateComment = ({idOrigin}) => {
-    
+
     const { user } = useAuth();
     const [comment, setComment] = useState("")
 
@@ -43,8 +43,7 @@ export const CreateComment = ({idOrigin}) => {
 
 return (
     <div>
-        <div>Comentarios:</div>
-        <Form style={{paddingTop: "3%", display: "block", margin: "auto", width: "100%" }}>
+        <Form style={{paddingTop: "0%", display: "block", margin: "auto", width: "100%" }}>
         <FloatingLabel
             controlId="floatingTextarea1"
             label="¡Comparte con la comunidad!"

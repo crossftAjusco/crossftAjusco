@@ -13,7 +13,7 @@ import Menu from "@mui/material/Menu";
 import { Navbar, Container, Nav, NavDropdown, Button } from "react-bootstrap";
 import { useAuth } from "../../Context/authContext";
 import { useNavigate, NavLink, Link } from "react-router-dom";
-import Logo from "../../assets/lp_imgs/Logo.jpg";
+import Logo from "../../assets/lp_imgs/LogoZero.png";
 import "./NavBar.css";
 import {
   Avatar,
@@ -22,6 +22,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import { Login } from '../LoginMail/Login'
 
 export const Navigation = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(false);
@@ -37,15 +38,10 @@ export const Navigation = () => {
 
   //cerrar sesión desde navBar
   const { user, logout, setAdmin, admin } = useAuth();
-  console.log(user);
-  // console.log(user)
+  // console.log(user);
   //const para la redirección del usuario
   const navigate = useNavigate();
   //una vez que cierra sesión se va navigate('direccón')
-
-  const handleLogin = () => {
-    navigate("/login");
-  };
 
   const handleLogout = async () => {
     await logout();
@@ -68,10 +64,11 @@ export const Navigation = () => {
         <NavLink className="logoText" to="/">
           <b>Cross Ft. Ajusco</b>
         </NavLink>
-
+        
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+          <center>
             <NavDropdown title="¿Quiénes somos?" id="collasible-nav-dropdown">
               <tr>
                 <Link className="underline" to="/acerca_de">
@@ -86,8 +83,9 @@ export const Navigation = () => {
               </tr>
               <tr>
                 <Link to="/testimonios">Testimonios</Link>
-              </tr>
-            </NavDropdown>
+                </tr>
+              </NavDropdown>
+              </center>
             {/* 
               <Nav.Link className="navtext" href="/crossftAjusco/recomendaciones_de_salud">
                 Recomendaciones de salud
@@ -155,11 +153,10 @@ export const Navigation = () => {
               </Box>
             </>
           ) : (
-            <button onClick={handleLogin} className="login">
-              Iniciar Sesión
-            </button>
+              <center>
+                <Login />
+              </center>
           )}
-
           <Nav>{/* <Nav.Link href="#deets">More deets</Nav.Link> */}</Nav>
         </Navbar.Collapse>
       </Container>

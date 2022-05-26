@@ -161,6 +161,9 @@ export const PostCard = ({
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
+          <div style={{display: "flex", justifyContent: "end", width:"100%"}}>
+            <div style={{fontSize: "100%", color: "#7E7E7E" }}>Comentarios</div>
+          </div>
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
@@ -170,7 +173,6 @@ export const PostCard = ({
             <ExpandMoreIcon />
           </ExpandMore>
         </CardActions>
-
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>
@@ -178,13 +180,21 @@ export const PostCard = ({
             <CreateComment idOrigin={id}/>
             {comments.map((comment) => {
               return(
-                <div key={comment.id}>
+                <Typography paragraph style={{color: "#545454", fontSize: "90%"}}>
+                <div key={comment.id}> 
                   {id === comment.idOrigin ? 
-                  <div>
-                    <div>{comment.comment}</div>
-                    <div>{comment.author}</div>
+                  <div style={{display: "flex"}}>
+                    <Avatar 
+                      sx={{ width: 24, height: 24}}
+                      aria-label="recipe"
+                      src={comment.avatar}
+                    ></Avatar>
+                    <div style={{display: "grid", placeContent: "end", marginLeft: "10px"}}>
+                      <div>{comment.comment}</div>
+                    </div>
                   </div> : null}
               </div>
+              </Typography>
               )
             })}
             </Typography>
