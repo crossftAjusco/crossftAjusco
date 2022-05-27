@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/crossftAjusco/static/css/main.26cdd5ae.css",
-    "main.js": "/crossftAjusco/static/js/main.da2a8f59.js",
+    "main.css": "/crossftAjusco/static/css/main.2effa08b.css",
+    "main.js": "/crossftAjusco/static/js/main.593d2984.js",
     "static/js/787.0fac509b.chunk.js": "/crossftAjusco/static/js/787.0fac509b.chunk.js",
     "static/media/LogoZero.png": "/crossftAjusco/static/media/LogoZero.6842cdfeddb12dd19cda.png",
+    "static/media/promo.png": "/crossftAjusco/static/media/promo.32d64427281c24c24dc9.png",
     "static/media/Login.jpg": "/crossftAjusco/static/media/Login.753fcc053b1eaa4e8ca4.jpg",
     "static/media/team.jpg": "/crossftAjusco/static/media/team.47e71952c611adaeb99c.jpg",
     "static/media/bosque.jpg": "/crossftAjusco/static/media/bosque.d8ef76a30c30014e300c.jpg",
     "static/media/powerade.jpg": "/crossftAjusco/static/media/powerade.2d6b5d211a29a89f2fb9.jpg",
     "static/media/lalostyle.jpg": "/crossftAjusco/static/media/lalostyle.ae086542b394f104b51a.jpg",
-    "static/media/nutriN.png": "/crossftAjusco/static/media/nutriN.88dd6c23da3aefceea35.png",
+    "static/media/nutricion.png": "/crossftAjusco/static/media/nutricion.3011847ba56dd22d0c9f.png",
     "static/media/arenal.jpg": "/crossftAjusco/static/media/arenal.d210c0953e17f91dde86.jpg",
     "static/media/celebrate.jpg": "/crossftAjusco/static/media/celebrate.b0a9992a2f9d9bc83fec.jpg",
     "static/media/ligas.jpg": "/crossftAjusco/static/media/ligas.e89f026a34d1ea8376df.jpg",
-    "static/media/newST.png": "/crossftAjusco/static/media/newST.63cbf731103ef8012708.png",
+    "static/media/estandar.png": "/crossftAjusco/static/media/estandar.06ff7404f70d0a9fcb3d.png",
     "static/media/rope.jpg": "/crossftAjusco/static/media/rope.17da82cabcee814fefa9.jpg",
     "static/media/ringCF.jpg": "/crossftAjusco/static/media/ringCF.7f70efb09c769a0c7918.jpg",
     "static/media/pesas.jpg": "/crossftAjusco/static/media/pesas.00422af1c29a3b5d6deb.jpg",
-    "static/media/focused.png": "/crossftAjusco/static/media/focused.ffa5478993268bd38cc9.png",
+    "static/media/enfocao.png": "/crossftAjusco/static/media/enfocao.449e8fae4400d8e787d5.png",
     "static/media/trainning.jpg": "/crossftAjusco/static/media/trainning.addc61738fbeea2ef1a4.jpg",
     "static/media/Reglamento.pdf": "/crossftAjusco/static/media/Reglamento.b8320c97e3d977066080.pdf",
     "static/media/spartan.jpg": "/crossftAjusco/static/media/spartan.2e8656e153313cb88ddf.jpg",
@@ -36,12 +37,12 @@
     "static/media/slick.ttf": "/crossftAjusco/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/crossftAjusco/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/crossftAjusco/index.html",
-    "main.26cdd5ae.css.map": "/crossftAjusco/static/css/main.26cdd5ae.css.map",
-    "main.da2a8f59.js.map": "/crossftAjusco/static/js/main.da2a8f59.js.map",
+    "main.2effa08b.css.map": "/crossftAjusco/static/css/main.2effa08b.css.map",
+    "main.593d2984.js.map": "/crossftAjusco/static/js/main.593d2984.js.map",
     "787.0fac509b.chunk.js.map": "/crossftAjusco/static/js/787.0fac509b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.26cdd5ae.css",
-    "static/js/main.da2a8f59.js"
+    "static/css/main.2effa08b.css",
+    "static/js/main.593d2984.js"
   ]
 }
