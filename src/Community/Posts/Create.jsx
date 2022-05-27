@@ -114,7 +114,7 @@ export const CreatePost = ({ setPosts }) => {
             </FloatingLabel>
           <div style={{ display: 'flex', flexDirection: 'raw' }}>  
             <AdPicture setFile={ setFile }/>
-            <AdPhoto />
+            {/*<AdPhoto />*/}
             <AdWebSite setUrl={ setUrl }/>
           </div>
           <div>

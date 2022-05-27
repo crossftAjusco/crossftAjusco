@@ -30,10 +30,11 @@ const InfoGeneral = () => {
             y está dirigido a cualquier persona.
           </h5>
         </div>
-        <CardMedia />
-        <CardActionArea title={`Misión`} content={mision} />
-        <CardMedia />
-        <CardActionArea title={`Visión`} content={vision} />
+        <div className="tarjetas">
+          <CardActionArea title={`Misión`} content={mision} />
+          <br></br>
+          <CardActionArea title={`Visión`} content={vision} />
+        </div>
       </section>
     </div>
   );

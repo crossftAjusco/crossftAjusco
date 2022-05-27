@@ -144,7 +144,7 @@ export const PostCard = ({
             </Typography>
           ) : null}
           {link ? (
-            <a target="_blank" rel="noreferrer" href={link}>
+            <a target="_blank" rel="noreferrer" href={link} style={{color: "#92C5FC"}}>
               {link}
             </a>
           ) : null}
@@ -156,10 +156,10 @@ export const PostCard = ({
         {!file ? <div></div> : null}
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
+            {/*<FavoriteIcon />*/}
           </IconButton>
           <IconButton aria-label="share">
-            <ShareIcon />
+            {/*<ShareIcon />*/}
           </IconButton>
           <div style={{display: "flex", justifyContent: "end", width:"100%"}}>
             <div style={{fontSize: "100%", color: "#7E7E7E" }}>Comentarios</div>
@@ -179,6 +179,7 @@ export const PostCard = ({
               {/*------------------- Comentarios al post -----------------------*/}
             <CreateComment idOrigin={id}/>
             <br></br>
+            <div style={{backgroundColor: "red", marginTop: "4%"}}></div>
             {comments.map((comment) => {
               return(
                 <Typography paragraph style={{color: "#545454", fontSize: "90%"}}>
