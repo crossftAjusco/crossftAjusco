@@ -96,36 +96,38 @@
 .grid1{
   padding: 0;
 }
-.li, .li1, .li2, .li3, .l14{ 
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: baseline;
-    position: relative;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
+.li, .li1, .li2, .li3{ 
     padding-top: 8px;
     padding-bottom: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin: .3rem;
     flex-direction: column;
-    align-content: center;
-    margin: .2rem;
 }
+
+.li5, .li4{ 
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: .3rem;
+}
+
+.css-10hburv-MuiTypography-root {
+  margin: 0;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  display: block;
+  font-weight: 500;
+  font-size:1rem;
+}
+
+
+
+
 .title1 {
   text-align: center;
   font-family: "Anton", sans-serif;
-  color: rgb(210, 153, 11);
+  color: #ecc510fc;
   margin-top: .3rem;
   margin-bottom: .3rem;
 }
@@ -137,9 +139,5 @@
   margin: .3rem;
 }
 #btnC {
-  color: rgb(210, 153, 11);
-}
-.css-1eqdgzv-MuiPaper-root-MuiSnackbarContent-root{
-  color: rgb(210, 153, 11);
-
+  color: #ecc510fc;
 }
