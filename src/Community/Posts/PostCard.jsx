@@ -16,9 +16,9 @@ import { useAuth } from "../../Context/authContext";
 import { MenuEditDelete } from "./MenuEditDelete";
 import { Zoom } from "./Zoom";
 import { ViewerPDF } from "./ViewerPDF";
-import { ReadComment } from "../Comments/ReadComment";
 import { CatchLink } from "./CatchLink";
 import { CreateComment } from "../Comments/CreateComment";
+import { DeleteComment } from "../Comments/DeleteComment"
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -183,8 +183,8 @@ export const PostCard = ({
               return(
                 <Typography paragraph style={{color: "#545454", fontSize: "90%"}}>
                 <div key={comment.id}> 
-                  {id === comment.idOrigin ? 
-                  <div style={{display: "flex", flexDirection: "row", justifyContent: "stretch"}}>
+                  {id === comment.idOrigin ? (
+                  <div style={{display: "flex"}}>
                     <Avatar 
                       sx={{ width: 24, height: 24}}
                       aria-label="recipe"
@@ -194,7 +194,12 @@ export const PostCard = ({
                       <div>{comment.comment}</div>
                       <div style={{fontSize: "65%", color: "#9C9C9C"}}>{comment.fechaComment + " at " + comment.horaComment + ":" + comment.minutosComment + " hrs."}</div>
                     </div>
-                  </div> : null}
+                    <div style={{display: "block", margin: "auto", rigth: 0, marginRight: "0px"}}>
+                    {comment.email === user.email ? <DeleteComment id={comment.id}/> : null }
+                    </div>
+                  </div>) : null}
+                  <div>
+                  </div>
               </div>
               </Typography>
               )

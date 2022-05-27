@@ -72,6 +72,7 @@ useEffect(() => {
         fechaComment: doc.get("date").toDate().toDateString(),
         horaComment: doc.get("date").toDate().getHours(),
         minutosComment: doc.get("date").toDate().getMinutes(),
+        email: doc.get("email")
       }
     })
     .slice()
