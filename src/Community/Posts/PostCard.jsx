@@ -144,7 +144,7 @@ export const PostCard = ({
             </Typography>
           ) : null}
           {link ? (
-            <a target="_blank" rel="noreferrer" href={link}>
+            <a target="_blank" rel="noreferrer" href={link} style={{color: "#92C5FC"}}>
               {link}
             </a>
           ) : null}
@@ -181,7 +181,7 @@ export const PostCard = ({
             <br></br>
             {comments.map((comment) => {
               return(
-                <Typography paragraph style={{color: "#545454", fontSize: "90%"}}>
+                <Typography paragraph style={{color: "#545454", fontSize: "90%", marginTop: "30px"}}>
                 <div key={comment.id}> 
                   {id === comment.idOrigin ? (
                   <div style={{display: "flex"}}>
