@@ -10,12 +10,13 @@ import {
   signInWithPopup,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { collection, getDocs, getFirestore, query, where, onSnapshot, doc } from "firebase/firestore";
-import app from "../firebase";
+import {
+  collection,
+  onSnapshot
+} from "firebase/firestore";
+import {db} from "../firebase";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
-//se utiliza el parámetro app desde as credenciales de firestore
-const firestore = getFirestore(app);
 //se crea el contexto a partir de importacion createContext
 export const authContext = createContext();
 //función que retorna datos generales del personal "logueado"
@@ -55,28 +56,15 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   
   useEffect(() => {
-    const q = query(collection(firestore, 'Users'));
-    let usuarios = [];
-    setUsers(null);
-    const unSubscribe = onSnapshot(q, (snap) => {
-      const array = snap.forEach((doc) => {
-        return usuarios.push(doc.data());
-      });
-    });
-    console.log(usuarios)
-    setUsers(usuarios)
+    onSnapshot(collection(db, 'Users'), (snapShot) => {
+      setUsers(snapShot.docs.map((doc) => doc.data()))
+    })
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       //Permite ver los datos del usuario "logueado"
       //console.log(currentUser.email)
       setUser(currentUser);
       setLoading(false);
     });
-    // function traerColl() {
-    //   const usersObtenidos = users;
-    //   console.log(usersObtenidos);
-    //   setUsers(usersObtenidos);
-    // }
-    // traerColl();
     return () => unsubscribe;
   }, []);
 
