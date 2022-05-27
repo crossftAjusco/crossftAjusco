@@ -104,6 +104,7 @@ export const UserPayments = () => {
                   month: "long",
                   day: "numeric",
                 })}
+                {console.log(uD.payment_days)}
       </td>
       </Grid>
       </ListItem>

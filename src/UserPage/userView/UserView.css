@@ -96,11 +96,32 @@
 .grid1{
   padding: 0;
 }
-.li, .li1, .li2, .li3, .l14, .li5{ 
+.li, .li1, .li2, .li3{ 
     padding-top: 8px;
     padding-bottom: 8px;
     margin: .3rem;
+    flex-direction: column;
 }
+
+.li5, .li4{ 
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: .3rem;
+}
+
+.css-10hburv-MuiTypography-root {
+  margin: 0;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  display: block;
+  font-weight: 500;
+  font-size:1rem;
+}
+
+
 
 
 .title1 {

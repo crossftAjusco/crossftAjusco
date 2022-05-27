@@ -28,13 +28,13 @@ const Profile = () => {
     const [show, setShow] = useState(false); //Hook para la ventana modal desactivada
     const handleShow = () => setShow(true);  //Hook para la ventana modal activada al dar click
     const [userId, setId] = useState('') //Hook para guardar el id del usuario
-    const [inf, setInfo] = useState({})
-    const itemTitle = ['Teléfono','Alergias','Condición', 'Altura', 'Peso', 'Cintura', 'Cuello']
+    const [inf, setInfo] = useState({}) //Guardamos los datos del usuario en un nuevo hook para poder utilizarlo en los datos que no se pueden editar 
+    const itemTitle = ['Teléfono','Alergias','Condición', 'Altura (mts)', 'Peso (kg)', 'Cintura (cm)', 'Cuello (cm)']//Arreglo para pintar dinamicamente los de los datos a editar
     
-   
+   //Función para abrir el modal al hacer click en el botón editar
   const handleClick = (e) => {
      //console.log(users.email)
-    setModalUserData ({
+    setModalUserData ({    //Pasamos a un objeto los datos a editar en el modal
       phone: users.phone,
       allergies: users.allergies,
       injuries: users.injuries,
@@ -49,22 +49,21 @@ const Profile = () => {
   }
  
  useEffect(() => {
-  let info = {}
+  let info = {} //guardamos ne un arreglo la data del usuario traida de la base de datos
     const q = query(collection(db,"Users"));
     const unsub = onSnapshot(q, (snap) => {
       const array = snap.docs.filter((doc) => {
-         if(user.email === doc.data().email) {
+         if(user.email === doc.data().email) { //comprobamos el email del usuario logueado con el de la base de datos
           //console.log(doc.id)
-          info = doc.data()
+          info = doc.data() //pasamos la data de la base de datos a una variable
           info.id = doc.id
           //console.log(info.id)
           return true
         }
       });
-       setId(info.id)
+       setId(info.id) //guardamos el id del usuario en el hoock
        //console.log(info) 
-       setInfo(info)    //Comprobamos que el objeto trae toda la data del usuario  
-       //console.log(info.id)   // Comprobamos que se puede acceder a la key del objeto
+       setInfo(info)  //guardamos la data del usuario en un hook  
        let objFilt = {
         phone: info.phone,          
         allergies: info.allergies,
@@ -75,7 +74,7 @@ const Profile = () => {
         neck: info.neck
       }
       console.log(objFilt) //Comprobamos que el nuevo objeto con la data a utilizar en el modal
-      setUsers(objFilt)
+      setUsers(objFilt) //Guardamos la data filtrada en un nuevo hook
     });
      return () =>  {
        unsub();
@@ -114,7 +113,7 @@ const Profile = () => {
                     <>
                     <Divider component="li" />
                     <Paper elevation={4} className="li5">
-                    <ListItem >
+                    <ListItem className="li5">
                      <ListItemText key={itemKey} className="list"
                      primary={itemTitle[index]}
                      secondary={users[item]} />
