@@ -11,7 +11,14 @@
 .pghp {
   font-family: "Saira Condensed", sans-serif;
   color: azure;
-  font-size: 16px;
+  font-size: 19px;
+  box-shadow: 3em;
+}
+
+.autor {
+  color: rgb(210, 153, 11);
+  font-family: "Saira Condensed", sans-serif;
+  font-size: 21px;
 }
 .slick-prev::before,
 .slick-next::before {
@@ -33,6 +40,7 @@
 }
 .testimonial {
   background-image: url("../../assets/lp_imgs/Login.jpg");
+  padding-top: 15px;
 }
 
 .marker {
