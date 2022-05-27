@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crossftAjusco/static/css/main.08998d17.css",
-    "main.js": "/crossftAjusco/static/js/main.ff20d186.js",
+    "main.css": "/crossftAjusco/static/css/main.26cdd5ae.css",
+    "main.js": "/crossftAjusco/static/js/main.da2a8f59.js",
     "static/js/787.0fac509b.chunk.js": "/crossftAjusco/static/js/787.0fac509b.chunk.js",
     "static/media/LogoZero.png": "/crossftAjusco/static/media/LogoZero.6842cdfeddb12dd19cda.png",
     "static/media/Login.jpg": "/crossftAjusco/static/media/Login.753fcc053b1eaa4e8ca4.jpg",
@@ -36,12 +36,12 @@
     "static/media/slick.ttf": "/crossftAjusco/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/crossftAjusco/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/crossftAjusco/index.html",
-    "main.08998d17.css.map": "/crossftAjusco/static/css/main.08998d17.css.map",
-    "main.ff20d186.js.map": "/crossftAjusco/static/js/main.ff20d186.js.map",
+    "main.26cdd5ae.css.map": "/crossftAjusco/static/css/main.26cdd5ae.css.map",
+    "main.da2a8f59.js.map": "/crossftAjusco/static/js/main.da2a8f59.js.map",
     "787.0fac509b.chunk.js.map": "/crossftAjusco/static/js/787.0fac509b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.08998d17.css",
-    "static/js/main.ff20d186.js"
+    "static/css/main.26cdd5ae.css",
+    "static/js/main.da2a8f59.js"
   ]
 }
