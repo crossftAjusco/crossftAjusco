@@ -2,10 +2,8 @@ import * as React from "react";
 import { useAuth } from "../../Context/authContext";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
-import StraightenIcon from '@mui/icons-material/Straighten';
 import Button from 'react-bootstrap/Button';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import UserModal from "./UserModal";
@@ -30,9 +28,12 @@ const Profile = () => {
     const [show, setShow] = useState(false); //Hook para la ventana modal desactivada
     const handleShow = () => setShow(true);  //Hook para la ventana modal activada al dar click
     const [userId, setId] = useState('') //Hook para guardar el id del usuario
-  
+    const [inf, setInfo] = useState({})
+    const itemTitle = ['Teléfono','Alergias','Condición', 'Altura', 'Peso', 'Cintura', 'Cuello']
+    
+   
   const handleClick = (e) => {
-     console.log(users.phone)
+     //console.log(users.email)
     setModalUserData ({
       phone: users.phone,
       allergies: users.allergies,
@@ -42,15 +43,13 @@ const Profile = () => {
       waist: users.waist,
       neck: users.neck,
     }) 
-    console.log('paso2')
-    
-    console.log(user)
+    //console.log('paso2')
+    //console.log(user)
     handleShow();
   }
-
+ 
  useEffect(() => {
-    let info = {}
-    
+  let info = {}
     const q = query(collection(db,"Users"));
     const unsub = onSnapshot(q, (snap) => {
       const array = snap.docs.filter((doc) => {
@@ -62,11 +61,11 @@ const Profile = () => {
           return true
         }
       });
-       //setUsers(info)
        setId(info.id)
-       console.log(info)     //Comprobamos que el objeto trae toda la data del usuario  
-       console.log(info.id)   // Comprobamos que se puede acceder a la key del objeto
-       let filtArr = {
+       //console.log(info) 
+       setInfo(info)    //Comprobamos que el objeto trae toda la data del usuario  
+       //console.log(info.id)   // Comprobamos que se puede acceder a la key del objeto
+       let objFilt = {
         phone: info.phone,          
         allergies: info.allergies,
         injuries: info.injuries,
@@ -75,20 +74,17 @@ const Profile = () => {
         waist: info.waist,
         neck: info.neck
       }
-      
-      console.log(filtArr) //Comprobamos que el nuevo objeto con la data a utilizar en el modal
-      setUsers(filtArr)
+      console.log(objFilt) //Comprobamos que el nuevo objeto con la data a utilizar en el modal
+      setUsers(objFilt)
     });
      return () =>  {
        unsub();
     };
   },[]);
-
-  console.log(users)
-  
+  //console.log(inf)
   return (
     <>
-    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={modalUserData} data={data} id={userId} keys={Key}/>  
+    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
     <div>
     <div className="title1">
     <h2>Mi Perfil</h2>
@@ -97,42 +93,80 @@ const Profile = () => {
           <Container maxWidth="lg" className="cont1">
             <Grid container spacing={1}>
               <Grid item xs={12} md={4} lg={12}>
-              <Paper className="paper1"
+              <Paper className="paper1" elevation={4}
                   sx={{
                     p: 1,
                     display: "flex",
+                    padding: 2,
                     flexDirection: "column",
                     height: 565,
-                  }}
-                >  
+                    }}>  
               <ScrollableFeed>             
               <List>
-                <p>
-                  Aquí puedes editar tus datos, si deseas cambiar algun otro dato como tu correo o 
-                  contraseña contacta a tu coach.
-                </p>
+                <p>Aquí puedes editar tus datos, si deseas cambiar algun otro dato como tu correo o 
+                  contraseña contacta a tu coach.</p>
                 <Divider component="li" />
-                {Object.keys(users).map((item,index)=> {
+                {Object.keys(users,itemTitle).map((item,index)=> {
                   const itemKey = `key-${index}`
-                  //console.log(itemKey)
-                  //console.log(typeof(itemKey))
+                  console.log(itemTitle[index])
+                  console.log(users[item])
                   return (
-                    <ListItem> 
-                     <ListItemText key={itemKey} primary={[item]} secondary={users[item]} />
+                    <>
+                    <Divider component="li" />
+                    <Paper elevation={4} className="li5">
+                    <ListItem >
+                     <ListItemText key={itemKey} className="list"
+                     primary={itemTitle[index]}
+                     secondary={users[item]} />
                         <Button  id="btn1" size="large" variant="success"
                         onClick={()=> {
                           handleClick()
                           setKey(itemKey)
-                          setTipo([item])
+                          setTipo(item)
                           setData(users[item])
                         }
                          } >
                           <ModeEditOutlineIcon/>
                         </Button>    
-                    </ListItem>
-                    )
-                })
-              }                
+                      </ListItem> 
+                      </Paper>
+                      </>
+                    )})}
+              <Divider component="li" />
+              <Paper elevation={4} className="li5">
+              <ListItem >
+               <ListItemText primary='Nombre' secondary={inf.name} className="list">
+               </ListItemText>
+               </ListItem> 
+               </Paper>
+               <Divider component="li" />
+              <Paper elevation={4} className="li5">
+              <ListItem >
+               <ListItemText primary='Apellido' secondary={inf.last_name} className="list">
+               </ListItemText>
+               </ListItem> 
+               </Paper>
+               <Divider component="li" />
+              <Paper elevation={4} className="li5">
+              <ListItem >
+               <ListItemText primary='Fecha de nacimiento' secondary={inf.birthday} className="list">
+               </ListItemText>
+               </ListItem> 
+               </Paper>
+              <Divider component="li" />
+              <Paper elevation={4} className="li5">
+              <ListItem >
+               <ListItemText primary='Email' secondary={user.email} className="list">
+               </ListItemText>
+               </ListItem> 
+               </Paper>
+               <Divider component="li" />
+              <Paper elevation={4} className="li5">
+              <ListItem >
+               <ListItemText primary='Contacto de Emergencia' secondary={inf.phone_contact} className="list">
+               </ListItemText>
+               </ListItem> 
+               </Paper>     
               </List> 
             </ScrollableFeed>   
             </Paper> 

@@ -8,25 +8,23 @@ const db = getFirestore(app);
 
 
 //creamos la función para traer los datos de la fila seleccionada en un modal
-const UserModal = ({show, setShow, modalUserData, tipo, data, id, keys}) => {
+const UserModal = ({show, setShow, tipo, data, id, keys}) => {
     const handleClose = () => setShow(false);
     const [dataUser, setUserData] = useState({});
     const [name, setUserData2] = useState({});
-  
     console.log(tipo)
-    //console.log(keys)
+    console.log(keys)
     //creamos la funcion para actualizar los datos del modal
     const updateA = async (e) => {
     e.preventDefault()
     //console.log(modalUserData.phone)
     const docRef = doc (db, `Users/${id}`);
-    //console.log(id)
+    console.log(name)
     await updateDoc(docRef, {
-       [name]: dataUser,
+       [tipo]: dataUser,
     });
       setUserData({}); 
-      setUserData2((bet) => ({
-        ...bet,
+      setUserData2(({
         phone: e.target.values,
         allergies: e.target.values,
         injuries: e.target.values,
@@ -36,10 +34,9 @@ const UserModal = ({show, setShow, modalUserData, tipo, data, id, keys}) => {
         neck: e.target.values
       }))
       handleClose();
+      alert('Actualizado correctamente')
     };
-    //const name2 = tipo[0]
-    //console.log(name2)
-  
+    console.log (tipo)
     return(
         <>
         <div >
