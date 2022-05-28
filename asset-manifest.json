@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crossftAjusco/static/css/main.f5988811.css",
-    "main.js": "/crossftAjusco/static/js/main.e0b2d0c6.js",
+    "main.css": "/crossftAjusco/static/css/main.2b89bd1e.css",
+    "main.js": "/crossftAjusco/static/js/main.d25659cc.js",
     "static/js/787.0fac509b.chunk.js": "/crossftAjusco/static/js/787.0fac509b.chunk.js",
     "static/media/LogoZero.png": "/crossftAjusco/static/media/LogoZero.6842cdfeddb12dd19cda.png",
     "static/media/promo.png": "/crossftAjusco/static/media/promo.32d64427281c24c24dc9.png",
@@ -22,27 +22,27 @@
     "static/media/trainning.jpg": "/crossftAjusco/static/media/trainning.addc61738fbeea2ef1a4.jpg",
     "static/media/Reglamento.pdf": "/crossftAjusco/static/media/Reglamento.b8320c97e3d977066080.pdf",
     "static/media/spartan.jpg": "/crossftAjusco/static/media/spartan.2e8656e153313cb88ddf.jpg",
-    "static/media/p5.jpg": "/crossftAjusco/static/media/p5.75be0332bf9bcd1385b9.jpg",
     "static/media/ballalo.jpg": "/crossftAjusco/static/media/ballalo.423d5c08488355ccc5b4.jpg",
-    "static/media/p3.jpg": "/crossftAjusco/static/media/p3.5769da027fff032ec880.jpg",
     "static/media/dip5V.jpeg": "/crossftAjusco/static/media/dip5V.63778721b9a02bfa72cf.jpeg",
-    "static/media/p4.jpg": "/crossftAjusco/static/media/p4.c0b42b1f16401e7dac09.jpg",
     "static/media/laloR.png": "/crossftAjusco/static/media/laloR.1ac88430aad9509a4326.png",
     "static/media/dip1V.jpeg": "/crossftAjusco/static/media/dip1V.5064516978e86b8de4ba.jpeg",
     "static/media/dip4H.jpeg": "/crossftAjusco/static/media/dip4H.8ac5c0e341de6aa975ba.jpeg",
     "static/media/dip3V.jpeg": "/crossftAjusco/static/media/dip3V.ddc2c55d213870acfe49.jpeg",
     "static/media/dip2H.jpeg": "/crossftAjusco/static/media/dip2H.b2f496baac8b2dfdcc62.jpeg",
+    "static/media/revicons.eot": "/crossftAjusco/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/crossftAjusco/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/crossftAjusco/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/slick.svg": "/crossftAjusco/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/crossftAjusco/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/crossftAjusco/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/crossftAjusco/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/crossftAjusco/index.html",
-    "main.f5988811.css.map": "/crossftAjusco/static/css/main.f5988811.css.map",
-    "main.e0b2d0c6.js.map": "/crossftAjusco/static/js/main.e0b2d0c6.js.map",
+    "main.2b89bd1e.css.map": "/crossftAjusco/static/css/main.2b89bd1e.css.map",
+    "main.d25659cc.js.map": "/crossftAjusco/static/js/main.d25659cc.js.map",
     "787.0fac509b.chunk.js.map": "/crossftAjusco/static/js/787.0fac509b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5988811.css",
-    "static/js/main.e0b2d0c6.js"
+    "static/css/main.2b89bd1e.css",
+    "static/js/main.d25659cc.js"
   ]
 }
