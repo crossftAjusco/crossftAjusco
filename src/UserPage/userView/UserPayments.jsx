@@ -142,15 +142,16 @@ export const UserPayments = () => {
           </td>
           <Collapse in={open2} unmountOnExit>
     
-      <td> {uD.payment_days.map((pays) => (
-        <td key={pays}> 
+      <tr> {uD.payment_days.map((pays) => (
+        <tr key={pays}> 
          {pays.toDate().toLocaleDateString("es-MX", {
           year: "numeric",
           month: "long",
           day: "numeric",
           })}
-          </td>
-        ))} </td>
+          </tr>
+        ))} 
+        </tr>
 
      </Collapse>
       </Grid>

@@ -39,6 +39,7 @@ const App = () => {
               <Route path="tarifas" element={<Precios />} />
               <Route path="testimonios" element={<Testimony />} />
 
+              {/* ADMIN */}
               <Route
                 path="/admin/*"
                 element={
@@ -54,7 +55,10 @@ const App = () => {
                 <Route path="form" element={<Register />} />
                 <Route path="usuarios" element={<Users />} />
                 <Route path="comunidad" element={<ReadPost />} />
+                <Route path="eventos" element={<UserDash />} />
               </Route>
+
+              {/* USUARIOS */}
               <Route
                 path="/UserView/*"
                 element={

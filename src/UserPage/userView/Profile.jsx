@@ -29,6 +29,7 @@ const Profile = () => {
     const handleShow = () => setShow(true);  //Hook para la ventana modal activada al dar click
     const [userId, setId] = useState('') //Hook para guardar el id del usuario
     const [inf, setInfo] = useState({}) //Guardamos los datos del usuario en un nuevo hook para poder utilizarlo en los datos que no se pueden editar 
+    const [titles, setTitle] = useState('');
     const itemTitle = ['Teléfono','Alergias','Condición', 'Altura (mts)', 'Peso (kg)', 'Cintura (cm)', 'Cuello (cm)']//Arreglo para pintar dinamicamente los de los datos a editar
     
    //Función para abrir el modal al hacer click en el botón editar
@@ -83,7 +84,7 @@ const Profile = () => {
   //console.log(inf)
   return (
     <>
-    <UserModal show={show} setShow={setShow} tipo={tipo} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
+    <UserModal show={show} setShow={setShow} tipo={tipo} titles={titles} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
     <div>
     <div className="title1">
     <h2>Mi Perfil</h2>
@@ -120,6 +121,7 @@ const Profile = () => {
                         <Button  id="btn1" size="large" variant="success"
                         onClick={()=> {
                           handleClick()
+                          setTitle(itemTitle[index])
                           setKey(itemKey)
                           setTipo(item)
                           setData(users[item])

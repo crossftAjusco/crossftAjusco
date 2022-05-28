@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import { XAxis, YAxis, Label, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import Title from './Title';
 import { useAuth } from "../../Context/authContext"
 
@@ -32,7 +32,7 @@ export default function Chart() {
 
   //Poblar el arreglo "lastPayday" con los dias de pago que hay en el mes
   for (let date of users) {
-    if (today.getMonth() == date.payday.toDate().getMonth() && today.getFullYear() == date.payday.toDate().getFullYear()) lastPayday.push(date.payday.toDate().getDate());
+    if (today.getMonth() === date.payday.toDate().getMonth() && today.getFullYear() === date.payday.toDate().getFullYear()) lastPayday.push(date.payday.toDate().getDate());
   }
 
   //Modificación del arreglo dataGraph con el numero de pagos ordenados por dia

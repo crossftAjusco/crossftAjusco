@@ -1,12 +1,7 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import Title from './Title';
 import { useAuth } from "../../Context/authContext"
-
-function preventDefault(event) {
-  event.preventDefault();
-}
 
 export default function KindOfUsers() {
   const { users } = useAuth();
@@ -14,10 +9,10 @@ export default function KindOfUsers() {
   let menNum = 0;
 
   for (let user of users) {
-    if (user.gender == 'female' || user.gender == 'Femenino' || user.gender == 'femenino') {
+    if (user.gender === 'female' || user.gender === 'Femenino' || user.gender === 'femenino') {
       womNum++
     }
-    if (user.gender == 'male' || user.gender == 'Masculino' || user.gender == 'masculino') {
+    if (user.gender === 'male' || user.gender === 'Masculino' || user.gender === 'masculino') {
       menNum++
     }
   }
