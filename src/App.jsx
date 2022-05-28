@@ -58,7 +58,6 @@ const App = () => {
                 <Route path="eventos" element={<UserDash />} />
               </Route>
 
-
               {/* USUARIOS */}
               <Route
                 path="/UserView/*"
