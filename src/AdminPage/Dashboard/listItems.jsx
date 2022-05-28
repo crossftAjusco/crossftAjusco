@@ -61,6 +61,7 @@ export const mainListItems = (
           </IconButton>
         </Tooltip>
       </NavLink>
+      
       <NavLink to='usuarios'>
         <Tooltip title="Usuarios">
           <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
@@ -68,9 +69,23 @@ export const mainListItems = (
           </IconButton>
         </Tooltip>
       </NavLink>
+
+      <NavLink to='eventos'>
+        <Tooltip title="Eventos">
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+          <LayersIcon size='large' />
+          </IconButton>
+        </Tooltip>
+      </NavLink>
+
+
     </div>
   </ThemeProvider>
 );
+
+
+
+
 
 export const secondaryListItems = (
   <React.Fragment>

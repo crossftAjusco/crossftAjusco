@@ -29,4 +29,4 @@ export const auth = getAuth(app);
 export const storage = getStorage(app);
 
 //Se exporta app para la auth con Google (se puede usar para otros fines de interacción con FB)
-export default app;
+export default app; 
