@@ -15,7 +15,7 @@ export default function Deposits() {
   const lastPayday = []
   //Poblar el arreglo "lastPayday" con los dias de pago que hay en el mes
   for (let date of users) {
-    if (today.getMonth() == date.payday.toDate().getMonth() && today.getFullYear() == date.payday.toDate().getFullYear()) lastPayday.push(date.payday.toDate().getDate());
+    if (today.getMonth() === date.payday.toDate().getMonth() && today.getFullYear() === date.payday.toDate().getFullYear()) lastPayday.push(date.payday.toDate().getDate());
   }
 
   return (
