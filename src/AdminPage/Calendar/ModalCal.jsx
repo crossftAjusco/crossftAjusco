@@ -24,7 +24,6 @@ const ModalCal = ({ show, setShow, modalUserInfo }) => {
     const timeStamp = Date.parse(date) + 18000000;
     const nuevaFecha = new Date(timeStamp); //Nueva fecha de pago utilizando el seleccionador
     if (!timeStamp) {
-      console.log(modalUserInfo.nextPayday);
       let proximoPago = new Date();
       proximoPago.setMonth(modalUserInfo.nextPayday.getMonth() + 1);
       proximoPago.setFullYear(modalUserInfo.nextPayday.getFullYear());
@@ -60,7 +59,7 @@ const ModalCal = ({ show, setShow, modalUserInfo }) => {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
-            {modalUserInfo.title} {modalUserInfo.lastName}
+            {modalUserInfo.title + " " + modalUserInfo.lastName}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
