@@ -19,6 +19,7 @@ import { ViewerPDF } from "./ViewerPDF";
 import { CatchLink } from "./CatchLink";
 import { CreateComment } from "../Comments/CreateComment";
 import { DeleteComment } from "../Comments/DeleteComment"
+import { Delete } from "../Posts/Delete"
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -154,6 +155,7 @@ export const PostCard = ({
         ) : null}
         {file === pdfPost ? <ViewerPDF pdfPost={pdfPost} /> : null}
         {!file ? <div></div> : null}
+        {user.email === "crossftajuscoweb@gmail.com" || user.email === "axoscoyetizote@gmail.com" ? <div style={{fontSize: "90%", color: "#FF6961", marginTop: "15px", marginBottom: "-40px"}}>Contenido inapropiado<Delete id={id} setPosts={setPosts} style={{with: "300px"}}/></div> : null}
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
             {/*<FavoriteIcon />*/}
@@ -161,25 +163,25 @@ export const PostCard = ({
           <IconButton aria-label="share">
             {/*<ShareIcon />*/}
           </IconButton>
-          <div style={{display: "flex", justifyContent: "end", width:"100%"}}>
-            <div style={{fontSize: "100%", color: "#7E7E7E" }}>Comentarios</div>
-          </div>
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
             aria-expanded={expanded}
             aria-label="show more"
           >
-            <ExpandMoreIcon />
+            <ExpandMoreIcon/>
           </ExpandMore>
         </CardActions>
+          <div style={{display: "flex", justifyContent: "end", width:"100%", marginTop:"-20px"}}>
+            <div style={{fontSize: "100%", color: "#7E7E7E" }}>Comentarios</div>
+          </div>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>
               {/*------------------- Comentarios al post -----------------------*/}
             <CreateComment idOrigin={id}/>
             <br></br>
-            <div style={{backgroundColor: "red", marginTop: "4%"}}></div>
+            <div style={{backgroundColor: "red", marginTop: "25px"}}></div>
             {comments.map((comment) => {
               return(
                 <Typography paragraph style={{color: "#545454", fontSize: "90%"}}>

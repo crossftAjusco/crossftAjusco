@@ -8,7 +8,7 @@ const db = getFirestore(app);
 
 
 //creamos la función para traer los datos de la fila seleccionada en un modal
-const UserModal = ({show, setShow, tipo, data, id, keys}) => {
+const UserModal = ({show, setShow, tipo, data, id, keys, titles}) => {
     const handleClose = () => setShow(false);
     const [dataUser, setUserData] = useState({});
     const [name, setUserData2] = useState({});
@@ -47,7 +47,7 @@ const UserModal = ({show, setShow, tipo, data, id, keys}) => {
       <Modal.Body>
         <Form >
           <Form.Group className="mb-3" >
-            <Form.Label>{tipo}</Form.Label>
+            <Form.Label>{titles}</Form.Label>
             <Form.Control
               name={tipo}
               placeholder={data}
