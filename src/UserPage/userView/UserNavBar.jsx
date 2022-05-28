@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { grey, yellow } from '@mui/material/colors';
 import { IconButton, Tooltip } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 const theme = createTheme({
   palette: {
     primary: {
@@ -18,42 +19,40 @@ const theme = createTheme({
     }
   }
 })
-
-
 export const mainListItems = (
   <ThemeProvider theme={theme}>
   <div className='userIcons'>
       <NavLink to='reglamento'>
       <Tooltip title="Reglamento">
-    <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+    <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc' } }}>
     <AutoStoriesIcon size='large' />
     </IconButton>
       </Tooltip>
       </NavLink>
       <NavLink to='profile'>
       <Tooltip title="Mi Perfil">
-    <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+    <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc' } }}>
     <PersonIcon size='large' />
     </IconButton>
       </Tooltip>
       </NavLink>
       <NavLink to='comunidad'>
         <Tooltip title='Comunidad'>
-        <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+        <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc' } }}>
           <PeopleIcon size='large' />
         </IconButton>
         </Tooltip>
       </NavLink>
       <NavLink to='pagos'>
         <Tooltip title='Pagos'>
-         <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+         <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc' } }}>
            <AttachMoneyIcon size='large' />
          </IconButton>
         </Tooltip>
       </NavLink>
       <NavLink to='eventos'>
         <Tooltip title='Eventos'>
-         <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+         <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc' } }}>
            <LayersIcon size='large' />
          </IconButton>
         </Tooltip>

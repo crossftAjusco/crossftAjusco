@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs,  query, onSnapshot } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { CreatePost } from './Create';
 import { PostCard } from './PostCard';
@@ -7,6 +7,8 @@ import { Sites } from '../SitiosInteres/Sites';
 import Avatar from '@mui/material/Avatar';
 import { useAuth } from '../../Context/authContext';
 import './ReadPost.css';
+
+ 
 
 export const ReadPost = () => {
   const [posts, setPosts] = useState([]);
@@ -38,9 +40,9 @@ export const ReadPost = () => {
 
 
 //-------------------------- Leer Comentarios de este Post -------------------------//
-const [comments, setComments] = useState([]);
+/*const [comments, setComments] = useState([]);
 const commentsCollectionRef = collection(db, 'Comments');
-useEffect(() => {
+//useEffect(() => {
   const getComments = async () => {
       const dataComments = await getDocs(commentsCollectionRef);
  //Obtener data al montar componente
@@ -52,7 +54,36 @@ useEffect(() => {
   };
   //console.log(comments);
   getComments()
-},[]);
+},[]);*/
+
+
+//PRUEBA ESCUCHADOR
+const [comments, setComments] = useState([]);
+useEffect(() => {
+  const q = query(collection(db, "Comments"));
+  const unsub = onSnapshot(q, (snap) => {
+    const getData = snap.docs.map((doc) => {
+      return{
+        id: doc.id,
+        comment: doc.get("comment"),
+        idOrigin: doc.get("idOrigin"),
+        avatar: doc.get("avatar"),
+        dateComment: doc.get("date"),
+        fechaComment: doc.get("date").toDate().toDateString(),
+        horaComment: doc.get("date").toDate().getHours(),
+        minutosComment: doc.get("date").toDate().getMinutes(),
+        email: doc.get("email")
+      }
+    })
+    .slice()
+    .sort((a, b) => b.dateComment - a.dateComment);
+    setComments([...getData])
+  });
+  return () => {
+    unsub();
+  };
+}, []);
+//console.log(comments)
 
   return (
     <div className="contentCommunity"> 
@@ -92,6 +123,7 @@ useEffect(() => {
                 link={post.url}
                 setPosts={setPosts}
                 comments={comments}
+                setComments={setComments}
               />
             </div>
           );

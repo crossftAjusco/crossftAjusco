@@ -16,9 +16,9 @@ import { useAuth } from "../../Context/authContext";
 import { MenuEditDelete } from "./MenuEditDelete";
 import { Zoom } from "./Zoom";
 import { ViewerPDF } from "./ViewerPDF";
-import { ReadComment } from "../Comments/ReadComment";
 import { CatchLink } from "./CatchLink";
 import { CreateComment } from "../Comments/CreateComment";
+import { DeleteComment } from "../Comments/DeleteComment"
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -144,7 +144,7 @@ export const PostCard = ({
             </Typography>
           ) : null}
           {link ? (
-            <a target="_blank" rel="noreferrer" href={link}>
+            <a target="_blank" rel="noreferrer" href={link} style={{color: "#92C5FC"}}>
               {link}
             </a>
           ) : null}
@@ -156,10 +156,10 @@ export const PostCard = ({
         {!file ? <div></div> : null}
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
+            {/*<FavoriteIcon />*/}
           </IconButton>
           <IconButton aria-label="share">
-            <ShareIcon />
+            {/*<ShareIcon />*/}
           </IconButton>
           <div style={{display: "flex", justifyContent: "end", width:"100%"}}>
             <div style={{fontSize: "100%", color: "#7E7E7E" }}>Comentarios</div>
@@ -178,21 +178,29 @@ export const PostCard = ({
             <Typography paragraph>
               {/*------------------- Comentarios al post -----------------------*/}
             <CreateComment idOrigin={id}/>
+            <br></br>
+            <div style={{backgroundColor: "red", marginTop: "4%"}}></div>
             {comments.map((comment) => {
               return(
                 <Typography paragraph style={{color: "#545454", fontSize: "90%"}}>
                 <div key={comment.id}> 
-                  {id === comment.idOrigin ? 
+                  {id === comment.idOrigin ? (
                   <div style={{display: "flex"}}>
                     <Avatar 
                       sx={{ width: 24, height: 24}}
                       aria-label="recipe"
                       src={comment.avatar}
                     ></Avatar>
-                    <div style={{display: "grid", placeContent: "end", marginLeft: "10px"}}>
+                    <div style={{display: "grid", placeContent: "center", marginLeft: "10px"}}>
                       <div>{comment.comment}</div>
+                      <div style={{fontSize: "65%", color: "#9C9C9C"}}>{comment.fechaComment + " at " + comment.horaComment + ":" + comment.minutosComment + " hrs."}</div>
                     </div>
-                  </div> : null}
+                    <div style={{display: "block", margin: "auto", rigth: 0, marginRight: "0px"}}>
+                    {comment.email === user.email ? <DeleteComment id={comment.id}/> : null }
+                    </div>
+                  </div>) : null}
+                  <div>
+                  </div>
               </div>
               </Typography>
               )

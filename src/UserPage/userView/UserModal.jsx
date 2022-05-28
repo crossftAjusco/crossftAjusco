@@ -8,50 +8,39 @@ const db = getFirestore(app);
 
 
 //creamos la función para traer los datos de la fila seleccionada en un modal
-const UserModal = ({show, setShow, modalUserData, tipo, data, id, keys}) => {
+const UserModal = ({show, setShow, tipo, data, id, keys}) => {
     const handleClose = () => setShow(false);
-    const [dataUser, setUserData] = useState({}); 
-    const [dataUser2, setUserData2] = useState(''); 
-
+    const [dataUser, setUserData] = useState({});
+    const [name, setUserData2] = useState({});
     console.log(tipo)
     console.log(keys)
     //creamos la funcion para actualizar los datos del modal
     const updateA = async (e) => {
     e.preventDefault()
-    console.log(modalUserData.phone)
+    //console.log(modalUserData.phone)
     const docRef = doc (db, `Users/${id}`);
-
-    console.log(id)
-    console.log(docRef)
+    console.log(name)
     await updateDoc(docRef, {
-       phone: dataUser,
-
+       [tipo]: dataUser,
     });
-      setUserData({});      
+      setUserData({}); 
+      setUserData2(({
+        phone: e.target.values,
+        allergies: e.target.values,
+        injuries: e.target.values,
+        height: e.target.values,
+        weight: e.target.values,
+        waist: e.target.values,
+        neck: e.target.values
+      }))
       handleClose();
+      alert('Actualizado correctamente')
     };
-
-    const updateB = async (e) => {
-      e.preventDefault()
-      console.log(modalUserData.allergies)
-      const docRef = doc (db, `Users/${id}`);
-  
-      console.log(id)
-      console.log(docRef)
-      await updateDoc(docRef, {
-         allergies: dataUser2
-      });
-        
-        setUserData2('');
-        handleClose();
-      };
-
-
-    
+    console.log (tipo)
     return(
         <>
         <div >
-        <Modal show={show} onHide={handleClose} key={keys='key-0'}>
+        <Modal show={show} onHide={handleClose} key={keys}>
       <Modal.Header>
         <Modal.Title>Cambiar Datos:</Modal.Title>
       </Modal.Header>
@@ -60,10 +49,13 @@ const UserModal = ({show, setShow, modalUserData, tipo, data, id, keys}) => {
           <Form.Group className="mb-3" >
             <Form.Label>{tipo}</Form.Label>
             <Form.Control
+              name={tipo}
               placeholder={data}
+              values={data}
               autoFocus 
               onChange={(e) => setUserData (e.target.value)}
             />
+            {console.log(tipo)}
           </Form.Group>
         </Form>
       </Modal.Body>
@@ -77,37 +69,7 @@ const UserModal = ({show, setShow, modalUserData, tipo, data, id, keys}) => {
       </Modal.Footer>
     </Modal>
     </div>
-
-
-    <div>
-        <Modal show={show} onHide={handleClose} key={keys='key-1'}>
-      <Modal.Header>
-        <Modal.Title>Cambiar Datos:</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form >
-          <Form.Group className="mb-3" >
-            <Form.Label>{tipo}</Form.Label>
-            <Form.Control
-              placeholder={data}
-              autoFocus 
-              onChange={(e) => setUserData2 (e.target.value)}
-            />
-          </Form.Group>
-        </Form>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Cancelar
-        </Button>
-        <Button variant="primary" onClick={updateB} type="submit" >
-          Guardar cambios
-        </Button>
-      </Modal.Footer>
-    </Modal>
-    </div>
     </>
-    
 
     )
 }

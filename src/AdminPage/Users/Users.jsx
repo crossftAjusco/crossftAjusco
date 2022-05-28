@@ -110,16 +110,20 @@ function Row(users) {
                     <TableCell>Próxima fecha de pago:</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell>{row.date_start.toDate().toLocaleDateString("es-MX", {
+                    <TableCell>
+                      {row.date_start.toDate().toLocaleDateString("es-MX", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
-                    })}</TableCell>
-                    <TableCell>{row.next_payday.toDate().toLocaleDateString("es-MX", {
+                    })}
+                    </TableCell>
+                    <TableCell>
+                      {row.next_payday.toDate().toLocaleDateString("es-MX", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
-                    })}</TableCell>
+                    })}
+                    </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

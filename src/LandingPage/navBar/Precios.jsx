@@ -1,8 +1,9 @@
 import React from "react";
 import "./Precios.css";
-import mensualidad from "../../assets/lp_imgs/newST.png";
-import enfocado from "../../assets/lp_imgs/focused.png";
-import nutri from "../../assets/lp_imgs/nutriN.png";
+import mensualidad from "../../assets/lp_imgs/estandar.png";
+import enfocado from "../../assets/lp_imgs/enfocao.png";
+import nutri from "../../assets/lp_imgs/nutricion.png";
+import promo from "../../assets/lp_imgs/promo.png";
 
 const Precios = () => {
   return (
@@ -21,6 +22,9 @@ const Precios = () => {
           </div>
           <div className="pricestyle">
             <img className="sizeprice" src={nutri} alt="focus" />
+          </div>
+          <div className="pricestyle">
+            <img className="sizeprice" src={promo} alt="focus" />
           </div>
         </div>
       </section>

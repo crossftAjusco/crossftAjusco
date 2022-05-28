@@ -22,7 +22,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
-import { Login } from '../LoginMail/Login'
+import { Login } from "../LoginMail/Login";
 
 export const Navigation = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(false);
@@ -64,28 +64,34 @@ export const Navigation = () => {
         <NavLink className="logoText" to="/">
           <b>Cross Ft. Ajusco</b>
         </NavLink>
-        
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-          <center>
-            <NavDropdown title="¿Quiénes somos?" id="collasible-nav-dropdown">
-              <tr>
-                <Link className="underline" to="/acerca_de">
-                  Acerca de
-                </Link>
-              </tr>
-              <tr>
-                <Link to="/coach">Coach</Link>
-              </tr>
-              <tr>
-                <Link to="/tarifas">Tarifas</Link>
-              </tr>
-              <tr>
-                <Link to="/testimonios">Testimonios</Link>
+            <center>
+              <NavDropdown title="¿Quiénes somos?" id="collasible-nav-dropdown">
+                <tr>
+                  <Link className="underline" to="/acerca_de">
+                    Acerca de
+                  </Link>
+                </tr>
+                <tr>
+                  <Link className="underline" to="/coach">
+                    Coach
+                  </Link>
+                </tr>
+                <tr>
+                  <Link className="underline" to="/tarifas">
+                    Tarifas
+                  </Link>
+                </tr>
+                <tr>
+                  <Link className="underline" to="/testimonios">
+                    Testimonios
+                  </Link>
                 </tr>
               </NavDropdown>
-              </center>
+            </center>
             {/* 
               <Nav.Link className="navtext" href="/crossftAjusco/recomendaciones_de_salud">
                 Recomendaciones de salud
@@ -153,9 +159,9 @@ export const Navigation = () => {
               </Box>
             </>
           ) : (
-              <center>
-                <Login />
-              </center>
+            <center>
+              <Login />
+            </center>
           )}
           <Nav>{/* <Nav.Link href="#deets">More deets</Nav.Link> */}</Nav>
         </Navbar.Collapse>
