@@ -2,33 +2,43 @@ import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts';
 import Title from './Title';
+import { useAuth } from "../../Context/authContext"
 
 // Generate Sales Data
 function createData(time, amount) {
   return { time, amount };
 }
 
-const data = [
-  createData('5', 0),
-  createData('10', 0),
-  createData('15', 0),
-  createData('20', 0),
-  createData('25', 0),
-  createData('30', 9),
-  createData('35', 0),
-  createData('40', 0),
-  createData('45', 0),
-  createData('50', 0),
-  createData('55', 0),
-  createData('60', 0),
-  createData('65', 0),
-  createData('70', 0),
-  createData('75', 0),
-  createData('80', 0),
-];
+
 
 export default function YearsGraph() {
+
   const theme = useTheme();
+  const { users } = useAuth();
+  const data = [
+  ];
+  let edad = []
+  for (let user of users) {
+    edad.push(new Date().getFullYear() - new Date(user.birthday).getFullYear())
+  }
+  edad.sort(function (a, b) {
+    return a - b;
+  });
+
+
+  let graphData = []
+  for (let i = 0; i <= edad[edad.length - 1] - 1; i++) {
+    graphData.push(0)
+  }
+
+  for (let i = 0; i <= edad.length; i++) {
+    graphData[edad[i] - 1] += 1
+  }
+
+  //se pobla la informacion para pintar la grafica
+  for (let i = 0; i <= graphData.length; i++) {
+    data.push(createData(i + 1, graphData[i]))
+  }
 
   return (
     <React.Fragment>

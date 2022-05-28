@@ -50,11 +50,11 @@ const Calendario = () => {
 
   const eventPropGetter = (event, start, end, isSelected) => {
     let newStyle = {
-      background: "blue",
+      background: "grey",
       color: "white",
     };
     if (event.paid) {
-      newStyle.backgroundColor = "grey";
+      newStyle.backgroundColor = "green";
     }
     if (event.late) {
       newStyle.backgroundColor = "red";
@@ -73,7 +73,7 @@ const Calendario = () => {
         return {
           id: doc.id,
           title: doc.get("name"),
-          lastName: doc.get("last_name"),
+          lastName: doc.get("lastname"),
           start: doc.get("payday").toDate(),
           nextPayDay: doc.get("next_payday").toDate(),
           end: doc.get("payday").toDate(),

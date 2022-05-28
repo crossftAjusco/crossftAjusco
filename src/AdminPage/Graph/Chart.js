@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import { XAxis, YAxis, Label, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import Title from './Title';
 import { useAuth } from "../../Context/authContext"
 
@@ -9,62 +9,42 @@ function createData(time, amount) {
   return { time, amount };
 }
 
-const data = [ /* x,y */
-  createData('1', 0),
-  createData('2', 0),
-  createData('3', 0),
-  createData('4', 900),
-  createData('5', 0),
-  createData('6', 300),
-  createData('7', 0),
-  createData('8', 0),
-  createData('9', 0),
-  createData('10', 0),
-  createData('11', 0),
-  createData('12', 0),
-  createData('13', 0),
-  createData('14', 0),
-  createData('15', 0),
-  createData('16', 0),
-  createData('17', 0),
-  createData('18', 0),
-  createData('19', 0),
-  createData('20', 0),
-  createData('21', 0),
-  createData('22', 0),
-  createData('23', 0),
-  createData('24', 0),
-  createData('25', 0),
-  createData('26', 0),
-  createData('27', 0),
-  createData('28', 300),
-  createData('29', 0),
-  createData('30', 0),
-  createData('31', 0),
-];
+
 
 export default function Chart() {
-  const { users } = useAuth()
+  const { users } = useAuth();
   const theme = useTheme();
+
+  /*------------------------------------------------- */
   /* Pintar los datos de la grafica de pagos recientes*/
+  /*------------------------------------------------- */
+  let data = [ /* x,y */
+  ];
   const today = new Date()
   const lastPayday = []
+
+  //Poblar el arreglo  "dataGraph" con ceros con una longuitud de los dias del mes
   const dataGraph = []
+  const lastDay = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate()
+  for (let i = 0; i <= lastDay - 1; i++) {
+    dataGraph.push(0)
+  }
+
+  //Poblar el arreglo "lastPayday" con los dias de pago que hay en el mes
   for (let date of users) {
-    today.getMonth() == date.payday.toDate().getMonth() && today.getFullYear() == date.payday.toDate().getFullYear() ?
-      lastPayday.push(date.payday.toDate()) :
-      console.log('otro mes o año')
+    if (today.getMonth() === date.payday.toDate().getMonth() && today.getFullYear() === date.payday.toDate().getFullYear()) lastPayday.push(date.payday.toDate().getDate());
   }
-  /*
-  for (let day of lastPayday) {
-    console.log(day.getDate())
-    if (dataGraph.includes(day.getDate())){
 
-    } else {
-
-    }
+  //Modificación del arreglo dataGraph con el numero de pagos ordenados por dia
+  for (let i = 0; i <= lastPayday.length; i++) {
+    dataGraph[lastPayday[i] - 1] += 1
   }
-  */
+
+  //Se pobla la información para pintar la gráfica
+  for (let i = 0; i <= dataGraph.length - 1; i++) {
+    data.push(createData(i + 1, dataGraph[i]))
+  }
+
   return (
     <React.Fragment>
       <Title>Ingresos</Title>

@@ -6,53 +6,43 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
+import { useAuth } from "../../Context/authContext"
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(id, date, name, email, amount) {
+  return { id, date, name, email, amount };
 }
 
-const rows = [
-  createData(
-    0,
-    '06 May, 2022',
-    'Monica Macal',
-    'Tupelo, MS',
-    'monhdz07@gmail.com',
-    300.00,
-  ),
-  createData(
-    1,
-    '04 May, 2022',
-    'Marely Hernandez',
-    'London, UK',
-    'pruebamarelyhdz@gmail.com',
-    300.00,
-  ),
-  createData(2, '04 May, 2022', 'Vania Ramirez', 'Boston, MA', 'vaniusha.ra@gmail.com', 300.00),
-  createData(
-    3,
-    '04 May, 2022',
-    'Gloria Arz',
-    'Gary, IN',
-    'gloryarz@gmail.com',
-    300.00,
-  ),
-  createData(
-    4,
-    '28 May, 2022',
-    'Alberto Gutierrez',
-    'Long Branch, NJ',
-    'albertoouu@gmail.com',
-    300.00,
-  ),
-];
+
 
 function preventDefault(event) {
   event.preventDefault();
 }
 
 export default function Orders() {
+  const { users } = useAuth();
+  const rows = [
+  ];
+
+  const sortUsers = users.slice().sort((a, b) => b.payday - a.payday);
+  //poblar los renglones 
+  let max = 0
+  if (sortUsers.length >= 0 && sortUsers.length <= 5) max = 0
+  if (sortUsers.length > 5) max = 5
+
+  for (let i = 0; i <= max; i++) {
+    console.log(i + 1, sortUsers[i].payday.toDate(), sortUsers[i].name + " " + sortUsers[i].lastname, sortUsers[i].email, 300.00)
+    rows.push(createData(i + 1, sortUsers[i].payday.toDate().toLocaleDateString("es-MX", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }), sortUsers[i].name + sortUsers[i].lastname, sortUsers[i].email, 300.00))
+  }
+  console.log(rows)
+
+
+
   return (
     <React.Fragment>
       <Title>Pagos recientes</Title>
@@ -72,7 +62,7 @@ export default function Orders() {
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
 
-              <TableCell>{row.paymentMethod}</TableCell>
+              <TableCell>{row.email}</TableCell>
               <TableCell align="right">{`$${row.amount}`}</TableCell>
             </TableRow>
           ))}
