@@ -50,11 +50,11 @@ const Calendario = () => {
 
   const eventPropGetter = (event, start, end, isSelected) => {
     let newStyle = {
-      background: "blue",
+      background: "grey",
       color: "white",
     };
     if (event.paid) {
-      newStyle.backgroundColor = "grey";
+      newStyle.backgroundColor = "green";
     }
     if (event.late) {
       newStyle.backgroundColor = "red";
