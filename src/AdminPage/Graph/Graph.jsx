@@ -15,7 +15,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 const Graph = () => {
   return (
     <>
-      <h1 className="tituloCalendar">Dashboard</h1>
+      <h1 className="title">Dashboard</h1>
       <Grid container spacing={3}>
         {/* Chart  ingresos*/}
         <Grid item xs={12} md={8} lg={9}>

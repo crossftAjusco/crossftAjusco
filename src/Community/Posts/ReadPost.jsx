@@ -95,7 +95,7 @@ useEffect(() => {
       </div>
       <div className="createPost">
       <div className="title1">
-    <h2>Comunidad</h2>
+    <h2 className='title'>Comunidad</h2>
     </div> 
         <CreatePost setPosts={setPosts} />
       </div>

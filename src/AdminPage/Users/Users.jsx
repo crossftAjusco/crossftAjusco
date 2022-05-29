@@ -1,3 +1,5 @@
+//Componente UsersList, colección general de usuarios registrados en AjuscoCrossFT
+//Se utiliza MaterialUi para imprimir la tabla de usuarios y sus características
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
@@ -17,7 +19,6 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { useAuth } from '../../Context/authContext'
 import { TableFooter, TablePagination } from '@mui/material';
-import ModalCal from '../../AdminPage/Calendar/ModalCal'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import SearchIcon from '@mui/icons-material/Search';
@@ -26,20 +27,25 @@ import './Users.css'
 import { yellow } from '@mui/material/colors';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { ConfModal } from './ConfirmModal';
 
+//Función que busca por nombre (term) en minúsculas
 function searchingTerm(term) {
   return function (x) {
     // console.log(x)
     return x.name.toLowerCase().includes(term) || !term
   }
 };
-
+//función que pinta cada fila (row) de la tabla de usuarios
+//Param Users es traida desde Context con info necesaria para el renderizado
 function Row(users) {
   const { row } = users;
   const [open, setOpen] = React.useState(false);
+  const [modalConf, setModalConf] = React.useState({});
+  const [show, setShow] = React.useState(false);
 
   return (
+    //función dinámica de impresión de los detalles en la tabla de Usuarios MUI
     <React.Fragment>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
         <TableCell>
@@ -52,8 +58,8 @@ function Row(users) {
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          <Grid container>
-            <Grid item lg={3}>
+          <Grid container> {/* Cada Grid ayuda a proporcionar las celdas */}
+            <Grid item lg={2}>
               <Avatar className="perfil" sx={{ bgcolor: yellow[700] }} alt={row.name} src='.' />
             </Grid>
             <Grid lg={5}>
@@ -130,6 +136,9 @@ function Row(users) {
                   <TableRow>
                     <TableCell>
                       Pagos realizados:
+                    </TableCell>
+                    <TableCell>
+                      <ConfModal show={show}  setShow={setShow} modalConf={modalConf}/>
                     </TableCell>
                   </TableRow>
                   <TableRow>

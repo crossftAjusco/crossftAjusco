@@ -87,7 +87,7 @@ const Profile = () => {
     <UserModal show={show} setShow={setShow} tipo={tipo} titles={titles} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
     <div>
     <div className="title1">
-    <h2>Mi Perfil</h2>
+    <h2 className="title">Mi Perfil</h2>
     </div>  
         <Box sx={{ display: "flex" }}>
           <Container maxWidth="lg" className="cont1">
