@@ -41,9 +41,7 @@ function searchingTerm(term) {
 function Row(users) {
   const { row } = users;
   const [open, setOpen] = React.useState(false);
-  const [modalConf, setModalConf] = React.useState({});
-  const [show, setShow] = React.useState(false);
-
+  
   return (
     //función dinámica de impresión de los detalles en la tabla de Usuarios MUI
     <React.Fragment>
@@ -74,7 +72,7 @@ function Row(users) {
         </TableCell>
         <TableCell >
           <Grid>
-            <a href={`https://api.whatsapp.com/send?phone=52${row.phone}&text=¡Hola!%20Somos%20AjuscoCrossFT...%20`} target="_blank" title="Enviar WhatsApp">
+            <a href={`https://api.whatsapp.com/send?phone=52${row.phone}&text=¡Hola!%20Somos%20AjuscoCrossFT...%20`} target="_blank" rel="noreferrer" title="Enviar WhatsApp">
               <Typography color="textPrimary" variant="body2">
                 <WhatsAppIcon className="activate" color="success" />
                 {row.phone}
@@ -138,7 +136,7 @@ function Row(users) {
                       Pagos realizados:
                     </TableCell>
                     <TableCell>
-                      <ConfModal show={show}  setShow={setShow} modalConf={modalConf}/>
+                      <ConfModal />
                     </TableCell>
                   </TableRow>
                   <TableRow>
