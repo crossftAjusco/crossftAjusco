@@ -64,10 +64,7 @@ return (
             </FloatingLabel>
             {comment === "" ? null : <Button onClick={handleComment} size="small" variant="outlined" style={{float: "right", marginBottom: "3%"}}>Comentar</Button> }
         </Form>
-
-    {/*Lectura de comentarios condicionada según idOrigin de Post comentado*/}
-        <div>
-            {/*<ReadComment/>*/}
+<div>
         </div>
     </div>
 )
