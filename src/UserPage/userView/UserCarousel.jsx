@@ -7,11 +7,6 @@ import { useAuth } from '../../Context/authContext';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 
-//import { Carousel } from "react-bootstrap";
-//import img3 from "../../assets/lp_imgs/p3.jpg";
-//import img4 from "../../assets/lp_imgs/p4.jpg";
-//import img5 from "../../assets/lp_imgs/p5.jpg";
-
 const UserCarousel = () => {
   const { user } = useAuth();
 //Traer Eventos de DB
@@ -49,15 +44,10 @@ const deletePost = async (id) => {
   }
 };
 
-
-
-
 return(
   <div>
     {allEvents.map((event) => {
       return(
-
-
 <div  style={{display: "flex", flexDirection: "column"}}>
         <Card key={event.id} style={{marginTop: "20px"}}>
         <CardMedia
