@@ -1,19 +1,12 @@
 import { collection, query, onSnapshot, doc, deleteDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import React, { useState, useEffect } from 'react';
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Slider from "react-slick";
-import { Paper } from '@mui/material'
-
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useAuth } from '../../Context/authContext';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+
 //import { Carousel } from "react-bootstrap";
 //import img3 from "../../assets/lp_imgs/p3.jpg";
 //import img4 from "../../assets/lp_imgs/p4.jpg";

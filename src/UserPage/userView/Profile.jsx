@@ -30,19 +30,22 @@ const Profile = () => {
     const [userId, setId] = useState('') //Hook para guardar el id del usuario
     const [inf, setInfo] = useState({}) //Guardamos los datos del usuario en un nuevo hook para poder utilizarlo en los datos que no se pueden editar 
     const [titles, setTitle] = useState('');
-    const itemTitle = ['Teléfono','Alergias','Condición', 'Altura (mts)', 'Peso (kg)', 'Cintura (cm)', 'Cuello (cm)']//Arreglo para pintar dinamicamente los de los datos a editar
+    const itemTitle = ['Teléfono','Contacto de Emergencia','Condición','Enfermedades','Alergias', 'Altura (mts)', 'Peso (kg)', 'Cintura (cm)', 'Cuello (cm)', 'Cadera (cm)']//Arreglo para pintar dinamicamente los de los datos a editar
     
    //Función para abrir el modal al hacer click en el botón editar
   const handleClick = (e) => {
      //console.log(users.email)
     setModalUserData ({    //Pasamos a un objeto los datos a editar en el modal
       phone: users.phone,
-      allergies: users.allergies,
-      injuries: users.injuries,
+      phone_contact: users.phone_contact,
+      kind_of_injuries: users.kind_of_injuries,
+      kind_of_ill: users.kind_of_ill,
+      kind_of_allergies: users.kind_of_allergies,
       height: users.height,
       weight: users.weight,
       waist: users.waist,
       neck: users.neck,
+      hip: users.hip,
     }) 
     //console.log('paso2')
     //console.log(user)
@@ -66,13 +69,16 @@ const Profile = () => {
        //console.log(info) 
        setInfo(info)  //guardamos la data del usuario en un hook  
        let objFilt = {
-        phone: info.phone,          
-        allergies: info.allergies,
-        injuries: info.injuries,
+        phone: info.phone, 
+        phone_contact: info.phone_contact, 
+        kind_of_injuries: info.kind_of_injuries, 
+        kind_of_ill: info.kind_of_ill,       
+        kind_of_allergies: info.kind_of_allergies,
         height: info.height,
         weight: info.weight,
         waist: info.waist,
-        neck: info.neck
+        neck: info.neck,
+        hip: info.hip
       }
       console.log(objFilt) //Comprobamos que el nuevo objeto con la data a utilizar en el modal
       setUsers(objFilt) //Guardamos la data filtrada en un nuevo hook
@@ -161,13 +167,6 @@ const Profile = () => {
                </ListItemText>
                </ListItem> 
                </Paper>
-               <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Contacto de Emergencia' secondary={inf.phone_contact} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>     
               </List> 
             </ScrollableFeed>   
             </Paper> 
