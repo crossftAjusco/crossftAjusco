@@ -143,7 +143,7 @@ const Profile = () => {
                <Divider component="li" />
               <Paper elevation={4} className="li5">
               <ListItem >
-               <ListItemText primary='Apellido' secondary={inf.last_name} className="list">
+               <ListItemText primary='Apellido' secondary={inf.lastname} className="list">
                </ListItemText>
                </ListItem> 
                </Paper>
