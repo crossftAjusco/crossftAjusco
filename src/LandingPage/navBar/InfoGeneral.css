@@ -24,7 +24,7 @@
   color: rgb(210, 153, 11);
   text-align: center;
   font-family: "Anton", sans-serif;
-  font-size: 21px;
+  font-size: 22px;
   padding-top: 5px;
 }
 
@@ -34,4 +34,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.css-r40f8v-MuiTypography-root {
+  margin: 0;
+  font-family: "Saira Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  color: rgba(0, 0, 0, 0.6);
 }
