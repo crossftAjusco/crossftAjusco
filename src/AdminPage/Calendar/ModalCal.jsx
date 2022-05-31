@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
-import app from "../../firebase";
+import { db } from "../../firebase";
 import {
   getFirestore,
   doc,
@@ -10,7 +10,6 @@ import {
   collection,
 } from "firebase/firestore";
 import "./modalCal.css";
-const db = getFirestore(app);
 
 const ModalCal = ({ show, setShow, modalUserInfo }) => {
   const handleClose = () => setShow(false);

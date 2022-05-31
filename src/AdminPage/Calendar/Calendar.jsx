@@ -1,6 +1,6 @@
 import "./calendar.css";
 import React, { useEffect, useState } from "react";
-import app from "../../firebase";
+import { db } from "../../firebase";
 import {
   getFirestore,
   collection,
@@ -13,7 +13,6 @@ import moment from "moment";
 import ModalCal from "./ModalCal";
 require("moment/locale/es-mx");
 const localizer = momentLocalizer(moment);
-const db = getFirestore(app);
 
 const Calendario = () => {
   const [data, setData] = useState([]);
@@ -108,7 +107,7 @@ const Calendario = () => {
 
   return (
     <>
-      <h1 className="tituloCalendar">Calendario de pagos</h1>
+      <h1 className="title">Calendario de pagos</h1>
       <Calendar
         localizer={localizer}
         events={data}

@@ -55,37 +55,24 @@ export function UserDash() {
     <h2>Próximos Eventos</h2>
     </div>
       <Box sx={{ display: "flex" }}>
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4, width: "60%" }}>
-            <Grid container spacing={1}>
-              <Grid item xs={12} md={8} lg={12}>
-              <Paper
-                  sx={{
-                    p: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4}}>
                 <ScrollableFeed>
                   <UserCarousel sx={{ height: "auto" }} /> 
                 </ScrollableFeed>
-                </Paper>
-              </Grid>   
-              
-            </Grid>
           </Container>
         </Box>
-{user.email === "crossftajuscoweb@gmail.com" || user.email === "axoscoyetizote@gmail.com" ? (
-<form onSubmit={submitEvent} style={{display: "flex", flexDirection: "row", justifyContent:"flex-end"}}>
-<AdPicture setFile={setEvent}/>
-<button
-        style={{
-          backgroundColor: "transparent",
-          borderStyle: "none",
-          marginTop: "12px"
-        }}>
-      <Button>Crear Evento</Button>
-    </button>
-</form>) : null }
+          {user.email === "crossftajuscoweb@gmail.com" || user.email === "axoscoyetizote@gmail.com" ? (
+          <form onSubmit={submitEvent} style={{display: "flex", flexDirection: "row", justifyContent:"flex-end"}}>
+          <AdPicture setFile={setEvent}/>
+            <button
+              style={{
+              backgroundColor: "transparent",
+              borderStyle: "none",
+              marginTop: "12px"
+              }}>
+              <Button>Crear Evento</Button>
+            </button>
+    </form>) : null }
   </>
   );
 };

@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import UserModal from "./UserModal";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import ScrollableFeed from 'react-scrollable-feed'
@@ -30,19 +29,22 @@ const Profile = () => {
     const [userId, setId] = useState('') //Hook para guardar el id del usuario
     const [inf, setInfo] = useState({}) //Guardamos los datos del usuario en un nuevo hook para poder utilizarlo en los datos que no se pueden editar 
     const [titles, setTitle] = useState('');
-    const itemTitle = ['Teléfono','Alergias','Condición', 'Altura (mts)', 'Peso (kg)', 'Cintura (cm)', 'Cuello (cm)']//Arreglo para pintar dinamicamente los de los datos a editar
+    const itemTitle = ['Teléfono','Contacto de Emergencia','Condición','Enfermedades','Alergias', 'Altura (mts)', 'Peso (kg)', 'Cintura (cm)', 'Cuello (cm)', 'Cadera (cm)']//Arreglo para pintar dinamicamente los de los datos a editar
     
    //Función para abrir el modal al hacer click en el botón editar
   const handleClick = (e) => {
      //console.log(users.email)
     setModalUserData ({    //Pasamos a un objeto los datos a editar en el modal
       phone: users.phone,
-      allergies: users.allergies,
-      injuries: users.injuries,
+      phone_contact: users.phone_contact,
+      kind_of_injuries: users.kind_of_injuries,
+      kind_of_ill: users.kind_of_ill,
+      kind_of_allergies: users.kind_of_allergies,
       height: users.height,
       weight: users.weight,
       waist: users.waist,
       neck: users.neck,
+      hip: users.hip,
     }) 
     //console.log('paso2')
     //console.log(user)
@@ -66,13 +68,16 @@ const Profile = () => {
        //console.log(info) 
        setInfo(info)  //guardamos la data del usuario en un hook  
        let objFilt = {
-        phone: info.phone,          
-        allergies: info.allergies,
-        injuries: info.injuries,
+        phone: info.phone, 
+        phone_contact: info.phone_contact, 
+        kind_of_injuries: info.kind_of_injuries, 
+        kind_of_ill: info.kind_of_ill,       
+        kind_of_allergies: info.kind_of_allergies,
         height: info.height,
         weight: info.weight,
         waist: info.waist,
-        neck: info.neck
+        neck: info.neck,
+        hip: info.hip
       }
       console.log(objFilt) //Comprobamos que el nuevo objeto con la data a utilizar en el modal
       setUsers(objFilt) //Guardamos la data filtrada en un nuevo hook
@@ -84,15 +89,15 @@ const Profile = () => {
   //console.log(inf)
   return (
     <>
-    <UserModal show={show} setShow={setShow} tipo={tipo} titles={titles} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
-    <div>
-    <div className="title1">
-    <h2>Mi Perfil</h2>
-    </div>  
+      <UserModal show={show} setShow={setShow} tipo={tipo} titles={titles} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
+      <div>
+        <div className="title1">
+         <h2 className="title">
+           Mi Perfil
+           </h2>
+        </div>  
         <Box sx={{ display: "flex" }}>
           <Container maxWidth="lg" className="cont1">
-            <Grid container spacing={1}>
-              <Grid item xs={12} md={4} lg={12}>
               <Paper className="paper1" elevation={4}
                   sx={{
                     p: 1,
@@ -100,82 +105,81 @@ const Profile = () => {
                     padding: 2,
                     flexDirection: "column",
                     height: 565,
-                    }}>  
+                  }}
+                  >  
               <ScrollableFeed>             
-              <List>
-                <p>Aquí puedes editar tus datos, si deseas cambiar algun otro dato como tu correo o 
-                  contraseña contacta a tu coach.</p>
+                <List>
+                  <p>
+                    Aquí puedes editar tus datos, si deseas cambiar algun otro dato como tu cumpleaños o email
+                    contacta a tu coach
+                  </p>
                 <Divider component="li" />
-                {Object.keys(users,itemTitle).map((item,index)=> {
-                  const itemKey = `key-${index}`
-                  console.log(itemTitle[index])
-                  console.log(users[item])
-                  return (
-                    <>
+                  {Object.keys(users,itemTitle).map((item,index)=> {
+                   const itemKey = `key-${index}`
+                     return (
+                       <>
+                         <Divider component="li" />
+                          <Paper elevation={4} className="li5">
+                           <ListItem className="li5">
+                             <ListItemText
+                               key={itemKey} 
+                               className="list"
+                               primary={itemTitle[index]}
+                               secondary={users[item]} 
+                               />
+                               <Button id="btn1" 
+                                  size="large" 
+                                  variant="success"
+                                  onClick={()=> {
+                                    handleClick()
+                                    setTitle(itemTitle[index])
+                                    setKey(itemKey)
+                                    setTipo(item)
+                                    setData(users[item])
+                                      }
+                                    }
+                                  >
+                                <ModeEditOutlineIcon/>
+                              </Button>    
+                            </ListItem> 
+                          </Paper>
+                       </>
+                      )
+                    })}
                     <Divider component="li" />
-                    <Paper elevation={4} className="li5">
-                    <ListItem className="li5">
-                     <ListItemText key={itemKey} className="list"
-                     primary={itemTitle[index]}
-                     secondary={users[item]} />
-                        <Button  id="btn1" size="large" variant="success"
-                        onClick={()=> {
-                          handleClick()
-                          setTitle(itemTitle[index])
-                          setKey(itemKey)
-                          setTipo(item)
-                          setData(users[item])
-                        }
-                         } >
-                          <ModeEditOutlineIcon/>
-                        </Button>    
-                      </ListItem> 
+                      <Paper elevation={4} className="li5">
+                        <ListItem >
+                          <ListItemText primary='Nombre' secondary={inf.name} className="list">
+                          </ListItemText>
+                        </ListItem> 
                       </Paper>
-                      </>
-                    )})}
-              <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Nombre' secondary={inf.name} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>
-               <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Apellido' secondary={inf.last_name} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>
-               <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Fecha de nacimiento' secondary={inf.birthday} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>
-              <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Email' secondary={user.email} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>
-               <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Contacto de Emergencia' secondary={inf.phone_contact} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>     
-              </List> 
-            </ScrollableFeed>   
-            </Paper> 
-          </Grid>
-          </Grid>
-        </Container>
-        </Box>   
-        </div>
+                    <Divider component="li" />
+                      <Paper elevation={4} className="li5">
+                        <ListItem >
+                          <ListItemText primary='Apellido' secondary={inf.lastname} className="list">
+                          </ListItemText>
+                        </ListItem> 
+                      </Paper>
+                    <Divider component="li" />
+                      <Paper elevation={4} className="li5">
+                        <ListItem >
+                          <ListItemText primary='Cumpleaños' secondary={inf.birthday} className="list">
+                          </ListItemText>
+                        </ListItem> 
+                      </Paper>
+                    <Divider component="li" />
+                      <Paper elevation={4} className="li5">
+                        <ListItem >
+                          <ListItemText primary='Email' secondary={user.email} className="list">
+                          </ListItemText>
+                        </ListItem> 
+                      </Paper>
+                    </List> 
+               </ScrollableFeed>   
+             </Paper> 
+           </Container>
+         </Box>   
+      </div>
     </>
   );    
 };

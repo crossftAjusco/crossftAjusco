@@ -1,9 +1,6 @@
 //Formulario de registro de nuevos usuaris
 //Se instaló npm formik "https://formik.org/docs/overview"
 import React, { useState } from "react";
-import { useAuth } from "../../Context/authContext";
-import { useNavigate } from "react-router-dom";
-import { Alert } from "../../LandingPage/Alerts/Alert";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import NuevoUsuario from "./NuevoUsuarioFB";
 import './Register.css'
@@ -42,6 +39,7 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
           payment_days: [new Date()],
           name: "",
           lastname: "",
+          photo: "",
           phone: "",
           phone_contact: "",
           gender: "",
