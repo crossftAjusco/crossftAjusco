@@ -27,10 +27,11 @@ const Biopic = () => {
           <br />
           Cuento con 2 certificaciones oficiales:
           <em>
-            <li>
+            <br />
+            <ul>
               Entrenador deportivo especializado en 'Entrenamiento Funcional'
-            </li>
-            <li>Entrenador en 'Acondicionamiento Físico'</li>
+            </ul>
+            <ul>Entrenador en 'Acondicionamiento Físico'</ul>
           </em>
         </p>
       </div>

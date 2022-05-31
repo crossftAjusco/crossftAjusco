@@ -68,7 +68,7 @@ const Carrousel = () => {
         <img className="picture" src={img5} alt="Third slide" />
         <Carousel.Caption className="carousel-caption carousel-label">
           <h3>En equipo todo es mejor</h3>
-          <p>!Súmate a la mejor comunidad de Crossfit en CDMX!</p>
+          <p>¡Súmate a la mejor comunidad de Crossfit en CDMX!</p>
         </Carousel.Caption>
       </Carousel.Item>
 

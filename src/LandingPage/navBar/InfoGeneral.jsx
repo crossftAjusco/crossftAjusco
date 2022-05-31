@@ -19,8 +19,9 @@ const InfoGeneral = () => {
       <section className="Info">
         <div className="details">
           <h4 className="slogan">
-            <i>Entrena para ser fuerte, no solo para parecerlo</i>
+            Entrena para ser fuerte, no solo para parecerlo...
           </h4>
+
           <br />
           <h5>
             Más que un centro de entrenamiento, somos una comunidad.
