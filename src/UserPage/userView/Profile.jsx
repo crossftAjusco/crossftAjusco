@@ -89,11 +89,13 @@ const Profile = () => {
   //console.log(inf)
   return (
     <>
-    <UserModal show={show} setShow={setShow} tipo={tipo} titles={titles} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
-    <div>
-    <div className="title1">
-    <h2 className="title">Mi Perfil</h2>
-    </div>  
+      <UserModal show={show} setShow={setShow} tipo={tipo} titles={titles} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
+      <div>
+        <div className="title1">
+         <h2 className="title">
+           Mi Perfil
+           </h2>
+        </div>  
         <Box sx={{ display: "flex" }}>
           <Container maxWidth="lg" className="cont1">
               <Paper className="paper1" elevation={4}
@@ -103,73 +105,81 @@ const Profile = () => {
                     padding: 2,
                     flexDirection: "column",
                     height: 565,
-                    }}>  
+                  }}
+                  >  
               <ScrollableFeed>             
-              <List>
-                <p>Aquí puedes editar tus datos, si deseas cambiar algun otro dato como tu correo o 
-                  contraseña contacta a tu coach.</p>
+                <List>
+                  <p>
+                    Aquí puedes editar tus datos, si deseas cambiar algun otro dato como tu cumpleaños o email
+                    contacta a tu coach
+                  </p>
                 <Divider component="li" />
-                {Object.keys(users,itemTitle).map((item,index)=> {
-                  const itemKey = `key-${index}`
-                  console.log(itemTitle[index])
-                  console.log(users[item])
-                  return (
-                    <>
+                  {Object.keys(users,itemTitle).map((item,index)=> {
+                   const itemKey = `key-${index}`
+                     return (
+                       <>
+                         <Divider component="li" />
+                          <Paper elevation={4} className="li5">
+                           <ListItem className="li5">
+                             <ListItemText
+                               key={itemKey} 
+                               className="list"
+                               primary={itemTitle[index]}
+                               secondary={users[item]} 
+                               />
+                               <Button id="btn1" 
+                                  size="large" 
+                                  variant="success"
+                                  onClick={()=> {
+                                    handleClick()
+                                    setTitle(itemTitle[index])
+                                    setKey(itemKey)
+                                    setTipo(item)
+                                    setData(users[item])
+                                      }
+                                    }
+                                  >
+                                <ModeEditOutlineIcon/>
+                              </Button>    
+                            </ListItem> 
+                          </Paper>
+                       </>
+                      )
+                    })}
                     <Divider component="li" />
-                    <Paper elevation={4} className="li5">
-                    <ListItem className="li5">
-                     <ListItemText key={itemKey} className="list"
-                     primary={itemTitle[index]}
-                     secondary={users[item]} />
-                        <Button  id="btn1" size="large" variant="success"
-                        onClick={()=> {
-                          handleClick()
-                          setTitle(itemTitle[index])
-                          setKey(itemKey)
-                          setTipo(item)
-                          setData(users[item])
-                        }
-                         } >
-                          <ModeEditOutlineIcon/>
-                        </Button>    
-                      </ListItem> 
+                      <Paper elevation={4} className="li5">
+                        <ListItem >
+                          <ListItemText primary='Nombre' secondary={inf.name} className="list">
+                          </ListItemText>
+                        </ListItem> 
                       </Paper>
-                      </>
-                    )})}
-              <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Nombre' secondary={inf.name} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>
-               <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Apellido' secondary={inf.lastname} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>
-               <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Fecha de nacimiento' secondary={inf.birthday} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>
-              <Divider component="li" />
-              <Paper elevation={4} className="li5">
-              <ListItem >
-               <ListItemText primary='Email' secondary={user.email} className="list">
-               </ListItemText>
-               </ListItem> 
-               </Paper>
-              </List> 
-            </ScrollableFeed>   
-            </Paper> 
-        </Container>
-        </Box>   
-        </div>
+                    <Divider component="li" />
+                      <Paper elevation={4} className="li5">
+                        <ListItem >
+                          <ListItemText primary='Apellido' secondary={inf.lastname} className="list">
+                          </ListItemText>
+                        </ListItem> 
+                      </Paper>
+                    <Divider component="li" />
+                      <Paper elevation={4} className="li5">
+                        <ListItem >
+                          <ListItemText primary='Cumpleaños' secondary={inf.birthday} className="list">
+                          </ListItemText>
+                        </ListItem> 
+                      </Paper>
+                    <Divider component="li" />
+                      <Paper elevation={4} className="li5">
+                        <ListItem >
+                          <ListItemText primary='Email' secondary={user.email} className="list">
+                          </ListItemText>
+                        </ListItem> 
+                      </Paper>
+                    </List> 
+               </ScrollableFeed>   
+             </Paper> 
+           </Container>
+         </Box>   
+      </div>
     </>
   );    
 };

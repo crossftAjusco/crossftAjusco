@@ -57,6 +57,7 @@ export const UserRules = () => {
              <object data={Reglamento} style={style} label="pdf">
              </object>
              </Paper>
+
              <Paper
                 sx={{
                   p: 2,
@@ -65,7 +66,7 @@ export const UserRules = () => {
                   height: 435,
                 }}>
             <h3>{uD.name} {uD.last_name}</h3> 
-            <h4>Este es mi reglamento de usuario:</h4>
+            <h4>Este es tu reglamento de usuario:</h4>
             <div key={uD.id}>
               <p>Al momento de pertenecer a la comunidad de 'Cross FT Ajusco' hago constatar que he leído y entendido las normas presentadas en el 'Reglamento Interno de Cross FT Ajusco', por lo que acepto de conformidad cumplir con lo establecido en el mismo, así como con las instrucciones e indicaciones que emitan los instructores y/o monitores acargo. 
               Así mismo, acepto las responsabilidades, derechos y obligaciones establecidos para las y los participantes de las actividades de 'Cross FT Ajusco' en la normatividad interna y externa que rige a la Institución.

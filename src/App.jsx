@@ -14,7 +14,7 @@ import Graph from "./AdminPage/Graph/Graph.jsx";
 import Calendar from "./AdminPage/Calendar/Calendar.jsx";
 import Users from "./AdminPage/Users/Users";
 import Profile from "./UserPage/userView/Profile.jsx";
-import { UserPayments } from "./UserPage/userView/UserPayments.jsx";
+import UserPayments from "./UserPage/userView/UserPayments.jsx";
 import { ReadPost } from "./Community/Posts/ReadPost";
 import { UserDash } from "./UserPage/userView/UserDash.jsx";
 import { UserRules } from "./UserPage/userView/UserRules.jsx";
