@@ -8,7 +8,6 @@ import Button from 'react-bootstrap/Button';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import UserModal from "./UserModal";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import ScrollableFeed from 'react-scrollable-feed'
@@ -97,8 +96,6 @@ const Profile = () => {
     </div>  
         <Box sx={{ display: "flex" }}>
           <Container maxWidth="lg" className="cont1">
-            <Grid container spacing={1}>
-              <Grid item xs={12} md={4} lg={12}>
               <Paper className="paper1" elevation={4}
                   sx={{
                     p: 1,
@@ -170,8 +167,6 @@ const Profile = () => {
               </List> 
             </ScrollableFeed>   
             </Paper> 
-          </Grid>
-          </Grid>
         </Container>
         </Box>   
         </div>

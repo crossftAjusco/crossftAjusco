@@ -60,8 +60,8 @@ return(
       {user.email === "crossftajuscoweb@gmail.com" || user.email === "axoscoyetizote@gmail.com" ? (
         <DeleteIcon
         onClick={() => deletePost(event.id)}
-        style={{ cursor: 'pointer', color: '#FF6961', marginTop: "7px", rigth: 0, marginRigth: "0px"}}
-      />
+        style={{fontSize: 40, cursor: 'pointer', color: '#FF6961', marginTop: "7px", rigth: 0, marginRigth: "0px"}}
+      /> 
         ) : null}
 </div>
     )})}
