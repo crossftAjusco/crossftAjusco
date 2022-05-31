@@ -1,23 +1,11 @@
 import { collection, query, onSnapshot, doc, deleteDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import React, { useState, useEffect } from 'react';
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Slider from "react-slick";
-import { Paper } from '@mui/material'
-
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useAuth } from '../../Context/authContext';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-//import { Carousel } from "react-bootstrap";
-//import img3 from "../../assets/lp_imgs/p3.jpg";
-//import img4 from "../../assets/lp_imgs/p4.jpg";
-//import img5 from "../../assets/lp_imgs/p5.jpg";
 
 const UserCarousel = () => {
   const { user } = useAuth();
@@ -56,15 +44,10 @@ const deletePost = async (id) => {
   }
 };
 
-
-
-
 return(
   <div>
     {allEvents.map((event) => {
       return(
-
-
 <div  style={{display: "flex", flexDirection: "column"}}>
         <Card key={event.id} style={{marginTop: "20px"}}>
         <CardMedia
@@ -77,8 +60,8 @@ return(
       {user.email === "crossftajuscoweb@gmail.com" || user.email === "axoscoyetizote@gmail.com" ? (
         <DeleteIcon
         onClick={() => deletePost(event.id)}
-        style={{ cursor: 'pointer', color: '#FF6961', marginTop: "7px", rigth: 0, marginRigth: "0px"}}
-      />
+        style={{fontSize: 40, cursor: 'pointer', color: '#FF6961', marginTop: "7px", rigth: 0, marginRigth: "0px"}}
+      /> 
         ) : null}
 </div>
     )})}
