@@ -106,7 +106,7 @@ const UserPayments = () => {
               <Paper elevation={4}>         
                 <ListItem className="li2">
                    <th>
-                     Último Págo Realizado 
+                     Último Pago Realizado 
                    </th>
                    <td> 
                      {uD.payment_days[Object.keys(uD.payment_days)[Object.keys(uD.payment_days).length -1]].toDate().toLocaleDateString("es-MX", {
