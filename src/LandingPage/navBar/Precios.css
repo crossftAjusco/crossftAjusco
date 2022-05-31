@@ -4,6 +4,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding-left: 4px;
 }
 .sect {
   background-image: url("../../assets/lp_imgs/Login.jpg");
@@ -21,8 +22,7 @@
 .pricestyle {
   height: 470px;
   width: 350px;
-  margin-left: 10px;
-  margin-top: 15px;
+  margin: 20px 16px;
 }
 .sizeprice {
   max-width: 100%;
