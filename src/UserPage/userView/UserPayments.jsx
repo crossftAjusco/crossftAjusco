@@ -16,8 +16,6 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Collapse from '@mui/material/Collapse';
 
-
-
 const UserPayments = () => {
   const { user, users } = useAuth(); //traemos y comparamos el id del usuario logueado
   const [open, setOpen] = React.useState(false); // Hook para desplegar Snackbar de copiado 
