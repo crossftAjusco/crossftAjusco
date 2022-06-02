@@ -9,9 +9,9 @@ import lalo from "../../assets/lp_imgs/laloR.png";
 
 const Biopic = () => {
   return (
-    <div className="biopic">
-      <div style={{ width: "320px", height: "550px" }} className="bioText">
-        <h3 className="encabezado">Eduardo Romero Flores</h3>
+    <>
+      <div className="bioText">
+        <h3 className="title">Eduardo Romero Flores</h3>
         <img className="picL" src={lalo} />
         <p>
           Desde pequeño adquirí dos pasiones que nunca he dejado: el{" "}
@@ -24,53 +24,59 @@ const Biopic = () => {
           formación; además del gusto por el conocimiento; de vital importancia
           en la práctica deportiva ya sea esta recreativa, amateur o
           profesional.
-          <br />
-          Cuento con 2 certificaciones oficiales:
-          <em>
-            <br />
-            <ul>
-              Entrenador deportivo especializado en 'Entrenamiento Funcional'
-            </ul>
-            <ul>Entrenador en 'Acondicionamiento Físico'</ul>
-          </em>
+        </p>
+        <p>Cuento con 2 certificaciones oficiales:</p>
+
+        <p>
+          {" "}
+          Entrenador deportivo especializado en{" "}
+          <em> Entrenamiento Funcional </em> y{" "}
+          <em> Entrenador en Acondicionamiento Físico </em>
+        </p>
+
+        <p>
+          Además de otros Diplomas y constancias que avalan mis conocimientos y
+          preparación:
         </p>
       </div>
-      <div className="ImgCert">
-        <img
-          style={{ width: "320px", height: "550px" }}
-          src={diplom3}
-          alt="certificado"
-        />
+      <div className="biopic">
+        <div className="ImgCert">
+          <img
+            style={{ width: "320px", height: "550px" }}
+            src={diplom3}
+            alt="certificado"
+          />
+        </div>
+        <div className="ImgCert">
+          <img
+            style={{ width: "320px", height: "520px" }}
+            src={diplom1}
+            alt="certificado"
+          />
+        </div>
+        <div className="ImgCert">
+          <img
+            style={{ width: "320px", height: "520px" }}
+            src={diplom2}
+            alt="certificado"
+          />
+        </div>
+        <div className="ImgCert">
+          <img
+            style={{ width: "320px", height: "520px" }}
+            src={diplom4}
+            alt="certificado"
+          />
+        </div>
+        <div className="ImgCert">
+          <img
+            style={{ width: "320px", height: "570px" }}
+            src={diplom5}
+            alt="certificado"
+          />
+        </div>
       </div>
-      <div className="ImgCert">
-        <img
-          style={{ width: "320px", height: "520px" }}
-          src={diplom1}
-          alt="certificado"
-        />
-      </div>
-      <div className="ImgCert">
-        <img
-          style={{ width: "320px", height: "520px" }}
-          src={diplom2}
-          alt="certificado"
-        />
-      </div>
-      <div className="ImgCert">
-        <img
-          style={{ width: "320px", height: "520px" }}
-          src={diplom4}
-          alt="certificado"
-        />
-      </div>
-      <div className="ImgCert">
-        <img
-          style={{ width: "320px", height: "570px" }}
-          src={diplom5}
-          alt="certificado"
-        />
-      </div>
-    </div>
+    </>
   );
 };
 

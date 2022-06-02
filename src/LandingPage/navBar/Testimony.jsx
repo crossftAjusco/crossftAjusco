@@ -39,10 +39,22 @@ const Testimony = () => {
             textAlign: "center",
           }}
         >
-          <h1 className="marker" style={{ marginBottom: 20 }}>
+          <h1 className="title" style={{ marginBottom: 20 }}>
             Testimonios
           </h1>
           <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
+            <Card
+              img="https://i.ibb.co/ySB8NCn/Alma-Delia.png"
+              paragraph="Soy ultramaratonista de montaña, en el mes de marzo inicio entrenamiento con Lalo Romero el cual me ha llevado a otro nivel de desarrollo de esta disciplina. 
+En estos tres meses he logrado desarrollar e incrementar masa muscular; donde inicie con una masa muscular de 25%, hoy estoy el 31.1% y he bajado mucha grasa visceral. 
+La verdad que esta disciplina y la orientación de Lalo me ha llevado a otro nivel donde después de un año de estar en actividad física y con estos tres meses he logrado correr un ultramaraton, en el pasado mes de Abril donde me sentí muy bien y mi cuerpo reaccionó al 100% y lo increíble que la recuperación fue más rápida y más eficiente. 
+Hoy solo tengo que agradecer a Dios por poner gente extraordinaria en mi camino que siempre es un pilar para mi crecimiento deportivo y personal, como lo es Lalo Romero que me ha llevado a otro nivel para desarrollar esta pasión por la montaña y el deporte. 
+No cabe duda que cuando tienes un coach con el conocimiento adecuado, simplemente te conviertes en tu mejor versión. 
+Simplemente Gracias Lalo por ser mi Coach y no consentirme. Gracias por que en cada entrenamiento me exiges más y eso me saca de mi área de confort para seguir avanzando. 
+Gracias, gracias, gracias. Amigo 
+Dios te bendice 🙏🏼🙏🏼🙏🏼✍🏼🤜🏼🦅💪🏼🎬"
+              author="Alma Delia Gonzalez Camacho."
+            />
             <Card
               img="https://pbs.twimg.com/profile_images/1431129476151357441/AZmUEptx_400x400.jpg"
               paragraph="Mi experiencia en el ejercicio lleva apenas 3 meses y medio, después de casi 20 años de inactividad física. Encontré en redes sociales a Cross FT Ajusco y llegó por medio de una dinámica, la cual fue 2 semanas de entrenamiento gratuitas, a partir de ahí ya no me fui, hoy puedo decir que estoy frente a un entrenador muy profesional (Lalo Romero) ya que sabe, entiende y adecua la forma de cada uno de los inscritos en su proyecto. En lo personal para mí ha Sido muy grato ya que en este poco tiempo he perdido casi 10 kilos, eso me sigue motivando día con día a qué nunca es tarde para empezar o regresar a hacer actividad física..."
@@ -89,11 +101,11 @@ const Card = ({ img, paragraph, author }) => {
       }}
     >
       <Avatar
-        imgProps={{ style: { borderRadius: "50%" } }}
+        imgProps={{ style: { borderRadius: "45%" } }}
         src={img}
         style={{
-          width: 100,
-          height: 100,
+          width: 110,
+          height: 110,
           border: "1px solid lightgray",
           padding: 5,
           marginBottom: 15,

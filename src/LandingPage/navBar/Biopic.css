@@ -4,20 +4,31 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  background-image: url("../../assets/lp_imgs/Login.jpg");
 }
 
 .encabezado {
   color: rgb(210, 153, 11);
   text-align: center;
+  justify-content: center;
   font-family: "Anton", sans-serif;
-  font-size: 22px;
+  font-size: 24px;
+  padding-bottom: 2%;
+  padding-top: 2%;
 }
 .bioText {
   color: #ffffff;
+
   font-family: "Saira Condensed", sans-serif;
   justify-content: center;
-  font-size: 15px;
-  text-align: justify;
+  font-size: 18px;
+  text-align: center;
+  width: auto;
+  margin-left: 4px;
+  padding-left: 4%;
+  margin-right: 4px;
+  padding-right: 4%;
+  padding-top: 2%;
 }
 .ImgCert {
   margin-left: 5px;
@@ -25,9 +36,10 @@
 }
 
 .picL {
-  border-radius: 45%;
-  width: 180px;
-  height: 200px;
+  border-radius: 55%;
+  width: 140px;
+  height: 175px;
   box-shadow: 2px;
   justify-content: center;
+  text-align: center;
 }
