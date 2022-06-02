@@ -44,6 +44,22 @@ const Testimony = () => {
           </h1>
           <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>
             <Card
+              img="https://i.ibb.co/ySB8NCn/Alma-Delia.png"
+              paragraph="Soy ultramaratonista de montaña, desde hace 5 años, en mi trayecto he ido aprendiendo a desarrollar la disciplina, nunca he contado con algún entrenador en específico, he corrido en base a mis conocimientos que los he adquirido de bibliografía y de amigos de experiencia en el ramo, así he llegado a correr 120km que ha sido lo máximo,  con buenos resultados excepto en mi última competencia de 100 millas no logré por lesión de siatica. Y después de 6 meses corrí el maratón Cdmx y lo logré terminar sin problema. 
+Posteriormente se vino la pandemia que me saco de la jugada, padecí Covid y me dio para abajo todos los sistemas, perdí mucho músculo, fuerza en piernas y debilidad física.
+Entro en recuperación donde no me permití vencerme ya que soy muy aferrada y empecé a meterle a la bici que fue mi gran aliada durante un año, seguí avanzando y el médico me indicó ejercicio de fuerza con pesas y funcional . 
+Aquí es donde entra mi queridísimo Coach de CrossFt Ajusco. Que me lo encuentro en el camino y dije esto es lo que busco!!!
+Y en el mes de marzo inicio entrenamiento con Lalo Romero el cual me ha llevado a otro nivel de desarrollo de esta disciplina. 
+En estos tres meses he logrado desarrollar e incrementar masa muscular donde inicie con una masa muscular de 25% y hasta hoy estoy el 31.1% y he bajado mucha grasa visceral. 
+La verdad que esta disciplina y la orientación de Lalo me ha llevado a otro nivel donde después de un año de estar en actividad física y con estos tres meses he logrado correr un ultramarathon, en el pasado mes de Abril donde me sentí muy bien y mi cuerpo reaccionó al 100% y lo increíble que la recuperación fue más rápida y más eficiente. 
+Hoy solo tengo que a gradecer a Dios por poner gente extraordinaria en mi camino que siempre es un pilar para mi crecimiento deportivo y personal, como lo es Lalo Romero que me ha llevado a otro nivel para desarrollar esta pasión por la montaña y el deporte. 
+No cabe duda que cuando tienes un coach con el conocimiento adecuado, simplemente te vuelves en tú mejor versión. 
+Simplemente Gracias Lalo por ser mi Coach y no consentirme. Gracias por que en cada entrenamiento me exiges más y eso me saca de mi área de confort para seguir avanzando. 
+Gracias, gracias, gracias. Amigo 
+Dios te bendice &#128591;&#128591;&#x1F91C🙏🏼🙏🏼🙏🏼✍🏼🤜🏼🦅💪🏼🎬"
+              author="Alma Delia Gonzalez Camacho."
+            />
+            <Card
               img="https://pbs.twimg.com/profile_images/1431129476151357441/AZmUEptx_400x400.jpg"
               paragraph="Mi experiencia en el ejercicio lleva apenas 3 meses y medio, después de casi 20 años de inactividad física. Encontré en redes sociales a Cross FT Ajusco y llegó por medio de una dinámica, la cual fue 2 semanas de entrenamiento gratuitas, a partir de ahí ya no me fui, hoy puedo decir que estoy frente a un entrenador muy profesional (Lalo Romero) ya que sabe, entiende y adecua la forma de cada uno de los inscritos en su proyecto. En lo personal para mí ha Sido muy grato ya que en este poco tiempo he perdido casi 10 kilos, eso me sigue motivando día con día a qué nunca es tarde para empezar o regresar a hacer actividad física..."
               author="Alejandro García"
