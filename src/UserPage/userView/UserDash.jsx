@@ -63,7 +63,7 @@ export function UserDash() {
               borderStyle: "none",
               marginTop: "12px"
               }}>
-              <Button variant="primary">Crear Evento</Button>
+              <Button variant="contained" color="primary">Crear Evento</Button>
             </button>
     </form>) : null }
   </>
