@@ -177,7 +177,7 @@ const UserPayments = () => {
                     </ThemeProvider>
                   </td>
                   <th marginLeft="3px">Nombre o Concepto</th>
-                  <td padding="2px">Pablo Romero</td>
+                  <td padding="2px">Eduardo Romero Flores</td>
                 </ListItem>
                 <Paper elevation={4}>
                   <ListItem className="li4">
