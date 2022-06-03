@@ -89,20 +89,19 @@ const Profile = () => {
   //console.log(inf)
   return (
     <>
-      <UserModal show={show} setShow={setShow} tipo={tipo} titles={titles} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
-      <div>
-        <div className="title1">
-         <h2 className="title">
+    <div className="title3">
+         <h2>
            Mi Perfil
            </h2>
         </div>  
+      <UserModal show={show} setShow={setShow} tipo={tipo} titles={titles} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
+      
         <Box sx={{ display: "flex" }}>
-          <Container maxWidth="lg" className="cont1">
+          <Container maxWidth="lg" sx={{ mt: 4, mb: 4}}>
               <Paper className="paper1" elevation={4}
                   sx={{
                     p: 1,
                     display: "flex",
-                    padding: 2,
                     flexDirection: "column",
                     height: 565,
                   }}
@@ -179,7 +178,7 @@ const Profile = () => {
              </Paper> 
            </Container>
          </Box>   
-      </div>
+      
     </>
   );    
 };

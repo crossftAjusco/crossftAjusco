@@ -1,23 +1,16 @@
 import { useAuth } from '../../Context/authContext';
 import "./UserView.css";
-import AddIcon from '@mui/icons-material/Add';
-import Fab from '@mui/material/Fab';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase';
-
 import React, {useState} from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
 import UserCarousel from "./UserCarousel.jsx";
 // import UserCarousel from "./UserCarousel.jsx";
 import ScrollableFeed from 'react-scrollable-feed'
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from "../../firebase"
-
 import Button from '@mui/material/Button';
-
 import { AdPicture } from "../../Community/Posts/AdPicture"
 
 
@@ -51,7 +44,7 @@ export function UserDash() {
   }
   return (
     <>
-    <div className="title1">
+     <div className="title3">
     <h2>Próximos Eventos</h2>
     </div>
       <Box sx={{ display: "flex" }}>
@@ -70,7 +63,7 @@ export function UserDash() {
               borderStyle: "none",
               marginTop: "12px"
               }}>
-              <Button>Crear Evento</Button>
+              <Button variant="primary">Crear Evento</Button>
             </button>
     </form>) : null }
   </>

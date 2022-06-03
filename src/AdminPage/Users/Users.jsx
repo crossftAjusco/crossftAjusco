@@ -178,7 +178,7 @@ export default function CollapsibleTable() {
 
   return (
     <TableContainer component={Paper}>
-      <h2 className="title">Usuarios registrados:</h2>
+      <h2 className="title">Usuarios registrados</h2>
       {usuarios && (
         <>
           <span className="lbl-search"><SearchIcon /></span>

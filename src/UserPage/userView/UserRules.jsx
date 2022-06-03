@@ -35,7 +35,7 @@ export const UserRules = () => {
   //Retornamos el rendereado de los elementos del reglamento
   return (
     <>
-      <div className="title">
+      <div className="title3">
         <h2>Reglamento de usuario</h2>
       </div>
       <Box sx={{ display: "flex" }}>

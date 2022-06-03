@@ -67,6 +67,7 @@
 }
 .contUser {
   background-image: url("../../assets/lp_imgs/Login.jpg");
+  align-items: center;
 }
 #subtitle,
 #welcome {
@@ -82,7 +83,7 @@
   margin-top: -4vh;
 }
 .iconos {
-  color: rgb(210, 153, 11);
+  color: #ecc510fc;
 }
 .paper1 {
   align-items: center;
@@ -133,6 +134,18 @@
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
 }
+
+.title3 {
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  color: #ecc510fc;
+  font-style: italic;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  background-color: #212529;
+  text-shadow: 2px 3px 3px black;
+}
+
 .cont1 {
   margin-top: 0;
 }

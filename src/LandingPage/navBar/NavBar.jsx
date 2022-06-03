@@ -126,13 +126,13 @@ export const Navigation = () => {
                 >
                   {admin ? (
                     <>
-                      <ListItemButton onClick={handleAdmin}>
+                      <ListItemButton onClick={handleAdmin} onClose={handleCloseUserMenu}>
                         <ListItemIcon>
                           <AdminPanelSettingsIcon />
                           <ListItemText primary="Admin" />
                         </ListItemIcon>
                       </ListItemButton>
-                      <ListItemButton onClick={handleLogout}>
+                      <ListItemButton onClick={handleLogout} onClose={handleCloseUserMenu}>
                         <ListItemIcon>
                           <LogoutIcon />
                           <ListItemText primary="LogOut" />
@@ -141,13 +141,13 @@ export const Navigation = () => {
                     </>
                   ) : (
                     <>
-                      <ListItemButton onClick={handleUser}>
+                      <ListItemButton onClick={handleUser} onClose={handleCloseUserMenu}>
                         <ListItemIcon>
                           <AccountCircleIcon />
                           <ListItemText primary="Usuario" />
                         </ListItemIcon>
                       </ListItemButton>
-                      <ListItemButton onClick={handleLogout}>
+                      <ListItemButton onClick={handleLogout} onClose={handleCloseUserMenu}>
                         <ListItemIcon>
                           <LogoutIcon />
                           <ListItemText primary="LogOut" />
@@ -160,7 +160,7 @@ export const Navigation = () => {
             </>
           ) : (
             <center>
-              <Login />
+              <Login onClose={handleCloseUserMenu}/>
             </center>
           )}
           <Nav>{/* <Nav.Link href="#deets">More deets</Nav.Link> */}</Nav>
