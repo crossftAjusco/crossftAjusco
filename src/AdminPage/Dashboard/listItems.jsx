@@ -35,28 +35,28 @@ export const mainListItems = (
     <div className='iconsDashboard'>
       <NavLink to='calendar'>
         <Tooltip title="Calendario">
-          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc;' } }}>
             <CalendarMonthIcon size='large' />
           </IconButton>
         </Tooltip>
       </NavLink>
       <NavLink to='graph'>
         <Tooltip title="Pagos">
-          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc;' } }}>
             <PaidIcon size='large' />
           </IconButton>
         </Tooltip>
       </NavLink>
       <NavLink to='comunidad'>
         <Tooltip title="Comunidad">
-          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc;' } }}>
             <ConnectWithoutContactIcon size='large' />
           </IconButton>
         </Tooltip>
       </NavLink>
       <NavLink to='form'>
         <Tooltip title="Nuevo usuario">
-          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc;' } }}>
             <GroupAddIcon size='large' />
           </IconButton>
         </Tooltip>
@@ -64,7 +64,7 @@ export const mainListItems = (
       
       <NavLink to='usuarios'>
         <Tooltip title="Usuarios">
-          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc;' } }}>
             <PeopleIcon fontSize="inherit" />
           </IconButton>
         </Tooltip>
@@ -72,7 +72,7 @@ export const mainListItems = (
 
       <NavLink to='eventos'>
         <Tooltip title="Eventos">
-          <IconButton color='primary' size='large' sx={{ "&:hover": { color: 'rgb(210, 153, 11)' } }}>
+          <IconButton color='primary' size='large' sx={{ "&:hover": { color: '#ecc510fc;' } }}>
           <LayersIcon size='large' />
           </IconButton>
         </Tooltip>

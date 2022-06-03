@@ -39,7 +39,7 @@ const Testimony = () => {
             textAlign: "center",
           }}
         >
-          <h1 className="title" style={{ marginBottom: 20 }}>
+          <h1 className="title3" style={{ marginBottom: 20 }}>
             Testimonios
           </h1>
           <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>

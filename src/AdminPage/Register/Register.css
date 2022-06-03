@@ -21,7 +21,7 @@
   font-family: "Anton", sans-serif;
   color: #ecc510fc;
   text-shadow: 2px 3px 3px black;
-  background-color: rgba(0, 0, 0, 0.819);
+  background-color: #212529;
   font-style: italic;
   font-size: 1.5rem;
   font-weight: 1px;
@@ -114,7 +114,7 @@
 
 .success {
   font-family: "Saira Condensed", sans-serif;
-  color: #ecc510fc;
+  color:#ecc510fc;
   font-weight: bold;
   font-size: 2rem;
   align-items: center;

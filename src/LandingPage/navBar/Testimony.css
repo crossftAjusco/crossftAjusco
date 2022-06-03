@@ -16,7 +16,7 @@
 }
 
 .autor {
-  color: rgb(210, 153, 11);
+  color: #ecc510fc;
   font-family: "Saira Condensed", sans-serif;
   font-size: 21px;
 }
@@ -44,7 +44,7 @@
 }
 
 .marker {
-  color: rgb(210, 153, 11);
+  color: #ecc510fc;
   text-align: center;
   font-family: "Anton", sans-serif;
   font-size: 1.5rem;

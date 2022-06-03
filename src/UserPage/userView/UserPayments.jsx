@@ -57,11 +57,12 @@ const UserPayments = () => {
   return (
     //Mostramos los pagos en una lista
     <>
-      <div className="title">
+    <div className="title3">
         <h2>Mis Pagos </h2>
-      </div>
+        </div>
       <Box sx={{ display: "flex" }}>
         <Container maxWidth="lg" className="cont1">
+        
           <Paper
             className="paper1"
             sx={{
@@ -154,8 +155,7 @@ const UserPayments = () => {
               <Paper elevation={4}>
                 <ListItem className="li3">
                   <th marginLeft="3px">Cuenta Clabe</th>
-                  <td padding="2px">072180003213100972</td>
-                  <td>
+                  <td padding="2px">072180003213100972
                     <IconButton
                       id="btnC"
                       size="large"
@@ -176,6 +176,8 @@ const UserPayments = () => {
                       />
                     </ThemeProvider>
                   </td>
+                  <th marginLeft="3px">Nombre o Concepto</th>
+                  <td padding="2px">Pablo Romero</td>
                 </ListItem>
                 <Paper elevation={4}>
                   <ListItem className="li4">

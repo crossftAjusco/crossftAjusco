@@ -136,7 +136,7 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
               {/* {console.log(values)} */}
               {/* {error && <Alert message={error} />} */}
               <Form className="formulario" type= "row"> {/* <Form> imprime en el UI */}
-              <h2 className="title">Registro de nuevos usuarios:</h2>
+              <h2 className="title">Registro de nuevos usuarios</h2>
                   <div className="fields">
                     <label htmlFor="payment_days" className="subtitles">Fecha de registro:</label>
                     <p className="subtitles">{inscripcion}</p>

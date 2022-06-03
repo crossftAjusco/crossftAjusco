@@ -94,8 +94,8 @@ useEffect(() => {
         ></Avatar>
       </div>
       <div className="createPost">
-      <div className="title1">
-    <h2 className='title'>Comunidad</h2>
+      <div className="title3">
+    <h2>Comunidad</h2>
     </div> 
         <CreatePost setPosts={setPosts} />
       </div>

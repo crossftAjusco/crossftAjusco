@@ -11,7 +11,7 @@ const Precios = () => {
     <>
       <section className="sect">
         <div>
-          <h1 className="title">Entrenamientos</h1>
+          <h1 className="title3">Entrenamientos</h1>
         </div>
         <div className="cost">
           <div className="pricestyle">
@@ -28,7 +28,7 @@ const Precios = () => {
       </section>
       <section className="sect">
         <div>
-          <h1 className="sloggi">Promociones</h1>
+          <h1 className="title3">Promociones</h1>
         </div>
 
         <div className="cost">
