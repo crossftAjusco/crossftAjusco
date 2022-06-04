@@ -3,9 +3,8 @@ import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import WarningIcon from '@mui/icons-material/Warning';
 import './confirm.css';
-import { getFirestore } from "firebase/firestore";
-import { doc, deleteDoc} from "firebase/firestore";
-
+import { getFirestore, doc, deleteDoc} from "firebase/firestore";
+//Se necesita iniciar el getFirestore para direccionar la referencia del Delete()
 const db = getFirestore();
 //Modal traido de la librería Bootstrap
 export const ConfModal = ({ id }) => {
@@ -13,9 +12,13 @@ export const ConfModal = ({ id }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+//Al dar click en eliminar dentro del modal se borra el "doc" dentro de la "collection" de FB
     const deleteUsuario = (id) => {
-            return deleteDoc(doc(db, 'Users', id));
+            try { //si todo sale bien...
+                deleteDoc(doc(db, 'Users', id));   
+            } catch (e) { //si ocurre un error en la conexion o referencia...
+                alert("Ocurrio el error: " + e)
+            }
         }
 
     return (

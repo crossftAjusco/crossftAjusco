@@ -40,6 +40,7 @@ function searchingTerm(term) {
 //Param Users es traida desde Context con info necesaria para el renderizado
 function Row(users, id) {
   const { row } = users;
+  //Gracias al const {row}=users; se trae dinamicamente cada id existente en la DB
   id = row.id;
   const [open, setOpen] = React.useState(false);
   
@@ -137,6 +138,7 @@ function Row(users, id) {
                       Pagos realizados:
                     </TableCell>
                     <TableCell>
+                      {/* se trae el id del "doc" para los fines del deleteDoc() dentro del "collection"*/}
                       <ConfModal id={id}/>
                     </TableCell>
                   </TableRow>
