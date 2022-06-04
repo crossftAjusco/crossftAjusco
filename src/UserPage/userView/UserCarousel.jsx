@@ -6,6 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useAuth } from '../../Context/authContext';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
+import swal from 'sweetalert';
 
 const UserCarousel = () => {
   const { user } = useAuth();
@@ -31,18 +32,42 @@ useEffect(() => {
 }, []);
 console.log(allEvents)
 
+
 //Eliminar
 const deletePost = async (id) => {
   //console.log(id);
-  try {
-    //Eliminar
-    await deleteDoc(doc(db, 'Events', id));
-    console.log('Document deleted with ID: ', id);
 
-  } catch (error) {
-    console.error('Error adding document: ', error);
-  }
+
+  await swal({
+    title: "¿Estás seguro?",
+    text: "Una vez eliminado, no podrás recuperar este evento.",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      try {
+        //Eliminar
+        deleteDoc(doc(db, 'Events', id));
+        //console.log('Document deleted with ID: ', id);
+      } catch (error) {
+        //console.error('Error adding document: ', error);
+      }
+      swal("¡Tu evento ha sido eliminado!", {
+        icon: "success",
+      });
+    } else {
+      swal("¡Uuf! ¡Salvaste tu evento!");
+    }
+  });
 };
+
+
+
+
+
+
 
 return(
   <div>
