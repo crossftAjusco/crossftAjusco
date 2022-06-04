@@ -97,7 +97,7 @@ useEffect(() => {
       <div className="title3">
     <h2>Comunidad</h2>
     </div> 
-        <CreatePost setPosts={setPosts} />
+        <CreatePost setPosts={setPosts}/>
       </div>
       <main className="postArea">
         {posts.map((post) => {
@@ -106,7 +106,6 @@ useEffect(() => {
               key={post.id}
               style={{
                 marginTop: '5%',
-                marginRight: '5%',
                 marginBottom: '5%',
               }}
             >
