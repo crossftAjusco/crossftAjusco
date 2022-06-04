@@ -89,7 +89,6 @@ export const CreatePost = ({ setPosts }) => {
           borderRadius: '7px',
           boxShadow: '0px 5px 7px -7px',
           padding: '1%',
-          marginRight: '5%',
         }}
       >
         <Form onSubmit={handleSubmit}>
