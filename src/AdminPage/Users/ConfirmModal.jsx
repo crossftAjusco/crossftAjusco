@@ -3,13 +3,20 @@ import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import WarningIcon from '@mui/icons-material/Warning';
 import './confirm.css';
+import { getFirestore } from "firebase/firestore";
+import { doc, deleteDoc} from "firebase/firestore";
 
+const db = getFirestore();
 //Modal traido de la librería Bootstrap
-export const ConfModal = () => {
-//Despliega el modal con el seteo de Show inicializado en false
+export const ConfModal = ({ id }) => {
+    //Despliega el modal con el seteo de Show inicializado en false
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const deleteUsuario = (id) => {
+            return deleteDoc(doc(db, 'Users', id));
+        }
 
     return (
         <>  
@@ -39,7 +46,7 @@ export const ConfModal = () => {
                     <Button variant="secondary" onClick={handleClose} className="modalbtn"> 
                         Cancelar
                     </Button>
-                    <Button variant="danger" onClick={handleClose} className="modalbtn">
+                    <Button variant="danger" onClick={()=> deleteUsuario(id)} className="modalbtn">
                         Eliminar
                     </Button>
                 </Modal.Footer>

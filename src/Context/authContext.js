@@ -3,8 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail } from "firebase/auth";
 import { collection, onSnapshot } from "firebase/firestore";
-import { db } from "../firebase";
-import { auth } from "../firebase";
+import { db, auth } from "../firebase";
 
 //se crea el contexto a partir de importacion createContext by React
 export const authContext = createContext();

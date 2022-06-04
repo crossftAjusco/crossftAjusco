@@ -38,8 +38,9 @@ function searchingTerm(term) {
 };
 //función que pinta cada fila (row) de la tabla de usuarios
 //Param Users es traida desde Context con info necesaria para el renderizado
-function Row(users) {
+function Row(users, id) {
   const { row } = users;
+  id = row.id;
   const [open, setOpen] = React.useState(false);
   
   return (
@@ -136,7 +137,7 @@ function Row(users) {
                       Pagos realizados:
                     </TableCell>
                     <TableCell>
-                      <ConfModal />
+                      <ConfModal id={id}/>
                     </TableCell>
                   </TableRow>
                   <TableRow>
