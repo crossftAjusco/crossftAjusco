@@ -2,7 +2,7 @@ import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { collection, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 
 
 export const Delete = ({ id, setPosts }) => {

@@ -139,7 +139,8 @@ function Row(users, id) {
                     </TableCell>
                     <TableCell>
                       {/* se trae el id del "doc" para los fines del deleteDoc() dentro del "collection"*/}
-                      <ConfModal id={id}/>
+                      <ConfModal id={id} />
+                      <button> Editar Información</button>
                     </TableCell>
                   </TableRow>
                   <TableRow>
