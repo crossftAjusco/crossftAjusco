@@ -25,12 +25,12 @@ export const ConfModal = ({ id }) => {
         <>  
             {/* Retorna un botón que aparece en pantalla */}
             <Button variant="outline-danger" size="sm" onClick={handleShow}>
-            Eliminar usuario
+            Eliminar Usuario
             </Button>
             {/* El modal se inicializa en show=falso, hasta que sea true para mostrarse */}
             <Modal show={show} onHide={handleClose}>
                 {/* Elementos del modal Bootstrap */}
-                <Modal.Header >
+                <Modal.Header closeButton>
                     <Modal.Title className="ModTitle" >
                     Borrar usuario
                     </Modal.Title>

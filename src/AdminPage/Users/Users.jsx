@@ -28,6 +28,7 @@ import { yellow } from '@mui/material/colors';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { ConfModal } from './ConfirmModal';
+import { EditModal } from './EditModal'
 
 //Función que busca por nombre (term) en minúsculas
 function searchingTerm(term) {
@@ -114,6 +115,11 @@ function Row(users, id) {
                   <TableRow>
                     <TableCell>Fecha de inicio: </TableCell>
                     <TableCell>Próxima fecha de pago:</TableCell>
+                    <TableCell>
+                      <center>
+                        <EditModal id={id} /> {/* Modal para editar info de usuario */}
+                      </center>
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
@@ -130,6 +136,11 @@ function Row(users, id) {
                       day: "numeric",
                     })}
                     </TableCell>
+                    <TableCell>
+                      <center>
+                        <ConfModal id={id} />
+                      </center>
+                    </TableCell> {/* se trae el id del "doc" \ modal para confirmar eliminación*/}
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -137,13 +148,6 @@ function Row(users, id) {
                     <TableCell>
                       Pagos realizados:
                     </TableCell>
-                    <TableCell>
-                      {/* se trae el id del "doc" para los fines del deleteDoc() dentro del "collection"*/}
-                      <ConfModal id={id} />
-                      <button> Editar Información</button>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
                     <TableCell>
                       {row.payment_days.map((historyRow) => (
                         <TableRow key={historyRow}>
