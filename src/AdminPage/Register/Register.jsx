@@ -223,7 +223,7 @@ export const Register = (valores) => { // Props = valores : {objeto conformado p
                     <Field type="number" name="waist" id="waist" placeholder="cm" step={0.1} precision={2} min={20} max={200} className="inputNum"/>
                     {/* Solo para el caso de values.gender == "femenino" */}
                     <div>
-                      {(values.gender === "femenino" && <>
+                      {(values.gender === "Femenino" && <>
                         <label htmlFor="hip" className="subtitles">Cadera:</label>
                         <Field type="number" name="hip" id="hip" placeholder="cm" step={0.1} precision={2} min={20} max={200} className="inputNum"/></>)}          
                     </div>

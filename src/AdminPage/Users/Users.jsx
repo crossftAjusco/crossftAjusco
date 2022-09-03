@@ -89,7 +89,6 @@ function Row(users, id) {
               </a>
           </Grid>
         </TableCell>
-        <TableCell>{row.gender}</TableCell>
         <TableCell >{
           new Date().getTime() < row.next_payday.toDate().getTime() ? (
             <div >
@@ -198,7 +197,6 @@ export default function CollapsibleTable() {
             <TableCell />
             <TableCell>Nombre(s):</TableCell>
             <TableCell># Teléfono:</TableCell>
-            <TableCell>Sexo:</TableCell>
             <TableCell>Status:</TableCell>
           </TableRow>
         </TableHead>
