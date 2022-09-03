@@ -6,7 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useAuth } from '../../Context/authContext';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 
 const UserCarousel = () => {
   const { user } = useAuth();

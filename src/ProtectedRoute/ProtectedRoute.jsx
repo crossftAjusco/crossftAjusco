@@ -23,7 +23,8 @@ export const ProtectedRoute = ({ children }) => {
 
   if (
     (user.email === "crossftajuscoweb@gmail.com") |
-    (user.email === "axoscoyetizote@gmail.com")
+    (user.email === "axoscoyetizote@gmail.com") |
+    (user.email ==="antonio281255@gmail.com")
   ) {
     setAdmin(true);
     return <>{children}</>;

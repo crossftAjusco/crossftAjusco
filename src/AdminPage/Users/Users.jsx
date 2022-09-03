@@ -28,6 +28,7 @@ import { yellow } from '@mui/material/colors';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { ConfModal } from './ConfirmModal';
+import { EditModal } from './EditModal'
 
 //Función que busca por nombre (term) en minúsculas
 function searchingTerm(term) {
@@ -88,7 +89,6 @@ function Row(users, id) {
               </a>
           </Grid>
         </TableCell>
-        <TableCell>{row.gender}</TableCell>
         <TableCell >{
           new Date().getTime() < row.next_payday.toDate().getTime() ? (
             <div >
@@ -114,6 +114,11 @@ function Row(users, id) {
                   <TableRow>
                     <TableCell>Fecha de inicio: </TableCell>
                     <TableCell>Próxima fecha de pago:</TableCell>
+                    <TableCell>
+                      <center>
+                        <EditModal id={id} /> {/* Modal para editar info de usuario */}
+                      </center>
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell>
@@ -130,6 +135,11 @@ function Row(users, id) {
                       day: "numeric",
                     })}
                     </TableCell>
+                    <TableCell>
+                      <center>
+                        <ConfModal id={id} />
+                      </center>
+                    </TableCell> {/* se trae el id del "doc" \ modal para confirmar eliminación*/}
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -137,12 +147,6 @@ function Row(users, id) {
                     <TableCell>
                       Pagos realizados:
                     </TableCell>
-                    <TableCell>
-                      {/* se trae el id del "doc" para los fines del deleteDoc() dentro del "collection"*/}
-                      <ConfModal id={id}/>
-                    </TableCell>
-                  </TableRow>
-                  <TableRow>
                     <TableCell>
                       {row.payment_days.map((historyRow) => (
                         <TableRow key={historyRow}>
@@ -193,7 +197,6 @@ export default function CollapsibleTable() {
             <TableCell />
             <TableCell>Nombre(s):</TableCell>
             <TableCell># Teléfono:</TableCell>
-            <TableCell>Sexo:</TableCell>
             <TableCell>Status:</TableCell>
           </TableRow>
         </TableHead>
