@@ -6,21 +6,27 @@ import { getFirestore, doc, updateDoc } from 'firebase/firestore';
 const db = getFirestore();
 
 //Se provee el ID al seleccionar el campo
-export const EditModal = ({ id }) => {
+export const EditModal = ({ id, name, lastName, email, phone, birthday, gender }) => {
   //Seteo del modal apertura & cierre
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const onChange = (e) => {
+    { console.log(e.target.value) }
+  }
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     //Update de usuarios
-    let docRef = db.collection('Users');
-    docRef.doc(id).updateDoc({
-      nombre: "",
-      apellido: ""
-    })
+  //   const refUpdate = doc(db, 'Users', id)
+  //   await updateDoc(refUpdate), {
+  //   }
+  // }
+
+  // const handleChange = () => {
+    
   }
 
   return (
@@ -40,34 +46,34 @@ export const EditModal = ({ id }) => {
         <Container>
           <Row>
             <Col xs={6} md={4}>
-              <label>Nombre:</label>
-              <input type="text" placeholder='Nombre'/>  
+              <label>Nombre(s):</label>
+                <input type="text" placeholder={name} onChange={onChange} />  
             </Col>
             <Col xs={6} md={4}>
-              <label>Apellido:</label>
-              <input type="text" placeholder='Apellido'/>
+              <label>Apellido(s):</label>
+              <input type="text" placeholder={lastName}/>
             </Col>
           </Row>
   
           <Row>
             <Col xs={6} md={4}>
-              <label>Email:</label>
-              <input type="mail" placeholder='Email'/>
+              <label>Email registrado:</label>
+                <input type="mail" placeholder={email} />
             </Col>
             <Col xs={6} md={4}>
               <label>Teléfono:</label>
-              <input type="tel" placeholder='Teléfono'/>
+                <input type="tel" placeholder={phone} />
             </Col>
           </Row>
 
           <Row>
             <Col xs={6} md={4}>
               <label>Cumpleaños: </label>
-              <input type="date" placeholder='Fecha de Nacimiento'/>
+              <input type="date" value={birthday}/>
             </Col>
             <Col xs={6} md={4}>
               <label>Sexo: </label>
-                <input list='gender' />
+                <input list='gender' placeholder={gender} />
                 <datalist id='gender'>
                   <option value='Femenino'>Femenino</option>
                   <option value='Masculino'>Maculino</option>

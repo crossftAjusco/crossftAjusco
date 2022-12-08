@@ -116,7 +116,16 @@ function Row(users, id) {
                     <TableCell>Próxima fecha de pago:</TableCell>
                     <TableCell>
                       <center>
-                        <EditModal id={id} /> {/* Modal para editar info de usuario */}
+                        {/* Modal para editar info de usuario */}
+                        <EditModal
+                          id={id}
+                          name={row.name}
+                          lastName={row.lastname}
+                          email={row.email}
+                          phone={row.phone}
+                          birthday={row.birthday}
+                          gender={row.gender}
+                        />
                       </center>
                     </TableCell>
                   </TableRow>
@@ -137,7 +146,8 @@ function Row(users, id) {
                     </TableCell>
                     <TableCell>
                       <center>
-                        <ConfModal id={id} />
+                        {/* Modal para editar usuarios registrados */}
+                        <ConfModal id={id}  /> 
                       </center>
                     </TableCell> {/* se trae el id del "doc" \ modal para confirmar eliminación*/}
                   </TableRow>
