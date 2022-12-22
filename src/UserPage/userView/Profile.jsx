@@ -52,7 +52,7 @@ const Profile = () => {
   }
  
  useEffect(() => {
-  let info = {} //guardamos ne un arreglo la data del usuario traida de la base de datos
+  let info = {} //guardamos en un arreglo la data del usuario traida de la base de datos
     const q = query(collection(db,"Users"));
     const unsub = onSnapshot(q, (snap) => {
       const array = snap.docs.filter((doc) => {
