@@ -1,7 +1,6 @@
 //Componente UsersList, colección general de usuarios registrados en AjuscoCrossFT
 //Se utiliza MaterialUi para imprimir la tabla de usuarios y sus características
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
@@ -22,7 +21,6 @@ import { TableFooter, TablePagination } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import SearchIcon from '@mui/icons-material/Search';
-import { ClassNames } from '@emotion/react';
 import './Users.css'
 import { yellow } from '@mui/material/colors';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -116,7 +114,16 @@ function Row(users, id) {
                     <TableCell>Próxima fecha de pago:</TableCell>
                     <TableCell>
                       <center>
-                        <EditModal id={id} /> {/* Modal para editar info de usuario */}
+                        {/* Modal para editar info de usuario */}
+                        <EditModal
+                          id={id}
+                          name={row.name}
+                          lastName={row.lastname}
+                          email={row.email}
+                          phone={row.phone}
+                          birthday={row.birthday}
+                          gender={row.gender}
+                        />
                       </center>
                     </TableCell>
                   </TableRow>
@@ -137,7 +144,8 @@ function Row(users, id) {
                     </TableCell>
                     <TableCell>
                       <center>
-                        <ConfModal id={id} />
+                        {/* Modal para editar usuarios registrados */}
+                        <ConfModal id={id}  /> 
                       </center>
                     </TableCell> {/* se trae el id del "doc" \ modal para confirmar eliminación*/}
                   </TableRow>

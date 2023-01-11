@@ -1,8 +1,6 @@
 //componente que crea el nuevo usuario a partir del nuevo registro en firebase
-import app from '../../firebase'
-import { collection, getFirestore, addDoc } from 'firebase/firestore'
-// Se llama a Firebase para conectarlo a la base de datos
-const db = getFirestore(app)
+import { db } from '../../firebase'
+import { collection, addDoc } from 'firebase/firestore'
 
 const NuevoUsuario = async (valores) => {
     //Se trae los valores al clickearle en "onSubmit"

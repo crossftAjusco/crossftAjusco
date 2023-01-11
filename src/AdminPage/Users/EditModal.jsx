@@ -1,26 +1,34 @@
 //Modal para editar la información del usuario seleccionado
 import { Modal, Row, Col, Button, Container } from 'react-bootstrap'
 import { useState } from 'react';
-import { getFirestore, doc, updateDoc } from 'firebase/firestore';
-
-const db = getFirestore();
+import { doc, updateDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 //Se provee el ID al seleccionar el campo
-export const EditModal = ({ id }) => {
+export const EditModal = ({ id, name, lastName, email, phone, birthday, gender }) => {
   //Seteo del modal apertura & cierre
   const [show, setShow] = useState(false);
+  const [update, setUpdate] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleChange = ({ target: { name, value } }) => {
+    setUpdate({ ...update, [name]: value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     //Update de usuarios
-    let docRef = db.collection('Users');
-    docRef.doc(id).updateDoc({
-      nombre: "",
-      apellido: ""
-    })
+    const refUpdate = doc(db, `Users/${id}`);
+    try {
+      console.log("cargando")
+      updateDoc(refUpdate, 
+        update
+      );
+      handleClose();
+    } catch (error) {
+      console.log(error);
+    }  
   }
 
   return (
@@ -29,7 +37,7 @@ export const EditModal = ({ id }) => {
       <Button variant="outline-dark" size="sm" onClick={handleShow} className="btnMdl">
         Editar Información
       </Button>
-      {/* Modal para editar informaciòn */}
+      {/* Inicia modal para editar informaciòn */}
       <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter" className="ModTitle">
@@ -40,37 +48,36 @@ export const EditModal = ({ id }) => {
         <Container>
           <Row>
             <Col xs={6} md={4}>
-              <label>Nombre:</label>
-              <input type="text" placeholder='Nombre'/>  
+              <label>Nombre(s):</label>
+                <input type="text" placeholder={name} onChange={handleChange} name="name"/>  
             </Col>
             <Col xs={6} md={4}>
-              <label>Apellido:</label>
-              <input type="text" placeholder='Apellido'/>
+              <label>Apellido(s):</label>
+                <input type="text" placeholder={lastName} onChange={handleChange} name="lastname"/>
             </Col>
           </Row>
-  
           <Row>
             <Col xs={6} md={4}>
-              <label>Email:</label>
-              <input type="mail" placeholder='Email'/>
+              <label>Email registrado:</label>
+                <input type="mail" placeholder={email} onChange={handleChange} name="email"/>
             </Col>
             <Col xs={6} md={4}>
               <label>Teléfono:</label>
-              <input type="tel" placeholder='Teléfono'/>
+                <input type="tel" placeholder={phone} onChange={handleChange}/>
             </Col>
           </Row>
 
           <Row>
             <Col xs={6} md={4}>
               <label>Cumpleaños: </label>
-              <input type="date" placeholder='Fecha de Nacimiento'/>
+              <input type="date" value={birthday} onChange={handleChange} name="birthday"/>
             </Col>
             <Col xs={6} md={4}>
               <label>Sexo: </label>
-                <input list='gender' />
+                <input list='gender' placeholder={gender} onChange={handleChange} name="gender"/>
                 <datalist id='gender'>
                   <option value='Femenino'>Femenino</option>
-                  <option value='Masculino'>Maculino</option>
+                  <option value='Masculino'>Masculino</option>
                 </datalist>
                 
             </Col>  
