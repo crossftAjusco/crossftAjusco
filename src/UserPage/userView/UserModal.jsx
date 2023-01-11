@@ -2,9 +2,8 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import  { useState } from 'react';
-import { updateDoc, doc, getFirestore, } from 'firebase/firestore';
-import app from "../../firebase";
-const db = getFirestore(app);
+import { updateDoc, doc } from 'firebase/firestore';
+import { db } from "../../firebase";
 
 //creamos la función para traer los datos del usuario por medio de props
 const UserModal = ({show, setShow, tipo, data, id, keys, titles}) => {

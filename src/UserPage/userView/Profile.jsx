@@ -13,9 +13,8 @@ import Box from "@mui/material/Box";
 import ScrollableFeed from 'react-scrollable-feed'
 import "./UserProf.css";
 import { useEffect, useState } from "react";
-import { getFirestore, collection, query, onSnapshot} from "firebase/firestore";
-import app from "../../firebase";
-const db = getFirestore(app);
+import { collection, query, onSnapshot} from "firebase/firestore";
+import { db } from "../../firebase";
 
 const Profile = () => {
     const { user } = useAuth();  // Hook para comprobar la autenticación del usuario 
@@ -90,12 +89,11 @@ const Profile = () => {
   return (
     <>
     <div className="title3">
-         <h2>
-           Mi Perfil
-           </h2>
+          <h2>
+            Mi Perfil
+          </h2>
         </div>  
       <UserModal show={show} setShow={setShow} tipo={tipo} titles={titles} modalUserData={modalUserData} data={data} id={userId} keys={Key} />  
-      
         <Box sx={{ display: "flex" }}>
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4}}>
               <Paper className="paper1" elevation={4}

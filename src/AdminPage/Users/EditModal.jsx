@@ -8,7 +8,7 @@ import { db } from '../../firebase';
 export const EditModal = ({ id, name, lastName, email, phone, birthday, gender }) => {
   //Seteo del modal apertura & cierre
   const [show, setShow] = useState(false);
-  const [update, setUpdate] = useState("")
+  const [update, setUpdate] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -19,10 +19,16 @@ export const EditModal = ({ id, name, lastName, email, phone, birthday, gender }
   const handleSubmit = async (e) => {
     e.preventDefault();
     //Update de usuarios
-    const refUpdate = doc(db, 'Users', id)
-    await updateDoc(refUpdate, {
-      update
-    });
+    const refUpdate = doc(db, `Users/${id}`);
+    try {
+      console.log("cargando")
+      updateDoc(refUpdate, 
+        update
+      );
+      handleClose();
+    } catch (error) {
+      console.log(error);
+    }  
   }
 
   return (
@@ -80,7 +86,7 @@ export const EditModal = ({ id, name, lastName, email, phone, birthday, gender }
       </Modal.Body>
       <Modal.Footer className="mdlFooter">
         <Button onClick={handleClose} variant="secondary" className="modalbtn">Cancelar</Button>
-        <Button type="submit" onClick={handleSubmit && handleClose} className="modalbtn" variant="warning">Guardar</Button>
+        <Button type="submit" onClick={handleSubmit} className="modalbtn" variant="warning">Guardar</Button>
       </Modal.Footer>
     </Modal>
     </>
