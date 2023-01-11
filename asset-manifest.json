@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/crossftAjusco/static/css/main.a2a4fb47.css",
-    "main.js": "/crossftAjusco/static/js/main.26e8fc38.js",
+    "main.js": "/crossftAjusco/static/js/main.0615c396.js",
     "static/js/787.0fac509b.chunk.js": "/crossftAjusco/static/js/787.0fac509b.chunk.js",
     "static/media/LogoZero.png": "/crossftAjusco/static/media/LogoZero.6842cdfeddb12dd19cda.png",
     "static/media/promofocus.png": "/crossftAjusco/static/media/promofocus.8d0f47ee125aabcd6082.png",
@@ -39,11 +39,11 @@
     "static/media/slick.woff": "/crossftAjusco/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/crossftAjusco/index.html",
     "main.a2a4fb47.css.map": "/crossftAjusco/static/css/main.a2a4fb47.css.map",
-    "main.26e8fc38.js.map": "/crossftAjusco/static/js/main.26e8fc38.js.map",
+    "main.0615c396.js.map": "/crossftAjusco/static/js/main.0615c396.js.map",
     "787.0fac509b.chunk.js.map": "/crossftAjusco/static/js/787.0fac509b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2a4fb47.css",
-    "static/js/main.26e8fc38.js"
+    "static/js/main.0615c396.js"
   ]
 }
